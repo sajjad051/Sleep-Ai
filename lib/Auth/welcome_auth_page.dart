@@ -83,7 +83,7 @@ class WelcomeAuthPage extends StatelessWidget {
 
                       shadowColor: Color(0xFF7D50FF),
                       onPressed: (){
-                        Get.toNamed(Routes.welcomePage2);
+                        Get.toNamed(Routes.signUp);
                       }),
                 ],
               ),

@@ -1,4 +1,8 @@
+import 'package:ai_sleep/Auth/Forgot/forgot_password.dart';
+import 'package:ai_sleep/Auth/Forgot/reset_password.dart';
+import 'package:ai_sleep/Auth/Forgot/verification_code.dart';
 import 'package:ai_sleep/Auth/Sign_in/Screen/Sign_in_screen.dart';
+import 'package:ai_sleep/Auth/Sign_up/Screen/Sign_up_screen.dart';
 import 'package:ai_sleep/Auth/welcome_auth_page.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
 
@@ -17,6 +21,10 @@ abstract class Routes{
   static const welcomePage4 = '/welcomePage4';
   static const welcomeAuthPage = '/welcomeAuthPage';
   static const signIn = '/signIn';
+  static const signUp = '/signUp';
+  static const forgotPage = '/forgotPage';
+  static const verificationCode = '/verificationCode';
+  static const resetPassword = '/resetPassword';
 }
 
 abstract class AppPage {
@@ -27,6 +35,10 @@ abstract class AppPage {
      GetPage(name: Routes.welcomePage4, page: ()=> WelcomePage4 (),),
      GetPage(name: Routes.welcomeAuthPage, page: ()=> WelcomeAuthPage(),),
      GetPage(name: Routes.signIn, page: ()=> SignInScreen(),),
+     GetPage(name: Routes.signUp, page: ()=> SignUpScreen(),),
+    GetPage(name: Routes.forgotPage, page: ()=> ForgotPassword(),),
+    GetPage(name: Routes.verificationCode, page: ()=> VerificationCode(),),
+    GetPage(name: Routes.resetPassword, page: ()=> ResetPassword(),),
 
   ];
 }
