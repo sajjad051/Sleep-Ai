@@ -6,16 +6,19 @@ import 'package:get/get_core/src/get_main.dart';
 
 import '../../../Route/Routes.dart';
 import '../../../widget/Social_media_button.dart';
+import '../../Controler/login_controler.dart';
 
 class SignInScreen extends StatelessWidget {
-  const SignInScreen({super.key});
+   SignInScreen({super.key});
+
+  LoginController controller = Get.put(LoginController());
 
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
     return Scaffold(
-      body: Container(
+      body: Obx( () => Container(
         color: Color(0xFF020825),
         child: SingleChildScrollView(
           child: Column(
@@ -55,9 +58,10 @@ class SignInScreen extends StatelessWidget {
                         color: Color(0xFF848BBD),
                       ),
                       child: TextField(
+                        controller: controller.email,
                         decoration: InputDecoration(
                           hintText: " Enter Your Email Address",
-                          prefixIcon: Icon(Icons.email),
+                          prefixIcon: controller.email.text.isEmpty? Icon(Icons.email) : null,
                           border: InputBorder.none,
                         ),
                       ),
@@ -72,13 +76,28 @@ class SignInScreen extends StatelessWidget {
                           color: Color(0xFF848BBD)),
                       child: TextField(
                         onChanged: (text) {
-                          // controller.validatePassword(text.toString());
+
                         },
+                        controller: controller.password,
+                        obscureText: controller.hidePassword.value,
                         decoration: InputDecoration(
                           hintText: " Enter Password",
-                          prefixIcon: Icon(Icons.lock),
-                          suffixIcon: Icon(Icons.visibility),
-          
+                          prefixIcon:controller.password.text.isEmpty ? Icon(Icons.lock) :null,
+
+                          //suffixIcon: Icon(Icons.visibility),
+                          suffixIcon: controller.hidePassword.value == false
+                              ? InkWell(
+                              onTap: () {
+                                controller.hidePassword.value = true;
+                              },
+                              child: const Icon(Icons.visibility))
+                              : InkWell(
+                              onTap: () {
+                                controller.hidePassword.value = false;
+                              },
+                              child: const Icon(Icons.visibility_off)),
+
+
                           border: InputBorder.none,
                           //border:OutlineInputBorder(),
                           // border: BorderRadius.circular(),
@@ -114,7 +133,7 @@ class SignInScreen extends StatelessWidget {
                         background: Color(0xFF7D50FF),
                         shadowColor: Color(0xFF7D50FF),
                         onPressed: () {
-          
+                            controller.login();
                         }),
           
                     SizedBox(height: 15,),
@@ -206,11 +225,12 @@ class SignInScreen extends StatelessWidget {
                   ],
                 ),
               ),
-              SizedBox(height: height,)
+              SizedBox(height: 25,)
             ],
           ),
         ),
       ),
+      )
     );
   }
 }

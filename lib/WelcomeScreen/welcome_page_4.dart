@@ -15,38 +15,40 @@ class WelcomePage4 extends StatelessWidget {
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
-    return Container(
-      color: Color(0xFF020825),
-      child: Stack(
-        alignment: Alignment.topCenter,
-        children: [
-          Container(
-            height: height * 0.6,
-            child: Image.asset(
-              "assets/welcome_img/fourth.webp",
-              fit: BoxFit.fill,
+    return Scaffold(
+      body: Container(
+        color: Color(0xFF020825),
+        child: Stack(
+          alignment: Alignment.topCenter,
+          children: [
+            Container(
+              height: height * 0.6,
+              child: Image.asset(
+                "assets/welcome_img/fourth.webp",
+                fit: BoxFit.fill,
+              ),
             ),
-          ),
-
-          WelcomePageTextWidget(
-              title: "Sleep Statistics and Trends You Need",
-              description:
-                  "Review statistics that may reveal shocking truth about your health"
-          ),
-
-          Padding(
-            padding: EdgeInsets.only(top: height * 0.88),
-            child: CustomButton(
-                height: 48,
-                width: 120,
-                text: "start",
-                background: Color(0xFF7D50FF),
-                shadowColor: Color(0xFF7D50FF),
-                onPressed: () {
-                  Get.toNamed(Routes.welcomeAuthPage);
-                }),
-          ),
-        ],
+      
+            WelcomePageTextWidget(
+                title: "Sleep Statistics and Trends You Need",
+                description:
+                    "Review statistics that may reveal shocking truth about your health"
+            ),
+      
+            Padding(
+              padding: EdgeInsets.only(top: height * 0.88),
+              child: CustomButton(
+                  height: 48,
+                  width: 120,
+                  text: "start",
+                  background: Color(0xFF7D50FF),
+                  shadowColor: Color(0xFF7D50FF),
+                  onPressed: () {
+                    Get.toNamed(Routes.welcomeAuthPage);
+                  }),
+            ),
+          ],
+        ),
       ),
     );
   }
