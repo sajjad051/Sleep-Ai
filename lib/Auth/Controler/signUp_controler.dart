@@ -11,6 +11,16 @@ class SignUpController extends GetxController{
   var hidePassword = true.obs;
   var showPassword = false.obs;
 
+  var isEmptyEmail =false.obs;
+  var isEmptyPassword = false.obs;
+  var isEmptyNumber = false.obs;
+
+  var isChecked = false.obs;
+
+  void toggleCheckbox(bool? value) {
+    isChecked.value = value ?? false;
+  }
+
   signUp() {
     FormData body = FormData({
       'email': email.text,

@@ -8,24 +8,26 @@ class WelcomePage3 extends StatelessWidget {
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
-    return Container(
-      color: Color(0xFF020825),
-      child: Stack(
-        alignment: Alignment.topCenter,
-        children: [
-          Container(
-            height: height * 0.6,
-            padding: EdgeInsets.all(20),
-            child: Image.asset(
-              "assets/welcome_img/third.webp",
-              fit: BoxFit.fill,
+    return Scaffold(
+      body: Container(
+        color: Color(0xFF020825),
+        child: Stack(
+          alignment: Alignment.topCenter,
+          children: [
+            Container(
+              height: height * 0.6,
+              padding: EdgeInsets.all(20),
+              child: Image.asset(
+                "assets/welcome_img/third.webp",
+                fit: BoxFit.fill,
+              ),
             ),
-          ),
-          const WelcomePageTextWidget(
-              title: "Understand Your Sleep Cycles",
-              description:
-                  "LTrack your movements and record sounds you made during sleep")
-        ],
+            const WelcomePageTextWidget(
+                title: "Understand Your Sleep Cycles",
+                description:
+                    "Track your movements and record sounds you made during sleep")
+          ],
+        ),
       ),
     );
   }

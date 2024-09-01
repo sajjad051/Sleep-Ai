@@ -23,6 +23,7 @@ class WelcomePage4 extends StatelessWidget {
           children: [
             Container(
               height: height * 0.6,
+              width: width,
               child: Image.asset(
                 "assets/welcome_img/fourth.webp",
                 fit: BoxFit.fill,

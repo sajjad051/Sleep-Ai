@@ -18,5 +18,8 @@ class ResetController extends GetxController{
       'confirmPassword':confirmPassword.text,
     });
     print(body.fields);
+    if(newPassword.text != confirmPassword.text){
+      print("Password not matched");
+    };
   }
 }

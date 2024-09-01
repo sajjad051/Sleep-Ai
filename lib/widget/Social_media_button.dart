@@ -12,7 +12,7 @@ class SocialMediaButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return  ClipOval(
       child: Material(
-        color: Color(0xFF020825), // Button color
+        color: Color(0xFF061339), // Button color
         child: InkWell(
           splashColor: Colors.white.withOpacity(0.3), // Splash color
           onTap: onPressed,

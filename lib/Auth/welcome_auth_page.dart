@@ -39,16 +39,13 @@ class WelcomeAuthPage extends StatelessWidget {
                       textAlign: TextAlign.left,
                       style: welcomeTextLarge(),
                     ),
-                    SizedBox(
-                      height: 25,
-                    ),
                     const Text(
                       "Sleeping",
                       textAlign: TextAlign.left,
                       style: TextStyle(fontSize: 30, color: Color(0xFFFEE4A2)),
                     ),
                     const SizedBox(
-                      height: 30,
+                      height: 20,
                     ),
                     Text(
                       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pretium aliquet nec velit nunc scelerisque facilisis mauris diam proin. Luctus eu sed nunc viverra imperdiet dui, lectus mauris vivamus",
@@ -59,7 +56,7 @@ class WelcomeAuthPage extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                height: 30,
+                height: 25,
               ),
               Padding(
                 padding: EdgeInsets.only(left: 10, right: 10),
@@ -71,12 +68,12 @@ class WelcomeAuthPage extends StatelessWidget {
                         text: "Sign In",
                         background: Color(0xFF7D50FF),
                         shadowColor: Color(0xFF7D50FF),
-                        onPressed: (){
+                        onPressed: () {
                           Get.toNamed(Routes.signIn);
                         }),
-      
-                    SizedBox(height: 30),
-
+                    SizedBox(
+                      height: 5,
+                    ),
                     RoundedButton(
                         height: 48,
                         width: Get.width,
@@ -84,10 +81,12 @@ class WelcomeAuthPage extends StatelessWidget {
                         background: Color(0xFF020825),
                         shadowColor: Color(0xFF7D50FF),
                         borderColor: Color(0xFF7D50FF),
-                        onPressed: (){
+                        onPressed: () {
                           Get.toNamed(Routes.signUp);
                         }),
-
+                    SizedBox(
+                      height: 25,
+                    )
                   ],
                 ),
               ),

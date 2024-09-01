@@ -4,8 +4,14 @@ import 'package:ai_sleep/Auth/Forgot/verification_code.dart';
 import 'package:ai_sleep/Auth/Sign_in/Screen/Sign_in_screen.dart';
 import 'package:ai_sleep/Auth/Sign_up/Screen/Sign_up_screen.dart';
 import 'package:ai_sleep/Auth/welcome_auth_page.dart';
+import 'package:ai_sleep/Home/dialog.dart';
+import 'package:ai_sleep/Home/home_page1.dart';
+import 'package:ai_sleep/Sleep/sleep_1.dart';
+import 'package:ai_sleep/WelcomeScreen/widget/On_Board_screen/onBoard.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
 
+import '../Sleep/sleep_2.dart';
+import '../Sleep/sleep_3.dart';
 import '../WelcomeScreen/welcome_page_1.dart';
 import '../WelcomeScreen/welcome_page_2.dart';
 import '../WelcomeScreen/welcome_page_3.dart';
@@ -25,6 +31,13 @@ abstract class Routes{
   static const forgotPage = '/forgotPage';
   static const verificationCode = '/verificationCode';
   static const resetPassword = '/resetPassword';
+  static const sleep1 = '/sleep1';
+  static const sleep2 = '/sleep2';
+  static const onBoard = '/onBoard';
+  static const sleep3 = '/sleep3';
+  static const home1 = '/home1';
+  static const dialog = '/dialog';
+
 }
 
 abstract class AppPage {
@@ -39,6 +52,12 @@ abstract class AppPage {
     GetPage(name: Routes.forgotPage, page: ()=> ForgotPassword(),),
     GetPage(name: Routes.verificationCode, page: ()=> VerificationCode(),),
     GetPage(name: Routes.resetPassword, page: ()=> ResetPassword(),),
+    GetPage(name: Routes.sleep1, page: ()=> Sleep1(),),
+    GetPage(name: Routes.sleep2, page: ()=> Sleep2(),),
+    GetPage(name: Routes.sleep3, page: ()=> Sleep3(),),
+    GetPage(name: Routes.onBoard, page: ()=> OnBoard(),),
+    GetPage(name: Routes.home1, page: ()=>HomePage1(),),
+    GetPage(name: Routes.dialog, page: ()=>DialogExample(),),
 
   ];
 }

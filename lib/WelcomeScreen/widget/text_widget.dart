@@ -24,7 +24,7 @@ class WelcomePageTextWidget extends StatelessWidget {
           Text(
             description,
             textAlign: TextAlign.center,
-            style: welcomeTextSmall(),
+            style: TextStyle(fontSize: 14, color: Color(0xFF848BBD)),
           )
         ],
       ),

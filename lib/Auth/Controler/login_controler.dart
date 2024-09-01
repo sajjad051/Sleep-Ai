@@ -12,6 +12,9 @@ class LoginController extends GetxController {
   var hideLockLogo = false.obs;
   var checkPassword = false.obs;
 
+  var isEmptyEmail = false.obs;
+  var isEmptyPassword = false.obs;
+
   login() {
     FormData body = FormData({
       'email': email.text,
