@@ -4,8 +4,11 @@ import 'package:ai_sleep/Auth/Forgot/verification_code.dart';
 import 'package:ai_sleep/Auth/Sign_in/Screen/Sign_in_screen.dart';
 import 'package:ai_sleep/Auth/Sign_up/Screen/Sign_up_screen.dart';
 import 'package:ai_sleep/Auth/welcome_auth_page.dart';
+import 'package:ai_sleep/Home/album_screen.dart';
+import 'package:ai_sleep/Home/artist_profile.dart';
 import 'package:ai_sleep/Home/dialog.dart';
 import 'package:ai_sleep/Home/home_page1.dart';
+import 'package:ai_sleep/Home/music_player_screen.dart';
 import 'package:ai_sleep/Sleep/sleep_1.dart';
 import 'package:ai_sleep/WelcomeScreen/widget/On_Board_screen/onBoard.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
@@ -20,6 +23,7 @@ import '../login.dart';
 
 
 abstract class Routes{
+  static const test = '/test';
   static const login = '/login';
   static const welcomePage1 = '/welcomePage1';
   static const welcomePage2 = '/welcomePage2';
@@ -37,11 +41,15 @@ abstract class Routes{
   static const sleep3 = '/sleep3';
   static const home1 = '/home1';
   static const dialog = '/dialog';
+  static const albam = '/albam';
+  static const musicPlayer = '/musicPlayer';
+  static const artistProfile = '/artistProfile';
 
 }
 
 abstract class AppPage {
   static final routes = [
+    GetPage(name: Routes.test, page: ()=> AlbumScreen(),),
      GetPage(name: Routes.login, page: ()=> LoginPage (),),
      GetPage(name: Routes.welcomePage2, page: ()=> WelcomePage2 (),),
      GetPage(name: Routes.welcomePage3, page: ()=> WelcomePage3 (),),
@@ -58,6 +66,9 @@ abstract class AppPage {
     GetPage(name: Routes.onBoard, page: ()=> OnBoard(),),
     GetPage(name: Routes.home1, page: ()=>HomePage1(),),
     GetPage(name: Routes.dialog, page: ()=>DialogExample(),),
+    GetPage(name: Routes.albam, page: ()=>AlbumScreen(),),
+    GetPage(name: Routes.musicPlayer, page: ()=>MusicPlayerScreen(),),
+    GetPage(name: Routes.artistProfile, page: ()=>ArtistProfile(),),
 
   ];
 }

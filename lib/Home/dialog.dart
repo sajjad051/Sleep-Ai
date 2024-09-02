@@ -28,9 +28,39 @@ class DialogExample extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
 
-                    Image.asset("assets/sleep/pop.jpg",
-                      fit: BoxFit.fill,),
-
+                    Align(
+                      alignment: Alignment.topRight,
+                      child: InkWell(
+                        onTap: () {
+                          Navigator.pop(context);
+                        },
+                        child: Icon(
+                          Icons.close,
+                          color: Colors.white.withOpacity(0.5),
+                        ),
+                      ),
+                    ),
+                    SizedBox(height: 20),
+                    Container(
+                     // margin: EdgeInsets.symmetric(horizontal: 20, vertical: 40),
+                      height: Get.width * .45,
+                      width: Get.width * .45,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(30),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black26,
+                            blurRadius: 20,
+                            offset: Offset(0, 10),
+                          )
+                        ],
+                        image: DecorationImage(
+                          image: AssetImage('assets/sleep/pop.jpg'), // Replace with your image path
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    ),
+                    SizedBox(height: 20,),
                     Text(
                       "Unlock Music",
                       style: TextStyle(
@@ -54,7 +84,7 @@ class DialogExample extends StatelessWidget {
                         shadowColor: Color(0xFF7D50FF),
                         borderColor: Color(0xFF7D50FF),
                         onPressed: () {
-                          Get.toNamed(Routes.signUp);
+                          //Get.toNamed(Routes.signUp);
                         }),
                     SizedBox(
                       height: 20,
@@ -66,12 +96,6 @@ class DialogExample extends StatelessWidget {
                         background: Color(0xFF7D50FF),
                         shadowColor: Color(0xFF7D50FF),
                         onPressed: () {}),
-                    TextButton(
-                      onPressed: () {
-                        Navigator.pop(context);
-                      },
-                      child: const Text('Close'),
-                    ),
                   ],
                 ),
               ),

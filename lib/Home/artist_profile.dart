@@ -1,0 +1,170 @@
+import 'package:ai_sleep/Home/customHomeCard.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+
+import '../Route/Routes.dart';
+import '../widget/custom_button.dart';
+
+class ArtistProfile extends StatelessWidget {
+  const ArtistProfile({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.purple.shade800,
+      body: Stack(
+        children: [
+          SizedBox(
+            height: Get.width,
+            width: Get.width,
+            child: Image.asset(
+              'assets/sleep/artist_img.jpg', // Replace with your image path
+              fit: BoxFit.cover,
+            ),
+          ),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              // Top section with back button and artist name
+              Padding(
+                padding: const EdgeInsets.symmetric(
+                    horizontal: 20.0, vertical: 30.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    InkWell(
+                        onTap: () {
+                          Navigator.pop(context);
+                        },child: Icon(Icons.arrow_back, color: Colors.white)),
+                    Text(
+                      'Lauren Groff',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold),
+                    ),
+                    Icon(Icons.favorite_border, color: Colors.white),
+                  ],
+                ),
+              ),
+              // Album Image
+              // Container(
+              //   // margin: EdgeInsets.all(20),
+              //   height: 200,
+              //   decoration: BoxDecoration(
+              //     borderRadius: BorderRadius.circular(20),
+              //     image: DecorationImage(
+              //       image: AssetImage('assets/sleep/sunset.jpg'), // Replace with your image path
+              //       fit: BoxFit.cover,
+              //     ),
+              //   ),
+              // ),
+              // Album details section
+
+              SizedBox(
+                height: Get.height * 0.25,
+              ),
+              Expanded(
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: Color(0xFF020825),
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(30),
+                      topRight: Radius.circular(30),
+                    ),
+                  ),
+                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Ghosts and Empties - Vol 1',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold),
+                      ),
+                      SizedBox(
+                        height: 15,
+                      ),
+                      InkWell(
+                        onTap: () {
+                          Get.toNamed(Routes.resetPassword);
+                        },
+                        child: Row(
+                          children: [
+                            Container(
+                              // margin: EdgeInsets.symmetric(horizontal: 20, vertical: 40),
+                              height: 43,
+                              width: 43,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.black26,
+                                    blurRadius: 20,
+                                    offset: Offset(0, 10),
+                                  )
+                                ],
+                                image: DecorationImage(
+                                  image: AssetImage(
+                                      'assets/sleep/sunset.jpg'), // Replace with your image path
+                                  fit: BoxFit.cover,
+                                ),
+                              ),
+                            ),
+                            SizedBox(width: 10),
+                            Expanded(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    'Lauren Groff',
+                                    style: TextStyle(color: Colors.grey[400]),
+                                  ),
+                                  Text(
+                                    'Musician',
+                                    style: TextStyle(
+                                        color: Color(0xFF848BBD), fontSize: 10),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Icon(Icons.arrow_forward_ios, color: Colors.white),
+                          ],
+                        ),
+                      ),
+                      SizedBox(height: 15),
+                      // Description and play button
+                      Text(
+                        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tristique amet pharetra sem varius dolor vel egestas risus, duis. Volutpat massa mauris luctus enim cras',
+                        style: TextStyle(color: Colors.grey[400]),
+                      ),
+                      SizedBox(height: 10),
+                      SizedBox(height: 5),
+                      Row(
+                        children: [
+                          Customhomecard(
+                            title: "Ghosts and Empties",
+                            subtitle: "By Lauren Groff",
+                            image: "assets/auth_img/sign_in.jpg", onPressed: () {  },),
+                          SizedBox(width: 10,),
+                          Customhomecard(
+                            title: "Ghosts and Empties",
+                            subtitle: "By Lauren Groff",
+                            image: "assets/auth_img/sign_in.jpg", onPressed: () {  },),
+                        ],
+                      ),
+
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+}
