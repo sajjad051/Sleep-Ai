@@ -192,7 +192,7 @@ class SignInScreen extends StatelessWidget {
                         shadowColor: Color(0xFF7D50FF),
                         onPressed: () {
                           controller.login();
-                          Get.toNamed(Routes.sleep1);
+                          Get.toNamed(Routes.homeScreen);
                         }),
                     SizedBox(
                       height: 15,

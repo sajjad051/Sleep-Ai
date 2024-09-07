@@ -170,7 +170,7 @@ class AlbumScreen extends StatelessWidget {
                                     color: Color(0xFFFFFFFF).withOpacity(.5),
                                     fontSize: 11),
                               ),
-                              trailing: Icon(Icons.favorite_border,
+                              trailing:  Icon(Icons.favorite_border,
                                   color: Color(0xFFFFFFFF).withOpacity(.8)),
                             );
                           },

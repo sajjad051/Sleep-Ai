@@ -1,3 +1,4 @@
+import 'package:ai_sleep/Home/Widget/custom_bottom_buttom.dart';
 import 'package:ai_sleep/widget/custom_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -19,24 +20,28 @@ class Sleep1 extends StatelessWidget {
       body: Stack(
         children: [
           SizedBox(
-            height: height,
-            width: width,
+            height: Get.height,
+            width: Get.width,
             child: Image.asset(
               "assets/sleep/sleep_bg.webp",
               fit: BoxFit.cover,
+              height: Get.height,
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(top: 108,left: 20,right: 20),
+            padding: const EdgeInsets.only(top: 108,left: 10,right: 10),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  "18:04",
-                  style: TextStyle(
-                      color: Color(0xFF020825),
-                      fontSize: 72,
-                      fontWeight: FontWeight.w500),
+                Center(
+                  child: Text(
+                    "18:04",
+                    style: TextStyle(
+                        color: Color(0xFF020825),
+                        fontSize: 72,
+                        fontWeight: FontWeight.w500),
+                  ),
                 ),
                 SizedBox(
                   height: 10,
@@ -65,12 +70,14 @@ class Sleep1 extends StatelessWidget {
                 SizedBox(
                   height: 25,
                 ),
-                Text(
-                  'Now Playing',
-                  style: TextStyle(
-                      color: Color(0xFF020825),
-                      fontSize: 16,
-                      fontWeight: FontWeight.w400),
+                Center(
+                  child: Text(
+                    'Now Playing',
+                    style: TextStyle(
+                        color: Color(0xFF020825),
+                        fontSize: 16,
+                        fontWeight: FontWeight.w400),
+                  ),
                 ),
                 SizedBox(height: 30),
                 Container(
@@ -226,37 +233,10 @@ class Sleep1 extends StatelessWidget {
                 SizedBox(
                   height: 40,
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    SvgPicture.asset(
-                      "assets/sleep/watch_img.svg",
-                      height: 40,
-                      width: 40,
-                    ),
-                    SvgPicture.asset(
-                      "assets/sleep/watch_img.svg",
-                      height: 40,
-                      width: 40,
-                    ),
-                    SvgPicture.asset(
-                      "assets/sleep/watch_img.svg",
-                      height: 40,
-                      width: 40,
-                    ),
-                    SvgPicture.asset(
-                      "assets/sleep/watch_img.svg",
-                      height: 40,
-                      width: 40,
-                    ),
-                    SvgPicture.asset(
-                      "assets/sleep/watch_img.svg",
-                      height: 40,
-                      width: 40,
-                    ),
-                  ],
-                ),
-                SizedBox(height: 25),
+
+
+                //button
+                CustomBottomButtom(),
               ],
             ),
           ),

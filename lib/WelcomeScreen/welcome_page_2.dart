@@ -22,7 +22,18 @@ class WelcomePage2 extends StatelessWidget {
           WelcomePageTextWidget(
               title: "Relaxing Sounds for Better\nSleeping",
               description:
-                  "Listen to music like meditation at bedtime to boost sleep efficiency")
+                  "Listen to music like meditation at bedtime to boost sleep efficiency"),
+          Positioned(
+            bottom: 30,  // Adjust this value as needed
+            left: 0,
+            right: 0,
+            child: Opacity(
+              opacity: .5,
+              child: Center(
+                child: Icon(Icons.keyboard_arrow_down, size: 50, color: Color(0xFFFFFFFF)),
+              ),
+            ),
+          ),
         ],
       ),
     );

@@ -25,7 +25,18 @@ class WelcomePage3 extends StatelessWidget {
             const WelcomePageTextWidget(
                 title: "Understand Your Sleep Cycles",
                 description:
-                    "Track your movements and record sounds you made during sleep")
+                    "Track your movements and record sounds you made during sleep"),
+            Positioned(
+              bottom: 30,  // Adjust this value as needed
+              left: 0,
+              right: 0,
+              child: Opacity(
+                opacity: .5,
+                child: Center(
+                  child: Icon(Icons.keyboard_arrow_down, size: 50, color: Color(0xFFFFFFFF)),
+                ),
+              ),
+            ),
           ],
         ),
       ),

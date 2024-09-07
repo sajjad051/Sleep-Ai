@@ -23,9 +23,15 @@ class AudioController extends GetxController {
   }
 
   void playAudio() async {
-    await _audioPlayer.setUrl('https://s3.amazonaws.com/scifri-episodes/scifri20181123-episode.mp3');
-    _audioPlayer.play();
+    print("CLICK Response okay");
+    try {
+      await _audioPlayer.setUrl('https://s3.amazonaws.com/scifri-episodes/scifri20181123-episode.mp3');
+      _audioPlayer.play();
+    } catch (e) {
+      print('Error playing audio: $e');
+    }
   }
+
 
   void pauseAudio() {
     _audioPlayer.pause();

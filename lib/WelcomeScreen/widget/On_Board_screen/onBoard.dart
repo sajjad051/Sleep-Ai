@@ -33,7 +33,7 @@ class _OnBoardState extends State<OnBoard> with TickerProviderStateMixin {
     });
     _progressController = AnimationController(
       vsync: this,
-      duration: const Duration(milliseconds: 500),
+      duration: const Duration(milliseconds: 300),
     );
   }
 
@@ -57,7 +57,7 @@ class _OnBoardState extends State<OnBoard> with TickerProviderStateMixin {
             },
             itemCount: totalPage,
             controller: _pageController,
-            scrollDirection: Axis.horizontal,
+            scrollDirection: Axis.vertical,
             itemBuilder: (context, index) => viewPage(index),
           ),
           Container(

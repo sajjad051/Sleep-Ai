@@ -1,3 +1,4 @@
+import 'package:ai_sleep/Home/Widget/custom_bottom_buttom.dart';
 import 'package:ai_sleep/Sleep/controler/picker_controler.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -24,7 +25,7 @@ class Sleep3 extends StatelessWidget {
               fit: BoxFit.cover,
             ),
           ),
-        Padding(padding: EdgeInsets.only(left: 20, right: 20,top: 35,bottom: 20),
+        Padding(padding: EdgeInsets.only(left: 20, right: 20,top: 35),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -261,37 +262,7 @@ class Sleep3 extends StatelessWidget {
                 }),
          // Spacer(),
             SizedBox(height: 25),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                SvgPicture.asset(
-                  "assets/sleep/watch_img.svg",
-                  height: 40,
-                  width: 40,
-                ),
-                SvgPicture.asset(
-                  "assets/sleep/watch_img.svg",
-                  height: 40,
-                  width: 40,
-                ),
-                SvgPicture.asset(
-                  "assets/sleep/watch_img.svg",
-                  height: 40,
-                  width: 40,
-                ),
-                SvgPicture.asset(
-                  "assets/sleep/watch_img.svg",
-                  height: 40,
-                  width: 40,
-                ),
-                SvgPicture.asset(
-                  "assets/sleep/watch_img.svg",
-                  height: 40,
-                  width: 40,
-                ),
-              ],
-            ),
+           CustomBottomButtom(),
 
           //  WheelPickerExample(),
 

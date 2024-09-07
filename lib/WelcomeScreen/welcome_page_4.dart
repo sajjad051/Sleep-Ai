@@ -35,18 +35,22 @@ class WelcomePage4 extends StatelessWidget {
                 description:
                     "Review statistics that may reveal shocking truth about your health"
             ),
-      
-            Padding(
-              padding: EdgeInsets.only(top: height * 0.88),
-              child: CustomButton(
-                  height: 48,
-                  width: 120,
-                  text: "start",
-                  background: Color(0xFF7D50FF),
-                  shadowColor: Color(0xFF7D50FF),
-                  onPressed: () {
+
+            Positioned(
+              bottom: 30,  // Adjust this value as needed
+              left: 0,
+              right: 0,
+              child: Opacity(
+                opacity: .5,
+                child: InkWell(
+                  onTap: () {
                     Get.toNamed(Routes.welcomeAuthPage);
-                  }),
+                  },
+                  child: Center(
+                    child: Icon(Icons.keyboard_arrow_down, size: 50, color: Color(0xFFFFFFFF)),
+                  ),
+                ),
+              ),
             ),
           ],
         ),
