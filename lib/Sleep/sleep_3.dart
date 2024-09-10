@@ -173,7 +173,7 @@ class Sleep3 extends StatelessWidget {
             SizedBox(height: 40,),
             InkWell(
               onTap: () {
-                Get.toNamed(Routes.home1);
+                Get.toNamed(Routes.test);
               },
               child: Container(
                 height: 86,

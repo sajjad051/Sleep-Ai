@@ -3,6 +3,7 @@ import 'package:ai_sleep/WelcomeScreen/welcome_page_3.dart';
 import 'package:ai_sleep/WelcomeScreen/widget/text_widget.dart';
 import 'package:ai_sleep/widget/custom_button.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 
@@ -29,11 +30,20 @@ class WelcomePage4 extends StatelessWidget {
                 fit: BoxFit.fill,
               ),
             ),
-      
-            WelcomePageTextWidget(
-                title: "Sleep Statistics and Trends You Need",
-                description:
-                    "Review statistics that may reveal shocking truth about your health"
+
+            Padding(
+              padding:  EdgeInsets.only(top: 655.h, left: 62.w, right: 60.w),
+              child: const Column(
+                children: [
+                  WelcomePageTextWidget(
+                      title: "Relaxing Sounds for Better\nSleeping",
+                      description:
+                      "Listen to music like meditation at bedtime to boost sleep efficiency"),
+                  SizedBox(
+                    height: 20,
+                  ),
+                ],
+              ),
             ),
 
             Positioned(

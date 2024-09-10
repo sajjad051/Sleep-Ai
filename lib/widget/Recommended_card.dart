@@ -1,5 +1,6 @@
 import 'package:ai_sleep/Auth/Controler/forgot_controler.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
@@ -111,8 +112,8 @@ class Recommendedcard extends StatelessWidget {
           Stack(
             children: [
               SizedBox(
-                height: Get.width * .4,
-                width: Get.width * .73,
+                height: 177.h,
+                width: 356.w,
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(20), // Adjust this value as needed
                   child: Image.asset(
@@ -123,62 +124,85 @@ class Recommendedcard extends StatelessWidget {
               ),
 
               Positioned(
-                top: 13,
-                right: 13,
+                top: 9.h,
+                right: 9.w,
                 child: InkWell(
                   onTap: () {
 
                   },
-                  child:  SvgPicture.asset(
-                    "assets/sleep/Heart.svg",
-                    height: 20,
-                    width: 20,
+                  child:  Container(
+                    height: 24.h,
+                    width: 24.w,
+                    decoration: BoxDecoration(
+                        color: Color(0xFF000000).withOpacity(.2),
+                        borderRadius: BorderRadius.circular(15)
+                    ),
+                    child: SvgPicture.asset(
+                      "assets/sleep/Heart.svg",
+                      height: 11.63.h,
+                      width: 13.5.w,
+                    ),
                   ),
                 ),
               ),
 
               Positioned(
-                bottom: 13,
-                right: 13,
+                bottom: 18.sp,
+                right: 9.sp,
                 child: InkWell(
                   onTap: () {
 
                   },
-                  child:  SvgPicture.asset(
-                    "assets/sleep/lock.svg",
-                    height: 20,
-                    width: 20,
+                  child:  Container(
+                    height: 24.h,
+                    width: 24.w,
+                    decoration: BoxDecoration(
+                      color: Color(0xFF000000).withOpacity(.2),
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                    child: SvgPicture.asset(
+                      "assets/sleep/lock.svg",
+                      height: 11.5.h,
+                      width: 13.63.w,
+                    ),
                   ),
                 ),
               ),
 
               Positioned(
-                bottom: 10,
+                bottom: 12,
                 left: 8,
-                child: Text(
-                  "05:00",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 12,
+                child: Container(
+                  height: 16.h,
+                  width: 38.w,
+                  decoration: BoxDecoration(
+                      color: Color(0xFF000000).withOpacity(.2),
+                      borderRadius: BorderRadius.circular(3)),
+                  child: Text(
+                    "05:00",
+                    style: TextStyle(
+                      color: Color(0xFFFFFFFF),
+                      fontSize: 12.sp,
+                    ),
                   ),
                 ),
               ),
             ],
           ),
-          SizedBox(height: 10,),
-          Text(title,style: TextStyle(color: Colors.white,fontSize: 14),),
-          SizedBox(height: 5,),
+          SizedBox(height: 9.h,),
+          Text(title,style: TextStyle(color: Colors.white,fontSize: 14.sp),),
+          SizedBox(height: 5.h),
           Row(
             children: [
-              Text(subtitle,style: TextStyle(color:Color(0xFF848BBD) ,fontSize: 10),),
-              SizedBox(width: 8,),
+              Text(subtitle,style: TextStyle(color:Color(0xFF848BBD) ,fontSize: 10.sp),),
+              SizedBox(width: 6.w,),
               SvgPicture.asset(
                 "assets/sleep/Ellipse.svg",
-                height: 8,
-                width: 8,
+                height: 4.h,
+                width: 4.h,
               ),
-              SizedBox(width: 8,),
-              Text("Story",style: TextStyle(color:Color(0xFF848BBD),fontSize: 10),),
+              SizedBox(width: 4.w,),
+              Text("Story",style: TextStyle(color:Color(0xFF848BBD),fontSize: 10.sp),),
 
             ],
           ),

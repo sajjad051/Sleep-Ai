@@ -50,6 +50,7 @@ class _OnBoardState extends State<OnBoard> with TickerProviderStateMixin {
       body: Stack(
         children: [
           PageView.builder(
+
             onPageChanged: (int position) {
               if (_onBoardController.pageIndex.value != position) {
                 _onBoardController.updateIndex(position);

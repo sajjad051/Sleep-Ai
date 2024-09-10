@@ -1,5 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
@@ -15,54 +16,52 @@ class HomeSlider extends StatelessWidget {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
 
-    return Container(
-      child: Column(
-        children: [
-          Stack(
-            children: [
-              Column(
-                children: [
-                  SizedBox(height: width * 0.010),
-                  CarouselSlider.builder(
-                    options: CarouselOptions(
-                      aspectRatio: 3 / 1.9,
-                      viewportFraction: 0.95,
-                      autoPlay: true,
-                      enlargeCenterPage: true,
-                      disableCenter: true,
-                      autoPlayInterval: Duration(seconds: 3),
-                      onPageChanged: (index, reason) {
-                        controller.updateIndex(index);
-                      },
-                    ),
-                    itemCount: 4, // Total number of slides
-                    itemBuilder: (BuildContext context, int itemIndex,
-                            int pageViewIndex) =>
-                        sliderWidget(height, width, itemIndex),
+    return Column(
+      children: [
+        Stack(
+          children: [
+            Column(
+              children: [
+                SizedBox(height: width * 0.010),
+                CarouselSlider.builder(
+                  options: CarouselOptions(
+                    aspectRatio: 3 / 1.9,
+                    viewportFraction: 0.95,
+                    autoPlay: true,
+                    enlargeCenterPage: true,
+                    disableCenter: true,
+                    autoPlayInterval: Duration(seconds: 3),
+                    onPageChanged: (index, reason) {
+                      controller.updateIndex(index);
+                    },
                   ),
-                  Container(
-                    margin: EdgeInsets.only(top: 20),
-                    child: Obx(() {
-                      return Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          ...List.generate(
-                            4, // Total number of indicators
-                            (indicatorIndex) => Indicator(
-                              isActive:
-                                  indicatorIndex == controller.indexNo.value,
-                            ),
+                  itemCount: 4, // Total number of slides
+                  itemBuilder: (BuildContext context, int itemIndex,
+                          int pageViewIndex) =>
+                      sliderWidget(height, width, itemIndex),
+                ),
+                Container(
+                  margin: EdgeInsets.only(top: 20.h),
+                  child: Obx(() {
+                    return Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        ...List.generate(
+                          4, // Total number of indicators
+                          (indicatorIndex) => Indicator(
+                            isActive:
+                                indicatorIndex == controller.indexNo.value,
                           ),
-                        ],
-                      );
-                    }),
-                  ),
-                ],
-              ),
-            ],
-          ),
-        ],
-      ),
+                        ),
+                      ],
+                    );
+                  }),
+                ),
+              ],
+            ),
+          ],
+        ),
+      ],
     );
   }
 
@@ -88,9 +87,9 @@ class HomeSlider extends StatelessWidget {
                 ),
                 Container(
                   margin:
-                      const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+                       EdgeInsets.symmetric(horizontal: 10.h, vertical: 10.h),
                   padding:
-                      const EdgeInsets.symmetric(horizontal: 5, vertical: 5),
+                       EdgeInsets.symmetric(horizontal: 5.h, vertical: 5.h),
                   decoration: BoxDecoration(
                     color: Colors.black.withOpacity(0.20),
                     borderRadius: const BorderRadius.all(Radius.circular(10)),
@@ -103,15 +102,15 @@ class HomeSlider extends StatelessWidget {
               ],
             ),
           ),
-          const SizedBox(height: 10),
+           SizedBox(height: 10.h),
           Text(
             "Breath exercise for better sleep",
             style: TextStyle(
-                fontSize: 16, color: Colors.white, fontWeight: FontWeight.w700),
+                fontSize: 16.sp, color: Colors.white, fontWeight: FontWeight.w700),
           ),
           Text(
             "Close your eyes and take a deep breathe to sleep better tonight",
-            style: TextStyle(fontSize: 12, color: Color(0xFF848BBD)),
+            style: TextStyle(fontSize: 12.sp, color: Color(0xFF848BBD)),
           ),
         ],
       ),

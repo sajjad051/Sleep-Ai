@@ -15,8 +15,9 @@ class Sleep1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
-    double height = MediaQuery.of(context).size.height;
     return Scaffold(
+      bottomNavigationBar: CustomBottomButtom(),
+      backgroundColor: Color(0xFF020825),
       body: Stack(
         children: [
           SizedBox(
@@ -25,7 +26,7 @@ class Sleep1 extends StatelessWidget {
             child: Image.asset(
               "assets/sleep/sleep_bg.webp",
               fit: BoxFit.cover,
-              height: Get.height,
+              //height: Get.height,
             ),
           ),
           Padding(
@@ -230,13 +231,8 @@ class Sleep1 extends StatelessWidget {
                     onPressed: () {
                       Get.toNamed(Routes.sleep2);
                     }),
-                SizedBox(
-                  height: 40,
-                ),
+                SizedBox(height: 30,),
 
-
-                //button
-                CustomBottomButtom(),
               ],
             ),
           ),

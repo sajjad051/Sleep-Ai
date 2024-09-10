@@ -16,7 +16,9 @@ import 'package:ai_sleep/Profile/profile_screen.dart';
 import 'package:ai_sleep/Records/records_screen.dart';
 import 'package:ai_sleep/Sleep/sleep_1.dart';
 import 'package:ai_sleep/Statistics/statistics_Screen.dart';
+import 'package:ai_sleep/TabBar_Music/tabbar_music.dart';
 import 'package:ai_sleep/WelcomeScreen/widget/On_Board_screen/onBoard.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
 
 import '../Sleep/sleep_2.dart';
@@ -61,7 +63,7 @@ abstract class Routes{
 
 abstract class AppPage {
   static final routes = [
-    GetPage(name: Routes.test, page: ()=> RecordsScreen()),
+       GetPage(name: Routes.test, page: ()=> TabBarMusic(),),
      //GetPage(name: Routes.login, page: ()=> LoginPage (),),
      GetPage(name: Routes.welcomePage2, page: ()=> WelcomePage2 (),),
      GetPage(name: Routes.welcomePage3, page: ()=> WelcomePage3 (),),

@@ -24,14 +24,13 @@ class _CustomRadioButtonState extends State<CustomRadioButton> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: Get.width,
       child: Column(
         children: [
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
             child: Container(
               height: 38,
-              width: Get.width *5,
+              width: Get.width * .60 ,
               decoration: BoxDecoration(
                 color: const Color(0xFF061339),
                 borderRadius: const BorderRadius.all(Radius.circular(24.0)),
@@ -47,7 +46,7 @@ class _CustomRadioButtonState extends State<CustomRadioButton> {
                 children: [
                   Container(
                     height: 40,
-                    width: 139,
+                    width: Get.width * .30,
                     alignment: Alignment.center,
                     decoration: (index == 1) ? decoration() : null,
                     child: Material(
@@ -75,7 +74,7 @@ class _CustomRadioButtonState extends State<CustomRadioButton> {
                   ),
                   Container(
                     height: 38,
-                    width: 139,
+                    width: Get.width *.30,
                     decoration: (index == 2) ? decoration() : null,
                     child: Material(
                       color: Colors.transparent,
@@ -105,7 +104,8 @@ class _CustomRadioButtonState extends State<CustomRadioButton> {
             ),
           ),
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            //crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
                 height: 8,

@@ -2,6 +2,7 @@ import 'package:ai_sleep/Home/Widget/custom_bottom_buttom.dart';
 import 'package:ai_sleep/Home/home_page/home_slider.dart';
 import 'package:ai_sleep/widget/Recommended_card.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import '../Widget/customHomeCard.dart';
 
@@ -14,104 +15,104 @@ class HomeScreen extends StatelessWidget {
       {
         'title': "Ghosts and Empties",
         'subtitle': "By Lauren Groff",
-        'image': "assets/sleep/test.jpg",
+        'image': "assets/sleep/ic_home.webp",
       },
       {
         'title': "Ghosts and Empties",
         'subtitle': "By Lauren Groff",
-        'image': "assets/auth_img/sign_in.jpg",
+        'image': "assets/sleep/demo_ic.webp",
       },
       {
         'title': "Ghosts and Empties",
         'subtitle': "By Lauren Groff",
-        'image': "assets/auth_img/sign_in.jpg",
+        'image': "assets/sleep/ic_home.webp",
       },
       {
         'title': "Ghosts and Empties",
         'subtitle': "By Lauren Groff",
-        'image': "assets/auth_img/sign_in.jpg",
+        'image': "assets/sleep/ic_home.webp",
       },
       {
         'title': "Ghosts and Empties",
         'subtitle': "By Lauren Groff",
-        'image': "assets/auth_img/sign_in.jpg",
+        'image': "assets/sleep/demo_ic.webp",
       },
       // Add more items as needed
     ];
 
     return Scaffold(
-      backgroundColor: Color(0xFF020825),
+      backgroundColor: Colors.transparent,
+      bottomNavigationBar: CustomBottomButtom(),
       body: Stack(
         children: [
-          // Image at the top
-          Positioned(
-            top: 0, // Position at the top
-            left: 0,
-            right: 0,
-            child: SizedBox(
-              height: Get.height * .28,
-              width: Get.width,
-              child: Image.asset(
-                "assets/sleep/home_cover.jpg",
-                fit: BoxFit.cover, // Ensures the image covers the width
-              ),
+          SizedBox(
+            height: Get.height,
+            width: Get.width,
+            child: Image.asset(
+              "assets/sleep/ic_home_bg.webp",
+              fit: BoxFit.cover, // Ensures the image covers the width
             ),
           ),
 
+          SingleChildScrollView(
 
-
-          ListView(
-            children: [
-
-           //   HomeSlider(),
-              Padding(
+              child: Padding(
                 padding: EdgeInsets.only(
-                    top: Get.height * .13, left: 24, right: 24),
+                    top: 160.h, left: 24.w,),
                 child: Column(
                   children: [
-                    HomeSlider(),
-                    SizedBox(height: 15,),
-
-
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          "Bedtime Stories",
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 16,
-                            color: Color(0xFFFFFFFF).withOpacity(.8),
-                          ),
-                        ),
-                        Text(
-                          "See All",
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 14,
-                            color: Color(0xFFFFFFFF).withOpacity(.8),
-                          ),
-                        ),
-                      ],
+                    Padding(
+                      padding:  EdgeInsets.only(right: 24.w),
+                      child: HomeSlider(),
                     ),
-                    SizedBox(height: 10),
-                    Container(
-                      height: Get.height * 0.28,
+                    SizedBox(height: 19.h,),
+
+
+                    Padding(
+                      padding: const EdgeInsets.only(right: 24),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            "Bedtime Stories",
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16,
+                              color: Color(0xFFFFFFFF).withOpacity(.8),
+                            ),
+                          ),
+                          Text(
+                            "See All",
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 14,
+                              color: Color(0xFFFFFFFF).withOpacity(.8),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    SizedBox(height: 12.h),
+                    SizedBox(
+                      height: 250.h,
                       // Adjust the height as needed
                       child: ListView.builder(
-                        scrollDirection: Axis.horizontal, // Horizontal scrolling
+                        scrollDirection: Axis.horizontal,
                         itemCount: gridItems.length,
-                        padding: EdgeInsets.only(top: 5),
+                       // padding: EdgeInsets.only(right:  16.w),
                         itemBuilder: (context, index) {
                           final item = gridItems[index];
-                          return Container(
-                            margin: EdgeInsets.symmetric(horizontal: 3), // Equivalent to crossAxisSpacing
-                            width: Get.width * 0.38, // Adjust the width of each item if needed
-                            child: Customhomecard(
-                              title: item['title']!,
-                              subtitle: item['subtitle']!,
-                              image: item['image']!,
+                          return SizedBox(
+                            //margin: EdgeInsets.symmetric(horizontal: 3),
+                            width: 176.w, // Adjust the width of each item if needed
+                            child: Padding(
+                              padding:  EdgeInsets.only(right: 16.w),
+                              child: Customhomecard(
+                                title: item['title']!,
+                                subtitle: item['subtitle']!,
+                                image: item['image']!,
+                              ),
                             ),
                           );
                         },
@@ -119,45 +120,51 @@ class HomeScreen extends StatelessWidget {
                     ),
 
 
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          "Freatred",
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 16,
-                            color: Color(0xFFFFFFFF).withOpacity(.8),
+                    Padding(
+                      padding:  EdgeInsets.only(right: 24.w),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            "Freatred",
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16.sp,
+                              color: Color(0xFFFFFFFF).withOpacity(.8),
+                            ),
                           ),
-                        ),
-                        Text(
-                          "See All",
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 14,
-                            color: Color(0xFFFFFFFF).withOpacity(.8),
+                          Text(
+                            "See All",
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 14.sp,
+                              color: Color(0xFFFFFFFF).withOpacity(.8),
+                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
-                    SizedBox(height: 10),
+                    SizedBox(height: 12.h),
                     Container(
-                      height: Get.height * 0.28,
+                      height: 250.h,
                       // Adjust the height as needed
                       child: ListView.builder(
-                        scrollDirection: Axis.horizontal, // Horizontal scrolling
+                        scrollDirection: Axis.horizontal,
                         itemCount: gridItems.length,
-                        padding: EdgeInsets.only(top: 5),
+                        // padding: EdgeInsets.only(right:  16.w),
                         itemBuilder: (context, index) {
                           final item = gridItems[index];
                           return Container(
-                            margin: EdgeInsets.symmetric(horizontal: 3), // Equivalent to crossAxisSpacing
-                            width: Get.width * 0.38, // Adjust the width of each item if needed
-                            child: Customhomecard(
-                              title: item['title']!,
-                              subtitle: item['subtitle']!,
-                              image: item['image']!,
+                            //margin: EdgeInsets.symmetric(horizontal: 3),
+                            width: 176.w, // Adjust the width of each item if needed
+                            child: Padding(
+                              padding:  EdgeInsets.only(right: 16.w),
+                              child: Customhomecard(
+                                title: item['title']!,
+                                subtitle: item['subtitle']!,
+                                image: item['image']!,
+                              ),
                             ),
                           );
                         },
@@ -165,211 +172,217 @@ class HomeScreen extends StatelessWidget {
                     ),
 
 
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          "Recommended",
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 16,
-                            color: Color(0xFFFFFFFF).withOpacity(.8),
+                    Padding(
+                      padding:  EdgeInsets.only(right: 24.w),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            "Recommended",
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16.sp,
+                              color: Color(0xFFFFFFFF).withOpacity(.8),
+                            ),
                           ),
-                        ),
-                        Text(
-                          "See All",
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 14,
-                            color: Color(0xFFFFFFFF).withOpacity(.8),
+                          Text(
+                            "See All",
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 14.sp,
+                              color: Color(0xFFFFFFFF).withOpacity(.8),
+                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
-                    SizedBox(height: 10),
+                    SizedBox(height: 10.h),
                     Container(
-                      height: Get.height * 0.30,
-                      //width: Get.width * .25,
+                      height: 250.h,
                       // Adjust the height as needed
-                      child: GridView.builder(
-                        scrollDirection: Axis.horizontal, // Horizontal scrolling
+                      child: ListView.builder(
+                        scrollDirection: Axis.horizontal,
                         itemCount: gridItems.length,
-                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: 1, // One item per row, adjust if needed
-                          crossAxisSpacing: 0,
-                          mainAxisSpacing: 0,
-                          childAspectRatio: 7/8.7,
-                        ),
-                        padding: EdgeInsets.only(top: 5),
+                        // padding: EdgeInsets.only(right:  16.w),
                         itemBuilder: (context, index) {
                           final item = gridItems[index];
-                          return Recommendedcard(
-                            title: item['title']!,
-                            subtitle: item['subtitle']!,
-                            image: item['image']!,
+                          return Container(
+                            //margin: EdgeInsets.symmetric(horizontal: 3),
+                            width: 356.w, // Adjust the width of each item if needed
+                            child: Padding(
+                              padding:  EdgeInsets.only(right: 16.w),
+                              child: Recommendedcard(
+                                title: item['title']!,
+                                subtitle: item['subtitle']!,
+                                image: item['image']!,
+                              ),
+                            ),
                           );
                         },
                       ),
                     ),
 
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          "Mental Fitness",
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 16,
-                            color: Color(0xFFFFFFFF).withOpacity(.8),
+                    Padding(
+                      padding:  EdgeInsets.only(right: 24.w),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            "Mental Fitness",
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16.sp,
+                              color: Color(0xFFFFFFFF).withOpacity(.8),
+                            ),
                           ),
-                        ),
-                        Text(
-                          "See All",
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 14,
-                            color: Color(0xFFFFFFFF).withOpacity(.8),
+                          Text(
+                            "See All",
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 14.sp,
+                              color: Color(0xFFFFFFFF).withOpacity(.8),
+                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
-                    SizedBox(height: 10),
+                    SizedBox(height: 10.h),
                     Container(
-                      height: Get.height * 0.30,
-                      //width: Get.width * .25,
+                      height: 250.h,
                       // Adjust the height as needed
-                      child: GridView.builder(
-                        scrollDirection: Axis.horizontal, // Horizontal scrolling
+                      child: ListView.builder(
+                        scrollDirection: Axis.horizontal,
                         itemCount: gridItems.length,
-                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: 1, // One item per row, adjust if needed
-                          crossAxisSpacing: 0,
-                          mainAxisSpacing: 0,
-                          childAspectRatio: 7/8.7,
-                        ),
-                        padding: EdgeInsets.only(top: 5),
+                        // padding: EdgeInsets.only(right:  16.w),
                         itemBuilder: (context, index) {
                           final item = gridItems[index];
-                          return Recommendedcard(
-                            title: item['title']!,
-                            subtitle: item['subtitle']!,
-                            image: item['image']!,
+                          return Container(
+                            //margin: EdgeInsets.symmetric(horizontal: 3),
+                            width: 356.w, // Adjust the width of each item if needed
+                            child: Padding(
+                              padding:  EdgeInsets.only(right: 16.w),
+                              child: Recommendedcard(
+                                title: item['title']!,
+                                subtitle: item['subtitle']!,
+                                image: item['image']!,
+                              ),
+                            ),
                           );
                         },
                       ),
                     ),
 
 
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          "Mental Fitness",
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 16,
-                            color: Color(0xFFFFFFFF).withOpacity(.8),
+                    Padding(
+                      padding:  EdgeInsets.only(right: 24.w),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            "Mental Fitness",
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16.sp,
+                              color: Color(0xFFFFFFFF).withOpacity(.8),
+                            ),
                           ),
-                        ),
-                        Text(
-                          "See All",
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 14,
-                            color: Color(0xFFFFFFFF).withOpacity(.8),
+                          Text(
+                            "See All",
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 14.sp,
+                              color: Color(0xFFFFFFFF).withOpacity(.8),
+                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
-                    SizedBox(height: 10),
+                    SizedBox(height: 10.h),
                     Container(
-                      height: Get.height * 0.28,
-                      //width: Get.width * .25,
+                      height: 250.h,
                       // Adjust the height as needed
-                      child: GridView.builder(
-                        scrollDirection: Axis.horizontal, // Horizontal scrolling
+                      child: ListView.builder(
+                        scrollDirection: Axis.horizontal,
                         itemCount: gridItems.length,
-                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: 1, // One item per row, adjust if needed
-                          crossAxisSpacing: 3,
-                          mainAxisSpacing: 0,
-                          childAspectRatio: 3/2.4,
-                        ),
-                        padding: EdgeInsets.only(top: 5),
+                        // padding: EdgeInsets.only(right:  16.w),
                         itemBuilder: (context, index) {
                           final item = gridItems[index];
-                          return Customhomecard(
-                            title: item['title']!,
-                            subtitle: item['subtitle']!,
-                            image: item['image']!,
+                          return Container(
+                            //margin: EdgeInsets.symmetric(horizontal: 3),
+                            width: 176.w, // Adjust the width of each item if needed
+                            child: Padding(
+                              padding:  EdgeInsets.only(right: 16.w),
+                              child: Customhomecard(
+                                title: item['title']!,
+                                subtitle: item['subtitle']!,
+                                image: item['image']!,
+                              ),
+                            ),
                           );
                         },
                       ),
                     ),
 
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          "Mental Fitness",
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 16,
-                            color: Color(0xFFFFFFFF).withOpacity(.8),
+                    Padding(
+                      padding:  EdgeInsets.only(right: 24.w),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            "Mental Fitness",
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16.sp,
+                              color: Color(0xFFFFFFFF).withOpacity(.8),
+                            ),
                           ),
-                        ),
-                        Text(
-                          "See All",
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 14,
-                            color: Color(0xFFFFFFFF).withOpacity(.8),
+                          Text(
+                            "See All",
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 14.sp,
+                              color: Color(0xFFFFFFFF).withOpacity(.8),
+                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
-                    SizedBox(height: 10),
+                    SizedBox(height: 10.h),
                     Container(
-                      height: Get.height * 0.28,
-                      //width: Get.width * .25,
+                      height: 250.h,
                       // Adjust the height as needed
-                      child: GridView.builder(
-                        scrollDirection: Axis.horizontal, // Horizontal scrolling
+                      child: ListView.builder(
+                        scrollDirection: Axis.horizontal,
                         itemCount: gridItems.length,
-                        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: 1, // One item per row, adjust if needed
-                          crossAxisSpacing: 3,
-                          mainAxisSpacing: 0,
-                          childAspectRatio: 3/2.4,
-                        ),
-                        padding: EdgeInsets.only(top: 5),
+                        // padding: EdgeInsets.only(right:  16.w),
                         itemBuilder: (context, index) {
                           final item = gridItems[index];
-                          return Customhomecard(
-                            title: item['title']!,
-                            subtitle: item['subtitle']!,
-                            image: item['image']!,
+                          return Container(
+                            //margin: EdgeInsets.symmetric(horizontal: 3),
+                            width: 176.w, // Adjust the width of each item if needed
+                            child: Padding(
+                              padding:  EdgeInsets.only(right: 16.w),
+                              child: Customhomecard(
+                                title: item['title']!,
+                                subtitle: item['subtitle']!,
+                                image: item['image']!,
+                              ),
+                            ),
                           );
                         },
                       ),
                     ),
 
-                    SizedBox(height: 15),
+                    SizedBox(height: 15.h),
 
                   ],
                 ),
               ),
-            ],
-          ),
-          Positioned(
-            bottom: 0,
-            left: 0,
-            right: 0,
-            child: CustomBottomButtom(),
+
           ),
 
 

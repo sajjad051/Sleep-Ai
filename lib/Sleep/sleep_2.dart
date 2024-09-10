@@ -31,6 +31,8 @@ class Sleep2 extends StatelessWidget {
     ];
 
     return Scaffold(
+      bottomNavigationBar: CustomBottomButtom(),
+      backgroundColor: Color(0xFF020825),
       body: Stack(
         children: [
           SizedBox(
@@ -151,8 +153,6 @@ class Sleep2 extends StatelessWidget {
                     ),
                   ),
                 ),
-                Spacer(),
-                CustomBottomButtom(),
               ],
 
             ),
