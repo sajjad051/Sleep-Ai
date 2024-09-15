@@ -1,15 +1,14 @@
+import 'package:ai_sleep/Auth/welcome_auth_page.dart';
 import 'package:ai_sleep/WelcomeScreen/welcome_page_1.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'Indicator.dart';
-
 
 import '../../welcome_page_2.dart';
 import '../../welcome_page_3.dart';
 import '../../welcome_page_4.dart';
 import 'onBoardControler.dart';
-
-
 
 class OnBoard extends StatefulWidget {
   const OnBoard({super.key});
@@ -19,10 +18,10 @@ class OnBoard extends StatefulWidget {
 }
 
 class _OnBoardState extends State<OnBoard> with TickerProviderStateMixin {
-  int totalPage = 4;
+  int totalPage = 5;
   late PageController _pageController;
   late AnimationController _progressController;
-   OnBoardController _onBoardController = Get.put(OnBoardController());
+  OnBoardController _onBoardController = Get.put(OnBoardController());
 
   @override
   void initState() {
@@ -38,10 +37,10 @@ class _OnBoardState extends State<OnBoard> with TickerProviderStateMixin {
   }
 
   @override
-  void dispose() {
-    _pageController.dispose();
-    super.dispose();
-  }
+  // void dispose() {
+  //   _pageController.dispose();
+  //   super.dispose();
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -50,7 +49,6 @@ class _OnBoardState extends State<OnBoard> with TickerProviderStateMixin {
       body: Stack(
         children: [
           PageView.builder(
-
             onPageChanged: (int position) {
               if (_onBoardController.pageIndex.value != position) {
                 _onBoardController.updateIndex(position);
@@ -62,16 +60,16 @@ class _OnBoardState extends State<OnBoard> with TickerProviderStateMixin {
             itemBuilder: (context, index) => viewPage(index),
           ),
           Container(
-            margin: EdgeInsets.only(top: height * 0.68),
+            margin: EdgeInsets.only(top: 605.h),
             child: Obx(() {
               return Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   ...List.generate(
-                      totalPage,
-                          (indicatorIndex) => Indicator(
+                      totalPage - 1,
+                      (indicatorIndex) => Indicator(
                           isActive: indicatorIndex ==
-                              _onBoardController.pageIndex.value
+                                  _onBoardController.pageIndex.value
                               ? true
                               : false)),
                 ],
@@ -90,8 +88,10 @@ class _OnBoardState extends State<OnBoard> with TickerProviderStateMixin {
       return const WelcomePage2();
     } else if (position == 2) {
       return const WelcomePage3();
-    } else {
+    } else if (position == 3) {
       return const WelcomePage4();
+    } else {
+      return const WelcomeAuthPage();
     }
   }
 }

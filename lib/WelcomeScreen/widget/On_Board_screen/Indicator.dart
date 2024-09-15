@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+import 'onBoardControler.dart';
 
 class Indicator extends StatelessWidget {
   final bool isActive;
@@ -8,31 +10,36 @@ class Indicator extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      alignment: Alignment.center,
-      children: [
-        Container(
-          width: 18,
-          height: 18,
-          margin: const EdgeInsets.symmetric(horizontal: 4.0),
-          child: CircularProgressIndicator(
-            value: isActive ? 1 : 0,
-            strokeWidth: 1,
-            backgroundColor: Colors.transparent,
-            valueColor: const AlwaysStoppedAnimation<Color>(Colors.deepPurpleAccent),
+    // Retrieve the existing instance of OnBoardController
+    final OnBoardController _onBoardController = Get.find<OnBoardController>();
+
+    return Obx(() {
+      return Stack(
+        alignment: Alignment.center,
+        children: [
+          Container(
+            width: 18.w,
+            height: 18.h,
+            margin: const EdgeInsets.symmetric(horizontal: 4.0),
+            child: CircularProgressIndicator(
+              value: isActive ? 1 : 0,
+              strokeWidth: 1,
+              backgroundColor: Colors.transparent,
+              valueColor: const AlwaysStoppedAnimation<Color>(Colors.deepPurpleAccent),
+            ),
           ),
-        ),
-        AnimatedContainer(
-          duration: const Duration(microseconds: 500),
-          width: 12,
-          height: 12,
-          decoration: BoxDecoration(
-            color:
-            isActive ? Colors.deepPurpleAccent : Colors.white.withOpacity(.2),
-            borderRadius: BorderRadius.circular(12),
-          ),
-        ),
-      ],
-    );
+          if (_onBoardController.pageIndex.value != 4)
+            AnimatedContainer(
+              duration: const Duration(milliseconds: 500),
+              width: 12.w,
+              height: 12.h,
+              decoration: BoxDecoration(
+                color: isActive ? Colors.deepPurpleAccent : Colors.white.withOpacity(.2),
+                borderRadius: BorderRadius.circular(12),
+              ),
+            ),
+        ],
+      );
+    });
   }
 }

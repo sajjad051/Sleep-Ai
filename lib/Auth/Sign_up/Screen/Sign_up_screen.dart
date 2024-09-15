@@ -28,7 +28,10 @@ class SignUpScreen extends StatelessWidget {
         Scaffold(
           backgroundColor: Colors.transparent,
           appBar: AppBar(
-            leading: Icon(Icons.arrow_back, color: Colors.white),
+            leading: InkWell(
+                onTap:(){
+                  Navigator.pop(context);
+                },child: Icon(Icons.arrow_back, color: Colors.white)),
             backgroundColor: Colors.transparent,
             surfaceTintColor: Colors.transparent,
           ),

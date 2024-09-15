@@ -4,6 +4,9 @@ import 'package:ai_sleep/widget/Recommended_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
+import '../../Route/Routes.dart';
+import '../../login.dart';
 import '../Widget/customHomeCard.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -15,34 +18,34 @@ class HomeScreen extends StatelessWidget {
       {
         'title': "Ghosts and Empties",
         'subtitle': "By Lauren Groff",
-        'image': "assets/sleep/ic_home.webp",
+        'image': "https://img.freepik.com/free-photo/cloud-forest-landscape_23-2151794637.jpg?size=626&ext=jpg&ga=GA1.1.184910439.1726138853&semt=ais_hybrid",
       },
       {
         'title': "Ghosts and Empties",
         'subtitle': "By Lauren Groff",
-        'image': "assets/sleep/demo_ic.webp",
+        'image': "https://img.freepik.com/free-photo/butterfly-blossom_23-2150636183.jpg?size=626&ext=jpg&ga=GA1.1.184910439.1726138853&semt=ais_hybrid",
       },
       {
         'title': "Ghosts and Empties",
         'subtitle': "By Lauren Groff",
-        'image': "assets/sleep/ic_home.webp",
+        'image': "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPM5FcRsv-a_yExYYTntz0gFrpSrzgTe240w&s",
       },
       {
         'title': "Ghosts and Empties",
         'subtitle': "By Lauren Groff",
-        'image': "assets/sleep/ic_home.webp",
+        'image': "https://img.freepik.com/premium-photo/scenic-view-seagulls-flying-beach-against-sky-during-sunset_948265-397301.jpg?size=626&ext=jpg&ga=GA1.1.184910439.1726138853&semt=ais_hybrid",
       },
       {
         'title': "Ghosts and Empties",
         'subtitle': "By Lauren Groff",
-        'image': "assets/sleep/demo_ic.webp",
+        'image': "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPM5FcRsv-a_yExYYTntz0gFrpSrzgTe240w&s",
       },
       // Add more items as needed
     ];
 
     return Scaffold(
       backgroundColor: Colors.transparent,
-      bottomNavigationBar: CustomBottomButtom(),
+     // bottomNavigationBar: CustomBottomButtom(),
       body: Stack(
         children: [
           SizedBox(
@@ -61,33 +64,42 @@ class HomeScreen extends StatelessWidget {
                     top: 160.h, left: 24.w,),
                 child: Column(
                   children: [
+                    // InkWell(
+                    // onTap: (){
+                    //   Get.toNamed(Routes.breathEx);
+                    // },child: HomeSlider()),
                     Padding(
-                      padding:  EdgeInsets.only(right: 24.w),
-                      child: HomeSlider(),
+                      padding:  EdgeInsets.only(right: 24),
+                      child: CarouselWidget(),
                     ),
                     SizedBox(height: 19.h,),
 
 
                     Padding(
-                      padding: const EdgeInsets.only(right: 24),
+                      padding:  EdgeInsets.only(right: 24.w),
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.start,
                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
                             "Bedtime Stories",
-                            style: TextStyle(
+                            style: GoogleFonts.inter(
                               fontWeight: FontWeight.bold,
                               fontSize: 16,
                               color: Color(0xFFFFFFFF).withOpacity(.8),
                             ),
                           ),
-                          Text(
-                            "See All",
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 14,
-                              color: Color(0xFFFFFFFF).withOpacity(.8),
+                          InkWell(
+                            onTap: () {
+                        Get.toNamed(Routes.bedTimeDtl);
+                            },
+                            child: Text(
+                              "See All",
+                              style: GoogleFonts.inter(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 14,
+                                color: Color(0xFFFFFFFF).withOpacity(.8),
+                              ),
                             ),
                           ),
                         ],
@@ -95,24 +107,20 @@ class HomeScreen extends StatelessWidget {
                     ),
                     SizedBox(height: 12.h),
                     SizedBox(
-                      height: 250.h,
-                      // Adjust the height as needed
+                      height: 235.h,
                       child: ListView.builder(
                         scrollDirection: Axis.horizontal,
                         itemCount: gridItems.length,
+                       padding: EdgeInsets.zero,
                        // padding: EdgeInsets.only(right:  16.w),
                         itemBuilder: (context, index) {
                           final item = gridItems[index];
-                          return SizedBox(
-                            //margin: EdgeInsets.symmetric(horizontal: 3),
-                            width: 176.w, // Adjust the width of each item if needed
-                            child: Padding(
-                              padding:  EdgeInsets.only(right: 16.w),
-                              child: Customhomecard(
-                                title: item['title']!,
-                                subtitle: item['subtitle']!,
-                                image: item['image']!,
-                              ),
+                          return Padding(
+                            padding:  EdgeInsets.only(right: 16.w,bottom: 10.h),
+                            child: Customhomecard(
+                              title: item['title']!,
+                              subtitle: item['subtitle']!,
+                              image: item['image']!,
                             ),
                           );
                         },
@@ -128,43 +136,44 @@ class HomeScreen extends StatelessWidget {
                         children: [
                           Text(
                             "Freatred",
-                            style: TextStyle(
+                            style: GoogleFonts.inter(
                               fontWeight: FontWeight.bold,
                               fontSize: 16.sp,
                               color: Color(0xFFFFFFFF).withOpacity(.8),
                             ),
                           ),
-                          Text(
-                            "See All",
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 14.sp,
-                              color: Color(0xFFFFFFFF).withOpacity(.8),
+                          InkWell(
+                            onTap: () {
+                              Get.toNamed(Routes.featuredDtl);
+                            },
+                            child: Text(
+                              "See All",
+                              style: GoogleFonts.inter(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 14.sp,
+                                color: Color(0xFFFFFFFF).withOpacity(.8),
+                              ),
                             ),
                           ),
                         ],
                       ),
                     ),
                     SizedBox(height: 12.h),
-                    Container(
-                      height: 250.h,
-                      // Adjust the height as needed
+                    SizedBox(
+                      height: 235.h,
                       child: ListView.builder(
                         scrollDirection: Axis.horizontal,
                         itemCount: gridItems.length,
+                        padding: EdgeInsets.zero,
                         // padding: EdgeInsets.only(right:  16.w),
                         itemBuilder: (context, index) {
                           final item = gridItems[index];
-                          return Container(
-                            //margin: EdgeInsets.symmetric(horizontal: 3),
-                            width: 176.w, // Adjust the width of each item if needed
-                            child: Padding(
-                              padding:  EdgeInsets.only(right: 16.w),
-                              child: Customhomecard(
-                                title: item['title']!,
-                                subtitle: item['subtitle']!,
-                                image: item['image']!,
-                              ),
+                          return Padding(
+                            padding:  EdgeInsets.only(right: 16.w,bottom: 10.h),
+                            child: Customhomecard(
+                              title: item['title']!,
+                              subtitle: item['subtitle']!,
+                              image: item['image']!,
                             ),
                           );
                         },
@@ -180,7 +189,7 @@ class HomeScreen extends StatelessWidget {
                         children: [
                           Text(
                             "Recommended",
-                            style: TextStyle(
+                            style: GoogleFonts.inter(
                               fontWeight: FontWeight.bold,
                               fontSize: 16.sp,
                               color: Color(0xFFFFFFFF).withOpacity(.8),
@@ -188,7 +197,7 @@ class HomeScreen extends StatelessWidget {
                           ),
                           Text(
                             "See All",
-                            style: TextStyle(
+                            style: GoogleFonts.inter(
                               fontWeight: FontWeight.bold,
                               fontSize: 14.sp,
                               color: Color(0xFFFFFFFF).withOpacity(.8),
@@ -231,7 +240,7 @@ class HomeScreen extends StatelessWidget {
                         children: [
                           Text(
                             "Mental Fitness",
-                            style: TextStyle(
+                            style: GoogleFonts.inter(
                               fontWeight: FontWeight.bold,
                               fontSize: 16.sp,
                               color: Color(0xFFFFFFFF).withOpacity(.8),
@@ -239,7 +248,7 @@ class HomeScreen extends StatelessWidget {
                           ),
                           Text(
                             "See All",
-                            style: TextStyle(
+                            style: GoogleFonts.inter(
                               fontWeight: FontWeight.bold,
                               fontSize: 14.sp,
                               color: Color(0xFFFFFFFF).withOpacity(.8),
@@ -283,7 +292,7 @@ class HomeScreen extends StatelessWidget {
                         children: [
                           Text(
                             "Mental Fitness",
-                            style: TextStyle(
+                            style: GoogleFonts.inter(
                               fontWeight: FontWeight.bold,
                               fontSize: 16.sp,
                               color: Color(0xFFFFFFFF).withOpacity(.8),
@@ -291,7 +300,7 @@ class HomeScreen extends StatelessWidget {
                           ),
                           Text(
                             "See All",
-                            style: TextStyle(
+                            style: GoogleFonts.inter(
                               fontWeight: FontWeight.bold,
                               fontSize: 14.sp,
                               color: Color(0xFFFFFFFF).withOpacity(.8),
@@ -301,25 +310,21 @@ class HomeScreen extends StatelessWidget {
                       ),
                     ),
                     SizedBox(height: 10.h),
-                    Container(
-                      height: 250.h,
-                      // Adjust the height as needed
+                    SizedBox(
+                      height: 235.h,
                       child: ListView.builder(
                         scrollDirection: Axis.horizontal,
                         itemCount: gridItems.length,
+                        padding: EdgeInsets.zero,
                         // padding: EdgeInsets.only(right:  16.w),
                         itemBuilder: (context, index) {
                           final item = gridItems[index];
-                          return Container(
-                            //margin: EdgeInsets.symmetric(horizontal: 3),
-                            width: 176.w, // Adjust the width of each item if needed
-                            child: Padding(
-                              padding:  EdgeInsets.only(right: 16.w),
-                              child: Customhomecard(
-                                title: item['title']!,
-                                subtitle: item['subtitle']!,
-                                image: item['image']!,
-                              ),
+                          return Padding(
+                            padding:  EdgeInsets.only(right: 16.w,bottom: 10.h),
+                            child: Customhomecard(
+                              title: item['title']!,
+                              subtitle: item['subtitle']!,
+                              image: item['image']!,
                             ),
                           );
                         },
@@ -334,7 +339,7 @@ class HomeScreen extends StatelessWidget {
                         children: [
                           Text(
                             "Mental Fitness",
-                            style: TextStyle(
+                            style: GoogleFonts.inter(
                               fontWeight: FontWeight.bold,
                               fontSize: 16.sp,
                               color: Color(0xFFFFFFFF).withOpacity(.8),
@@ -342,7 +347,7 @@ class HomeScreen extends StatelessWidget {
                           ),
                           Text(
                             "See All",
-                            style: TextStyle(
+                            style: GoogleFonts.inter(
                               fontWeight: FontWeight.bold,
                               fontSize: 14.sp,
                               color: Color(0xFFFFFFFF).withOpacity(.8),
@@ -352,25 +357,21 @@ class HomeScreen extends StatelessWidget {
                       ),
                     ),
                     SizedBox(height: 10.h),
-                    Container(
-                      height: 250.h,
-                      // Adjust the height as needed
+                    SizedBox(
+                      height: 235.h,
                       child: ListView.builder(
                         scrollDirection: Axis.horizontal,
                         itemCount: gridItems.length,
+                        padding: EdgeInsets.zero,
                         // padding: EdgeInsets.only(right:  16.w),
                         itemBuilder: (context, index) {
                           final item = gridItems[index];
-                          return Container(
-                            //margin: EdgeInsets.symmetric(horizontal: 3),
-                            width: 176.w, // Adjust the width of each item if needed
-                            child: Padding(
-                              padding:  EdgeInsets.only(right: 16.w),
-                              child: Customhomecard(
-                                title: item['title']!,
-                                subtitle: item['subtitle']!,
-                                image: item['image']!,
-                              ),
+                          return Padding(
+                            padding:  EdgeInsets.only(right: 16.w,bottom: 10.h),
+                            child: Customhomecard(
+                              title: item['title']!,
+                              subtitle: item['subtitle']!,
+                              image: item['image']!,
                             ),
                           );
                         },

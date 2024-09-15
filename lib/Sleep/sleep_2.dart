@@ -1,10 +1,13 @@
 import 'package:ai_sleep/Auth/Controler/forgot_controler.dart';
 import 'package:ai_sleep/Home/Widget/custom_bottom_buttom.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
+import 'package:google_fonts/google_fonts.dart';
 
+import '../Home/Widget/navigation_controller.dart';
 import '../Route/Routes.dart';
 
 class Sleep2 extends StatelessWidget {
@@ -31,7 +34,7 @@ class Sleep2 extends StatelessWidget {
     ];
 
     return Scaffold(
-      bottomNavigationBar: CustomBottomButtom(),
+      // bottomNavigationBar: CustomBottomButtom(),
       backgroundColor: Color(0xFF020825),
       body: Stack(
         children: [
@@ -44,7 +47,7 @@ class Sleep2 extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(top: 35, left: 20, right: 20,bottom: 20),
+            padding:  EdgeInsets.only(top: 58.h, left: 24.w, right: 20.w),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -53,13 +56,20 @@ class Sleep2 extends StatelessWidget {
                   children: [
                     Row(
                       children: [
-                        Image.asset("assets/sleep/Vector.webp"),
-                        SizedBox(width: 20),
+                        InkWell(
+                          onTap: () {
+                            Get.find<NavigationController>().clickStartTrack.value = 0;
+                          },
+                          child: Image.asset("assets/sleep/Vector.webp",
+                          height: 32.h,
+                          width: 32.w,),
+                        ),
+                        SizedBox(width: 21.h),
                         Text(
                           "Alarm",
-                          style: TextStyle(
+                          style: GoogleFonts.inter(
                             color: Color(0xFF020825),
-                            fontSize: 16,
+                            fontSize: 16.sp,
                             fontWeight: FontWeight.w700,
                           ),
                         ),
@@ -67,17 +77,17 @@ class Sleep2 extends StatelessWidget {
                     ),
                     InkWell(
                       onTap: () {
-                        Get.toNamed(Routes.sleep3);
+                        Get.find<NavigationController>().clickStartTrack.value = 2;
                       },
                       child: SvgPicture.asset(
                         "assets/sleep/plusBtn.svg",
-                        height: 23.5,
-                        width: 23.5,
+                        height: 23.5.h,
+                        width: 23.5.w,
                       ),
                     ),
                   ],
                 ),
-                SizedBox(height: 60),
+                SizedBox(height: 40.h),
                 Container(
                   padding: EdgeInsets.all(15),
                   decoration: BoxDecoration(
@@ -106,17 +116,17 @@ class Sleep2 extends StatelessWidget {
                                   children: [
                                     Text(
                                       alarms[index],
-                                      style: TextStyle(
+                                      style: GoogleFonts.inter(
                                         color: Color(0xFFFFFFFF),
-                                        fontSize: 22,
+                                        fontSize: 22.h,
                                       ),
                                     ),
-                                    SizedBox(height: 5),
+                                    SizedBox(height: 5.h),
                                     Text(
                                       weekDays[index],
                                       style: TextStyle(
                                         color: Color(0xFFFFFFFF),
-                                        fontSize: 16,
+                                        fontSize: 16.sp,
                                       ),
                                     ),
                                   ],
@@ -162,11 +172,6 @@ class Sleep2 extends StatelessWidget {
     );
   }
 }
-
-
-
-
-
 
 // import 'package:ai_sleep/Home/Widget/custom_bottom_buttom.dart';
 // import 'package:flutter/material.dart';

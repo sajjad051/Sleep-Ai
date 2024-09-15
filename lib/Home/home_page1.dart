@@ -19,43 +19,47 @@ class HomePage1 extends StatelessWidget {
       {
         'title': "Ghosts and Empties",
         'subtitle': "By Lauren Groff",
-        'image': "assets/sleep/demo_ic.webp",
+        'image': "https://img.freepik.com/free-photo/cloud-forest-landscape_23-2151794637.jpg?size=626&ext=jpg&ga=GA1.1.184910439.1726138853&semt=ais_hybrid",
       },
       {
         'title': "Ghosts and Empties",
         'subtitle': "By Lauren Groff",
-        'image': "assets/sleep/demo_ic.webp",
+        'image': "https://img.freepik.com/free-photo/butterfly-blossom_23-2150636183.jpg?size=626&ext=jpg&ga=GA1.1.184910439.1726138853&semt=ais_hybrid",
       },
       {
         'title': "Ghosts and Empties",
         'subtitle': "By Lauren Groff",
-        'image': "assets/sleep/demo_ic.webp",
+        'image': "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPM5FcRsv-a_yExYYTntz0gFrpSrzgTe240w&s",
       },
       {
         'title': "Ghosts and Empties",
         'subtitle': "By Lauren Groff",
-        'image': "assets/sleep/demo_ic.webp",
+        'image': "https://img.freepik.com/premium-photo/scenic-view-seagulls-flying-beach-against-sky-during-sunset_948265-397301.jpg?size=626&ext=jpg&ga=GA1.1.184910439.1726138853&semt=ais_hybrid",
       },
       {
         'title': "Ghosts and Empties",
         'subtitle': "By Lauren Groff",
-        'image': "assets/sleep/demo_ic.webp",
+        'image': "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPM5FcRsv-a_yExYYTntz0gFrpSrzgTe240w&s",
       },
       {
         'title': "Ghosts and Empties",
         'subtitle': "By Lauren Groff",
-        'image': "assets/sleep/demo_ic.webp",
+        'image': "https://img.freepik.com/premium-photo/scenic-view-seagulls-flying-beach-against-sky-during-sunset_948265-397301.jpg?size=626&ext=jpg&ga=GA1.1.184910439.1726138853&semt=ais_hybrid",
       },
       {
         'title': "Ghosts and Empties",
         'subtitle': "By Lauren Groff",
-        'image': "assets/sleep/demo_ic.webp",
+        'image': "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPM5FcRsv-a_yExYYTntz0gFrpSrzgTe240w&s",
       },
-
       {
         'title': "Ghosts and Empties",
         'subtitle': "By Lauren Groff",
-        'image': "assets/sleep/demo_ic.webp",
+        'image': "https://img.freepik.com/premium-photo/scenic-view-seagulls-flying-beach-against-sky-during-sunset_948265-397301.jpg?size=626&ext=jpg&ga=GA1.1.184910439.1726138853&semt=ais_hybrid",
+      },
+      {
+        'title': "Ghosts and Empties",
+        'subtitle': "By Lauren Groff",
+        'image': "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPM5FcRsv-a_yExYYTntz0gFrpSrzgTe240w&s",
       },
       // Add more items as needed
     ];
@@ -71,10 +75,10 @@ class HomePage1 extends StatelessWidget {
                 itemCount: gridItems.length,
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
-                    crossAxisSpacing: 10,
-                    mainAxisSpacing: 10,
-                    childAspectRatio: 5 / 6.4),
-                padding: EdgeInsets.only(top: 5),
+                    crossAxisSpacing: 5,
+                    mainAxisSpacing: 5,
+                    childAspectRatio: 5 / 5.9),
+                padding: EdgeInsets.only(top: 20.h),
                 itemBuilder: (context, index) {
                   final item = gridItems[index];
                   return CustomMusiccard(

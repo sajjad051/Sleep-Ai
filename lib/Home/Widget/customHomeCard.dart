@@ -1,9 +1,11 @@
 import 'package:ai_sleep/Auth/Controler/forgot_controler.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import '../../Route/Routes.dart';
 import '../../widget/custom_button.dart';
@@ -106,22 +108,24 @@ class Customhomecard extends StatelessWidget {
           ),
         ),
       ),
-      child: Container(
+      child: SizedBox(
         height: 219.h,
-        width: 176.w,
+        width: 177.h,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Stack(
               children: [
                 SizedBox(
-                  height: 176,
-                  width: 176,
+                  height: 177.h,
+                  width: 177.w,
                   child: ClipRRect(
-                    borderRadius: BorderRadius.circular(20), // Adjust this value as needed
-                    child: Image.asset(
-                      image,
-                      fit: BoxFit.fill,
+                    borderRadius: BorderRadius.circular(8.74), // Adjust this value as needed
+                    child: Image(
+                      image: CachedNetworkImageProvider(
+                        image,
+                      ),
+                      fit: BoxFit.cover,
                     ),
                   ),
                 ),
@@ -193,11 +197,11 @@ class Customhomecard extends StatelessWidget {
               ],
             ),
             SizedBox(height: 9.h,),
-            Text(title,style: TextStyle(color: Colors.white,fontSize: 14.sp),),
+            Text(title,maxLines:1,style: GoogleFonts.inter(color: Colors.white,fontSize: 14.sp),),
             SizedBox(height: 3.h,),
             Row(
                 children: [
-                  Text(subtitle,style: TextStyle(color:Color(0xFF848BBD) ,fontSize: 10),),
+                  Text(subtitle,style: GoogleFonts.inter(color:Color(0xFF848BBD) ,fontSize: 10),),
                   SizedBox(width: 6.w,),
                   SvgPicture.asset(
                     "assets/sleep/Ellipse.svg",
@@ -205,7 +209,7 @@ class Customhomecard extends StatelessWidget {
                     width: 4.w,
                   ),
                   SizedBox(width: 4.w,),
-                  Text("Story",style: TextStyle(color:Color(0xFF848BBD),fontSize: 10.sp),),
+                  Text("Story",maxLines: 1,style: GoogleFonts.inter(color:Color(0xFF848BBD),fontSize: 10.sp),),
 
                 ],
             ),

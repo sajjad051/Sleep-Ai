@@ -8,6 +8,7 @@ import 'package:ai_sleep/Records/record_sleep_data.dart';
 import 'package:ai_sleep/Records/sleep_noise.dart';
 import 'package:date_picker_timeline/date_picker_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'date_picker_controler.dart';
 
@@ -19,17 +20,17 @@ class RecordsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFF020825),
-      bottomNavigationBar: CustomBottomButtom(),
+     // bottomNavigationBar: CustomBottomButtom(),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.only(left: 24, right: 24, top: 32),
+          padding:  EdgeInsets.only(left: 24.w, right: 24.w, top: 32.h),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               DatePickerWidget(),
-              const SizedBox(height: 16),
+               SizedBox(height: 16.h),
               ProgressWidget(),
-              SizedBox(height: 15),
+              SizedBox(height: 15.h),
               Sleepquality(),
               SizedBox(height: 15),
               RecordSleepData(),

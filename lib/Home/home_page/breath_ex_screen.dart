@@ -1,8 +1,10 @@
 import 'package:ai_sleep/Auth/Controler/forgot_controler.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import '../../Route/Routes.dart';
 import '../../core/usecase/app_color.dart';
@@ -14,55 +16,53 @@ class BreathExScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Stack(
-        children: [
-          SizedBox(
-            height: Get.height,
-            width: Get.width,
-            child: Image.asset(
-              "assets/sleep/background_breath_ex.jpg",
-              fit: BoxFit.cover,
-            ),
+    return Stack(
+      children: [
+        SizedBox(
+          height: Get.height,
+          width: Get.width,
+          child: Image.asset(
+            "assets/sleep/background_breath_ex.jpg",
+            fit: BoxFit.cover,
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
+        ),
+        Scaffold(
+          backgroundColor: Colors.transparent,
+          appBar: AppBar(
+            title: Text(
+              "Bedtime Stories",
+              style: GoogleFonts.inter(
+                  fontSize: 16.sp,
+                  fontWeight: FontWeight.w700,
+                  color: Color(0xFFFFFFFF).withOpacity(.8)),
+            ),
+            leading: InkWell(
+                onTap: () {
+                  Navigator.pop(context);
+                },
+                child: Icon(Icons.arrow_back, color: Colors.white)),
+            backgroundColor: Colors.transparent,
+          ),
+          body: Padding(
+            padding:  EdgeInsets.symmetric(horizontal: 24.w),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Padding(
-                  padding: const EdgeInsets.symmetric(
-                       vertical: 30.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      InkWell(
-                          onTap: () {
-                            Get.toNamed(Routes.home1);
-                          },child: Icon(Icons.arrow_back, color: Colors.white)),
-                      SizedBox(width: 15,),
-                      Text(
-                        'Lauren Groff',
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold),
-                      ),
-                    ],
-                  ),
-
+                SizedBox(
+                  height: 90.h,
                 ),
-                SizedBox(height: Get.height * .15,),
                 Center(
                   child: SvgPicture.asset("assets/sleep/breathEx_Img.svg"),
                 ),
-                SizedBox(height: Get.height * .03,),
+                SizedBox(
+                  height: 34.h,
+                ),
                 Center(
                   child: Text(
                     'Relax Your Mind and Relieve Stress',
-                    style: TextStyle(
+                    style: GoogleFonts.inter(
                         color: Colors.white,
-                        fontSize: 18,
+                        fontSize: 18.sp,
                         fontWeight: FontWeight.bold),
                   ),
                 ),
@@ -72,86 +72,92 @@ class BreathExScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Container(
-                      width: 66,
-                      height: 66,
+                      width: 66.w,
+                      height: 66.h,
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(45),
+                        borderRadius: BorderRadius.circular(45).w,
                         //  border: Border.all(color: Color(0xFF848BBD)),
                         color: Color(0xFFFFFFFF).withOpacity(.2),
                       ),
                       child: Center(
-                        child: Text("1 min",
-                          style: TextStyle(color: AppColor.editTextColor),
+                        child: Text(
+                          "1 min",
+                          style: GoogleFonts.inter(color: AppColor.editTextColor),
                           textAlign: TextAlign.center,
                         ),
                       ),
                     ),
                     Container(
-                      width: 66,
-                      height: 66,
+                      width: 66.w,
+                      height: 66.h,
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(45),
+                        borderRadius: BorderRadius.circular(45).w,
                         //  border: Border.all(color: Color(0xFF848BBD)),
                         color: Color(0xFFFFFFFF).withOpacity(.2),
                       ),
                       child: Center(
-                        child: Text("2 min",
-                          style: TextStyle(color: AppColor.editTextColor),
+                        child: Text(
+                          "2 min",
+                          style: GoogleFonts.inter(color: AppColor.editTextColor),
                           textAlign: TextAlign.center,
                         ),
                       ),
                     ),
                     Container(
-                      width: 66,
-                      height: 66,
+                      width: 66.w,
+                      height: 66.h,
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(45),
+                        borderRadius: BorderRadius.circular(45).w,
                         //  border: Border.all(color: Color(0xFF848BBD)),
                         color: Color(0xFFFFFFFF).withOpacity(.2),
                       ),
                       child: Center(
-                        child: Text("3 min",
-                          style: TextStyle(color: AppColor.editTextColor),
+                        child: Text(
+                          "3 min",
+                          style: GoogleFonts.inter(color: AppColor.editTextColor),
                           textAlign: TextAlign.center,
                         ),
                       ),
                     ),
                     Container(
-                      width: 66,
-                      height: 66,
+                      width: 66.w,
+                      height: 66.h,
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(45),
+                        borderRadius: BorderRadius.circular(45).w,
                         //  border: Border.all(color: Color(0xFF848BBD)),
                         color: Color(0xFFFFFFFF).withOpacity(.2),
                       ),
                       child: Center(
-                        child: Text("4 min",
-                          style: TextStyle(color: AppColor.editTextColor),
+                        child: Text(
+                          "4 min",
+                          style: GoogleFonts.inter(color: AppColor.editTextColor),
                           textAlign: TextAlign.center,
                         ),
                       ),
                     ),
                     Container(
-                      width: 66,
-                      height: 66,
+                      width: 66.w,
+                      height: 66.w,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(45),
                         //  border: Border.all(color: Color(0xFF848BBD)),
                         color: Color(0xFFFFFFFF).withOpacity(.2),
                       ),
                       child: Center(
-                        child: Text("5 min",
-                          style: TextStyle(color: AppColor.editTextColor),
+                        child: Text(
+                          "5 min",
+                          style: GoogleFonts.inter(color: AppColor.editTextColor),
                           textAlign: TextAlign.center,
                         ),
                       ),
                     ),
-
                   ],
                 ),
-                SizedBox(height: 30,),
+                SizedBox(
+                  height: 30.h,
+                ),
                 CustomButton(
-                    height: 50,
+                    height: 50.h,
                     width: Get.width,
                     text: "Start Now",
                     background: Color(0xFF7D50FF),
@@ -159,12 +165,14 @@ class BreathExScreen extends StatelessWidget {
                     onPressed: () {
                       Get.toNamed(Routes.breathTime);
                     }),
-                SizedBox(height: 20,),
+                SizedBox(
+                  height: 69.h,
+                ),
               ],
             ),
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }

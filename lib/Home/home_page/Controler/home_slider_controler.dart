@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 
 class HomeSliderController extends GetxController {
-  RxInt indexNo = 0.obs;
+  var indexNo = 0.obs;
 
   void updateIndex(int index) {
     indexNo.value = index;

@@ -1,9 +1,11 @@
 import 'package:ai_sleep/Auth/Controler/forgot_controler.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import '../../Route/Routes.dart';
 import '../../widget/custom_button.dart';
@@ -115,11 +117,13 @@ class Recommendedcard extends StatelessWidget {
                 height: 177.h,
                 width: 356.w,
                 child: ClipRRect(
-                  borderRadius: BorderRadius.circular(20), // Adjust this value as needed
-                  child: Image.asset(
-                    image,
-                    fit: BoxFit.cover,
-                  ),
+                  borderRadius: BorderRadius.circular(8.47), // Adjust this value as needed
+                   child: Image(
+                     image: CachedNetworkImageProvider(
+                       'https://images.pexels.com/photos/1172064/pexels-photo-1172064.jpeg',
+                     ),
+                     fit: BoxFit.cover,
+                   ),
                 ),
               ),
 
@@ -141,7 +145,9 @@ class Recommendedcard extends StatelessWidget {
                       "assets/sleep/Heart.svg",
                       height: 11.63.h,
                       width: 13.5.w,
+
                     ),
+
                   ),
                 ),
               ),
@@ -190,11 +196,11 @@ class Recommendedcard extends StatelessWidget {
             ],
           ),
           SizedBox(height: 9.h,),
-          Text(title,style: TextStyle(color: Colors.white,fontSize: 14.sp),),
+          Text(title,style: GoogleFonts.inter(color: Colors.white,fontSize: 14.sp),),
           SizedBox(height: 5.h),
           Row(
             children: [
-              Text(subtitle,style: TextStyle(color:Color(0xFF848BBD) ,fontSize: 10.sp),),
+              Text(subtitle,style: GoogleFonts.inter(color:Color(0xFF848BBD) ,fontSize: 10.sp),),
               SizedBox(width: 6.w,),
               SvgPicture.asset(
                 "assets/sleep/Ellipse.svg",
@@ -202,7 +208,7 @@ class Recommendedcard extends StatelessWidget {
                 width: 4.h,
               ),
               SizedBox(width: 4.w,),
-              Text("Story",style: TextStyle(color:Color(0xFF848BBD),fontSize: 10.sp),),
+              Text("Story",style: GoogleFonts.inter(color:Color(0xFF848BBD),fontSize: 10.sp),),
 
             ],
           ),

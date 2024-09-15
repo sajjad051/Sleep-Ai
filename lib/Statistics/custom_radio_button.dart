@@ -1,5 +1,6 @@
 import 'package:ai_sleep/Auth/Controler/forgot_controler.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 
@@ -11,6 +12,7 @@ class CustomRadioButton extends StatefulWidget {
 }
 
 class _CustomRadioButtonState extends State<CustomRadioButton> {
+  PageController pageController = Get.put(PageController());
   int index = 1;
 
   BoxDecoration decoration() {
@@ -29,7 +31,7 @@ class _CustomRadioButtonState extends State<CustomRadioButton> {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
             child: Container(
-              height: 38,
+              height: 38.h,
               width: Get.width * .60 ,
               decoration: BoxDecoration(
                 color: const Color(0xFF061339),
@@ -45,7 +47,7 @@ class _CustomRadioButtonState extends State<CustomRadioButton> {
               child: Row(
                 children: [
                   Container(
-                    height: 40,
+                    height: 40.h,
                     width: Get.width * .30,
                     alignment: Alignment.center,
                     decoration: (index == 1) ? decoration() : null,
@@ -57,13 +59,15 @@ class _CustomRadioButtonState extends State<CustomRadioButton> {
                         onTap: () {
                           setState(() {
                             index = 1;
+
                           });
+                          pageController.previousPage( duration: Duration(seconds: 1), curve: Curves.easeInOut);
                         },
-                        child: const Center(
+                        child:  Center(
                           child: Text(
                             "Week",
                             style: TextStyle(
-                              fontSize: 14,
+                              fontSize: 14.sp,
                               color: Colors.white,
                               fontWeight: FontWeight.w700,
                             ),
@@ -73,7 +77,7 @@ class _CustomRadioButtonState extends State<CustomRadioButton> {
                     ),
                   ),
                   Container(
-                    height: 38,
+                    height: 38.h,
                     width: Get.width *.30,
                     decoration: (index == 2) ? decoration() : null,
                     child: Material(
@@ -85,12 +89,13 @@ class _CustomRadioButtonState extends State<CustomRadioButton> {
                           setState(() {
                             index = 2;
                           });
+                          pageController.animateToPage(1, duration: Duration(seconds: 1), curve: Curves.easeInOut);
                         },
-                        child: const Center(
+                        child:  Center(
                           child: Text(
                             "Month",
                             style: TextStyle(
-                              fontSize: 14,
+                              fontSize: 14.sp,
                               color: Colors.white,
                               fontWeight: FontWeight.w700,
                             ),
@@ -108,16 +113,16 @@ class _CustomRadioButtonState extends State<CustomRadioButton> {
             //crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
-                height: 8,
-                width: 8,
+                height: 8.h,
+                width: 8.w,
                 decoration: BoxDecoration(
                   color: (index == 1) ? const Color(0xFF7D50FF) : null,
                   shape: BoxShape.circle,
                 ),
               ),
               Container(
-                height: 8,
-                width: 8,
+                height: 8.h,
+                width: 8.w,
                 decoration: BoxDecoration(
                   color: (index == 2) ? const Color(0xFF7D50FF) : null,
                   shape: BoxShape.circle,

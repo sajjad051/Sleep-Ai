@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 
@@ -9,14 +10,14 @@ class AlbumScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.purple.shade800,
+      //backgroundColor: Colors.purple.shade800,
       body: Stack(
         children: [
           SizedBox(
             height: Get.width,
             width: Get.width,
             child: Image.asset(
-              'assets/sleep/sunset.jpg', // Replace with your image path
+              'assets/sleep/ic_sunset.webp', // Replace with your image path
               fit: BoxFit.cover,
             ),
           ),
@@ -25,15 +26,17 @@ class AlbumScreen extends StatelessWidget {
             children: [
               // Top section with back button and artist name
               Padding(
-                padding: const EdgeInsets.symmetric(
-                    horizontal: 20.0, vertical: 30.0),
+                padding:
+                    EdgeInsets.symmetric(horizontal: 20.0.h, vertical: 30.0.w),
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     InkWell(
                         onTap: () {
-                          Get.toNamed(Routes.home1);
-                        },child: Icon(Icons.arrow_back, color: Colors.white)),
+                          Get.back();
+                        },
+                        child: Icon(Icons.arrow_back, color: Colors.white)),
+                    SizedBox(width: 33.w,),
                     Text(
                       'Lauren Groff',
                       style: TextStyle(
@@ -41,6 +44,7 @@ class AlbumScreen extends StatelessWidget {
                           fontSize: 18,
                           fontWeight: FontWeight.bold),
                     ),
+                    Spacer(),
                     Icon(Icons.favorite_border, color: Colors.white),
                   ],
                 ),
@@ -64,7 +68,7 @@ class AlbumScreen extends StatelessWidget {
               ),
               Expanded(
                 child: Container(
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     color: Color(0xFF020825),
                     borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(30),
@@ -79,11 +83,11 @@ class AlbumScreen extends StatelessWidget {
                         'Ghosts and Empties - Vol 1',
                         style: TextStyle(
                             color: Colors.white,
-                            fontSize: 20,
+                            fontSize: 20.sp,
                             fontWeight: FontWeight.bold),
                       ),
                       SizedBox(
-                        height: 15,
+                        height: 21.h,
                       ),
                       InkWell(
                         onTap: () {
@@ -93,25 +97,25 @@ class AlbumScreen extends StatelessWidget {
                           children: [
                             Container(
                               // margin: EdgeInsets.symmetric(horizontal: 20, vertical: 40),
-                              height: 43,
-                              width: 43,
+                              height: 43.h,
+                              width: 43.w,
                               decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10),
-                                boxShadow: [
+                                borderRadius: BorderRadius.circular(8),
+                                boxShadow: const [
                                   BoxShadow(
                                     color: Colors.black26,
                                     blurRadius: 20,
                                     offset: Offset(0, 10),
                                   )
                                 ],
-                                image: DecorationImage(
+                                image: const DecorationImage(
                                   image: AssetImage(
-                                      'assets/sleep/sunset.jpg'), // Replace with your image path
+                                      'assets/sleep/ic_sunset.webp'), // Replace with your image path
                                   fit: BoxFit.cover,
                                 ),
                               ),
                             ),
-                            SizedBox(width: 10),
+                            SizedBox(width: 17.w),
                             Expanded(
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -123,7 +127,8 @@ class AlbumScreen extends StatelessWidget {
                                   Text(
                                     'Musician',
                                     style: TextStyle(
-                                        color: Color(0xFF848BBD), fontSize: 10),
+                                        color: Color(0xFF848BBD),
+                                        fontSize: 10.sp),
                                   ),
                                 ],
                               ),
@@ -132,16 +137,16 @@ class AlbumScreen extends StatelessWidget {
                           ],
                         ),
                       ),
-                      SizedBox(height: 15),
+                      SizedBox(height: 30.h),
                       // Description and play button
                       Text(
                         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tristique amet pharetra sem varius dolor vel egestas risus, duis. Volutpat massa mauris luctus enim cras',
                         style: TextStyle(color: Colors.grey[400]),
                       ),
-                      SizedBox(height: 10),
+                      SizedBox(height: 21.h),
                       Center(
                         child: CustomButton(
-                            height: 50,
+                            height: 50.h,
                             width: Get.width,
                             text: "Play",
                             background: Color(0xFF7D50FF),
@@ -168,9 +173,9 @@ class AlbumScreen extends StatelessWidget {
                                 '05:49',
                                 style: TextStyle(
                                     color: Color(0xFFFFFFFF).withOpacity(.5),
-                                    fontSize: 11),
+                                    fontSize: 11.sp),
                               ),
-                              trailing:  Icon(Icons.favorite_border,
+                              trailing: Icon(Icons.favorite_border,
                                   color: Color(0xFFFFFFFF).withOpacity(.8)),
                             );
                           },

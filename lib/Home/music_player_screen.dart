@@ -1,158 +1,5 @@
-// import 'package:flutter/material.dart';
-//
-// class MusicPlayerScreen extends StatelessWidget {
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       body: Stack(
-//         children: [
-//           // Background Image
-//           SizedBox(
-//             height: double.infinity,
-//             width: double.infinity,
-//             child: Image.asset(
-//               'assets/sleep/popUpImg.png', // Replace with your image path
-//               fit: BoxFit.cover,
-//             ),
-//           ),
-//           // Rest of the UI
-//           SafeArea(
-//             child: Column(
-//               children: [
-//                 // Top bar
-//                 Padding(
-//                   padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 20),
-//                   child: Row(
-//                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-//                     children: [
-//                       Row(
-//                         children: [
-//                           InkWell(
-//                             onTap: () {
-//                               // Add your onTap action here
-//                               Navigator.pop(context);
-//                             },
-//                             child: Icon(
-//                               Icons.arrow_back,
-//                               color: Colors.white,
-//                             ),
-//                           ),
-//                           SizedBox(width: 20,),
-//                           Text('Music', style: TextStyle(color: Colors.white, fontSize: 18)),
-//                         ],
-//                       ),
-//                       Row(
-//                         children: [
-//                           Icon(Icons.playlist_play, color: Colors.white),
-//                           SizedBox(width: 10),
-//                           Icon(Icons.favorite_border, color: Colors.white),
-//                         ],
-//                       ),
-//                     ],
-//                   ),
-//                 ),
-//                 // Album Art
-//                 Container(
-//                   margin: EdgeInsets.symmetric(horizontal: 20, vertical: 40),
-//                   height: 350,
-//                   width: 320,
-//                   decoration: BoxDecoration(
-//                     borderRadius: BorderRadius.circular(30),
-//                     boxShadow: [
-//                       BoxShadow(
-//                         color: Colors.black26,
-//                         blurRadius: 20,
-//                         offset: Offset(0, 10),
-//                       )
-//                     ],
-//                     image: DecorationImage(
-//                       image: AssetImage('assets/sleep/sunset.jpg'), // Replace with your image path
-//                       fit: BoxFit.cover,
-//                     ),
-//                   ),
-//                 ),
-//                 // Song Title
-//                 Text(
-//                   'Kings Of Leon - Pyro',
-//                   style: TextStyle(
-//                     color: Colors.white,
-//                     fontSize: 22,
-//                     fontWeight: FontWeight.bold,
-//                   ),
-//                 ),
-//                 SizedBox(height: 20),
-//                 // Slider and time indicators
-//                 Padding(
-//                   padding: const EdgeInsets.symmetric(horizontal: 19.0),
-//                   child: Column(
-//                     children: [
-//                       Slider(
-//                         value: 3.54,
-//                         min: 0,
-//                         max: 5.00,
-//                         onChanged: (value) {},
-//                         activeColor: Colors.white,
-//                         inactiveColor: Colors.white30,
-//
-//                       ),
-//                       Padding(
-//                         padding: const EdgeInsets.symmetric(horizontal: 25),
-//                         child: Row(
-//                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-//                           children: [
-//                             Text('00:03:54', style: TextStyle(color: Colors.white)),
-//                             Text('00:05:00', style: TextStyle(color: Colors.white)),
-//                           ],
-//                         ),
-//                       ),
-//                     ],
-//                   ),
-//                 ),
-//                 SizedBox(height: 20),
-//                 // Control buttons
-//                 Row(
-//                   mainAxisAlignment: MainAxisAlignment.center,
-//                   children: [
-//                     IconButton(
-//                       onPressed: () {},
-//                       icon: Icon(Icons.timer, color: Colors.white),
-//                       iconSize: 30,
-//                     ),
-//                     IconButton(
-//                       onPressed: () {},
-//                       icon: Icon(Icons.skip_previous, color: Colors.white),
-//                       iconSize: 40,
-//                     ),
-//                     CircleAvatar(
-//                       radius: 30,
-//                       backgroundColor: Colors.white,
-//                       child: IconButton(
-//                         onPressed: () {},
-//                         icon: Icon(Icons.play_arrow, color: Colors.purple.shade800),
-//                         iconSize: 40,
-//                       ),
-//                     ),
-//                     IconButton(
-//                       onPressed: () {},
-//                       icon: Icon(Icons.skip_next, color: Colors.white),
-//                       iconSize: 40,
-//                     ),
-//                     IconButton(
-//                       onPressed: () {},
-//                       icon: Icon(Icons.volume_up, color: Colors.white),
-//                       iconSize: 30,
-//                     ),
-//                   ],
-//                 ),
-//               ],
-//             ),
-//           ),
-//         ],
-//       ),
-//     );
-//   }
-// }
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 //import 'audio_controller.dart';
 import 'controler/audio_controler.dart'; // Import the AudioController
@@ -171,7 +18,7 @@ class MusicPlayerScreen extends StatelessWidget {
               height: double.infinity,
               width: double.infinity,
               child: Image.asset(
-                'assets/sleep/popUpImg.png', // Replace with your image path
+                'assets/sleep/popUpImg.webp', // Replace with your image path
                 fit: BoxFit.cover,
               ),
             ),
@@ -181,7 +28,7 @@ class MusicPlayerScreen extends StatelessWidget {
                 children: [
                   // Top bar
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 20),
+                    padding:  EdgeInsets.symmetric(horizontal: 24.h, vertical: 24.w),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -194,16 +41,17 @@ class MusicPlayerScreen extends StatelessWidget {
                               child: Icon(
                                 Icons.arrow_back,
                                 color: Colors.white,
+                               size: 32.sp,
                               ),
                             ),
-                            SizedBox(width: 20,),
-                            Text('Music', style: TextStyle(color: Colors.white, fontSize: 18)),
+                            SizedBox(width: 33.w,),
+                            Text('Music', style: TextStyle(color: Colors.white, fontSize: 16.sp)),
                           ],
                         ),
                         Row(
                           children: [
                             Icon(Icons.playlist_play, color: Colors.white),
-                            SizedBox(width: 10),
+                            SizedBox(width: 13),
                             Icon(Icons.favorite_border, color: Colors.white),
                           ],
                         ),
@@ -211,10 +59,11 @@ class MusicPlayerScreen extends StatelessWidget {
                     ),
                   ),
                   // Album Art
+                  SizedBox(height: 77.h,),
                   Container(
-                    margin: EdgeInsets.symmetric(horizontal: 20, vertical: 40),
-                    height: 350,
-                    width: 320,
+                    margin: EdgeInsets.only(left: 55.h, right: 56.h),
+                    height: 360.h,
+                    width: 307.w,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(30),
                       boxShadow: [
@@ -225,24 +74,26 @@ class MusicPlayerScreen extends StatelessWidget {
                         )
                       ],
                       image: DecorationImage(
-                        image: AssetImage('assets/sleep/sunset.jpg'), // Replace with your image path
+                        image: AssetImage('assets/sleep/ic_sunset.webp'), // Replace with your image path
                         fit: BoxFit.cover,
                       ),
                     ),
                   ),
                   // Song Title
+
+                  SizedBox(height: 73.h),
                   Text(
                     'Kings Of Leon - Pyro',
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: 22,
+                      fontSize: 22.sp,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  SizedBox(height: 20),
+                  SizedBox(height: 40.h),
                   // Slider and time indicators
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 19.0),
+                    padding:  EdgeInsets.only(left: 40.w, right: 38.w),
                     child: Column(
                       children: [
                           Slider(
@@ -257,7 +108,7 @@ class MusicPlayerScreen extends StatelessWidget {
                           ),
 
                         Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 25),
+                          padding:  EdgeInsets.only(left: 20.w, right: 22.w),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
@@ -275,7 +126,7 @@ class MusicPlayerScreen extends StatelessWidget {
                       ],
                     ),
                   ),
-                  SizedBox(height: 20),
+                  SizedBox(height: 35.h),
                   // Control buttons
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -283,15 +134,17 @@ class MusicPlayerScreen extends StatelessWidget {
                       IconButton(
                         onPressed: () {},
                         icon: Icon(Icons.timer, color: Colors.white),
-                        iconSize: 30,
+                        iconSize: 30.sp,
                       ),
+                      SizedBox(width:  17.w,),
                       IconButton(
                         onPressed: () {
                           audioController.stopAudio();
                         },
                         icon: Icon(Icons.skip_previous, color: Colors.white),
-                        iconSize: 40,
+                        iconSize: 40.sp,
                       ),
+                       SizedBox(width:  9.33.w,),
                        CircleAvatar(
                           radius: 30,
                           backgroundColor: Colors.white,
@@ -307,15 +160,17 @@ class MusicPlayerScreen extends StatelessWidget {
                               audioController.isPlaying.value ? Icons.pause : Icons.play_arrow,
                               color: Colors.purple.shade800,
                             ),
-                            iconSize: 40,
+                            iconSize: 40.sp,
                           ),
 
                       ),
+                      SizedBox(width: 9.33.w,),
                       IconButton(
                         onPressed: () {},
                         icon: Icon(Icons.skip_next, color: Colors.white),
-                        iconSize: 40,
+                        iconSize: 40.sp,
                       ),
+                      SizedBox(width: 17.w,),
                       IconButton(
                         onPressed: () {
                           // Toggle mute/unmute
@@ -331,7 +186,7 @@ class MusicPlayerScreen extends StatelessWidget {
                               : Icons.volume_off,
                           color: Colors.white,
                         ),
-                        iconSize: 30,
+                        iconSize: 30.sp,
                       ),
                     ],
                   ),

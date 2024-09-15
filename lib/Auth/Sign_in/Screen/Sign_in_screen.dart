@@ -30,7 +30,9 @@ class SignInScreen extends StatelessWidget {
         Scaffold(
           backgroundColor: Colors.transparent,
           appBar: AppBar(
-            leading: Icon(Icons.arrow_back, color: Colors.white),
+            leading: InkWell(onTap: () {
+              Navigator.pop(context);
+            },child: Icon(Icons.arrow_back, color: Colors.white)),
             backgroundColor: Colors.transparent,
           ),
           body: Obx(() {
@@ -189,7 +191,7 @@ class SignInScreen extends StatelessWidget {
                       shadowColor: const Color(0xFF7D50FF),
                       onPressed: () {
                         controller.login();
-                        Get.toNamed(Routes.homeScreen);
+                        Get.toNamed(Routes.homePageView);
                       }),
                   SizedBox(
                     height: 17.h,

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class CustomButton extends StatelessWidget {
   final double height;
@@ -11,14 +13,12 @@ class CustomButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(padding: EdgeInsets.only(
-      left: 8, right: 8, bottom: 8, top: 8),
-    child: Container(
+    return Container(
       height: height,
       width: width,
       decoration: BoxDecoration(
         color: background,
-          borderRadius: BorderRadius.all(Radius.circular(24.0)),
+          borderRadius: BorderRadius.all(Radius.circular(40.0)),
         boxShadow: <BoxShadow>[
           BoxShadow(
             color: shadowColor.withOpacity(0.3),
@@ -34,17 +34,20 @@ class CustomButton extends StatelessWidget {
           highlightColor: Colors.transparent,
           onTap: onPressed,
           child: Center(
-            child: Text(text,
-            style: TextStyle(
-              fontWeight: FontWeight.w500,
-              fontSize: 18,
-              color: Colors.white
+            child: Text(
+              text,
+              style: GoogleFonts.inter(
+                fontWeight: FontWeight.w500,
+                fontSize: 18.sp,
+                color: Colors.white,
+                height: 2.6
+              ),
+
             ),
             ),
           ),
         ),
-      ),
-    ),
-    );
+      );
+
   }
 }

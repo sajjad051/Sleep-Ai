@@ -1,11 +1,11 @@
+import 'package:ai_sleep/Home/home_page/slider_Indicator.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
-
-import '../../WelcomeScreen/widget/On_Board_screen/Indicator.dart';
+import 'package:ai_sleep/Home/home_page/slider_Indicator.dart';
 import 'Controler/home_slider_controler.dart';
 
 class HomeSlider extends StatelessWidget {
@@ -22,10 +22,10 @@ class HomeSlider extends StatelessWidget {
           children: [
             Column(
               children: [
-                SizedBox(height: width * 0.010),
+                SizedBox(height: width * 0.009),
                 CarouselSlider.builder(
                   options: CarouselOptions(
-                    aspectRatio: 3 / 1.9,
+                    aspectRatio: 3 / 1,
                     viewportFraction: 0.95,
                     autoPlay: true,
                     enlargeCenterPage: true,
@@ -48,7 +48,7 @@ class HomeSlider extends StatelessWidget {
                       children: [
                         ...List.generate(
                           4, // Total number of indicators
-                          (indicatorIndex) => Indicator(
+                          (indicatorIndex) => SliderIndicator(
                             isActive:
                                 indicatorIndex == controller.indexNo.value,
                           ),

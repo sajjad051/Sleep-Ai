@@ -1,9 +1,13 @@
 import 'package:ai_sleep/Auth/Controler/forgot_controler.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
+import 'package:google_fonts/google_fonts.dart';
 
+//artist profile
 class CustomUnlockCard extends StatelessWidget {
 
   final String image;
@@ -26,13 +30,15 @@ class CustomUnlockCard extends StatelessWidget {
           Stack(
             children: [
               SizedBox(
-                height: Get.width * .3,
-                width: Get.width * .437,
+                height: 182.h,
+                width: 182.h,
                 child: ClipRRect(
-                  borderRadius: BorderRadius.circular(20), // Adjust this value as needed
-                  child: Image.asset(
-                    image,
-                    fit: BoxFit.fill,
+                  borderRadius: BorderRadius.circular(8.47.w), // Adjust this value as needed
+                  child: Image(
+                    image: CachedNetworkImageProvider(
+                      image,
+                    ),
+                    fit: BoxFit.cover,
                   ),
                 ),
               ),
@@ -67,25 +73,26 @@ class CustomUnlockCard extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(height: 10,),
+          SizedBox(height: 9.h,),
 
-          Text(title,style: TextStyle(color: Colors.white,fontSize: 14),),
+          Text(title,style: GoogleFonts.inter(color: Colors.white,fontSize: 14.sp, fontWeight: FontWeight.w500),),
+          SizedBox(height: 6.h,),
           Row(
             children: [
-              Text(subtitle,style: TextStyle(color:Color(0xFF848BBD) ,fontSize: 10),),
-              SizedBox(width: 8,),
+              Text(subtitle,style: GoogleFonts.inter(color:Color(0xFF848BBD) ,fontSize: 10.sp),),
+              SizedBox(width: 6.w,),
               SvgPicture.asset(
                 "assets/sleep/Ellipse.svg",
-                height: 8,
-                width: 8,
+                height: 4.h,
+                width: 4.w,
               ),
-              SizedBox(width: 8,),
-              Text("Story",style: TextStyle(color:Color(0xFF848BBD),fontSize: 10),),
+              SizedBox(width: 6.w,),
+              Text("Story",style: GoogleFonts.inter(color:Color(0xFF848BBD),fontSize: 10.sp, fontWeight: FontWeight.w400),),
 
             ],
           ),
 
-          SizedBox(height: 10),
+          //SizedBox(height: 10),
         ],
 
       ),
