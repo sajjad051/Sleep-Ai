@@ -1,5 +1,6 @@
 import 'package:ai_sleep/Auth/Controler/forgot_controler.dart';
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -29,7 +30,7 @@ class CustomMusiccard extends StatelessWidget {
         builder: (BuildContext context) => Dialog(
           backgroundColor: Color(0xFF061239),
           child: Padding(
-            padding: const EdgeInsets.all(20.0),
+            padding:  EdgeInsets.symmetric(horizontal: 20.w,vertical: 20.h),
             child: Column(
               mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.center,
@@ -49,36 +50,38 @@ class CustomMusiccard extends StatelessWidget {
                 ),
                 SizedBox(height: 39.h),
                 Container(
-                  // margin: EdgeInsets.symmetric(horizontal: 20, vertical: 40),
                   height: 238.h,
                   width: 255.w,
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(30),
+                    borderRadius: BorderRadius.circular(15),
                     boxShadow: [
                       BoxShadow(
                         color: Colors.black26,
                         blurRadius: 20,
                         offset: Offset(0, 10),
-                      )
+                      ),
                     ],
-                    image: DecorationImage(
-                      image: AssetImage('assets/sleep/pop.jpg'), // Replace with your image path
-                      fit: BoxFit.cover,
+                  ),
+                  child: Center(
+                    child: SvgPicture.asset(
+                      'assets/sleep/img_dialog.svg',
+                      fit: BoxFit.fill, // This makes the SVG cover the entire container
                     ),
                   ),
                 ),
+
                 SizedBox(height: 30.33.h,),
                 Text(
                   "Unlock Music",
-                  style: TextStyle(
+                  style: GoogleFonts.inter(
                       fontSize: 28.sp,
                       color: Color(0xFFFFFFFF),
-                      fontWeight: FontWeight.bold),
+                      fontWeight: FontWeight.w700),
                 ),
                 SizedBox(height: 12.h,),
                 Text(
                   "Unlock Music by Watching Video",
-                  style: TextStyle(fontSize: 19.sp, color: Color(0xFF848BBD)),
+                  style: GoogleFonts.inter(fontSize: 16.sp, color: Color(0xFF848BBD),fontWeight: FontWeight.w400),
                 ),
                 SizedBox(
                   height: 61.h,
@@ -102,7 +105,9 @@ class CustomMusiccard extends StatelessWidget {
                     text: "Unlock All",
                     background: Color(0xFF7D50FF),
                     shadowColor: Color(0xFF7D50FF),
-                    onPressed: () {}),
+                    onPressed: () {
+
+                    }),
                 SizedBox(height: 52.h,),
               ],
             ),
@@ -110,7 +115,7 @@ class CustomMusiccard extends StatelessWidget {
         ),
       ),
       child: Container(
-        height: 227.h,
+        height: 230.h,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -131,43 +136,67 @@ class CustomMusiccard extends StatelessWidget {
                 ),
 
                 Positioned(
-                  top: 13,
-                  right: 13,
+                  top: 9.h,
+                  right: 9.w,
                   child: InkWell(
                     onTap: () {
 
                     },
-                   child:  SvgPicture.asset(
-                      "assets/sleep/Heart.svg",
-                      height: 20,
-                      width: 20,
+                    child:  Container(
+                      height: 24.h,
+                      width: 24.w,
+                      decoration: BoxDecoration(
+                        color: Color(0xFF000000).withOpacity(.2), // Background color with opacity
+                        borderRadius: BorderRadius.circular(12.r),
+                      ),
+                      child: Icon(
+                        Icons.favorite_border,
+                        color: Color(0xFFFFFFFF),
+                        size: 13.5,// Icon color
+                      ),
+                    ),
+
+                  ),
+                ),
+
+                Positioned(
+                  bottom: 18.sp,
+                  right: 9.sp,
+                  child: InkWell(
+                    onTap: () {
+
+                    },
+                    child:  Container(
+                      height: 24.h,
+                      width: 24.w,
+                      decoration: BoxDecoration(
+                        color: Color(0xFF000000).withOpacity(.2), // Background color with opacity
+                        borderRadius: BorderRadius.circular(12.r),
+                      ),
+                      child: Icon(
+                        CupertinoIcons.lock_fill,
+                        color: Color(0xFFFFFFFF),
+                        size: 13.5,// Icon color
+                      ),
                     ),
                   ),
                 ),
 
                 Positioned(
-                  bottom: 13,
-                  right: 13,
-                  child: InkWell(
-                    onTap: () {
-
-                    },
-                    child:  SvgPicture.asset(
-                      "assets/sleep/lock.svg",
-                      height: 20,
-                      width: 20,
-                    ),
-                  ),
-                ),
-
-                Positioned(
-                  bottom: 10,
+                  bottom: 12,
                   left: 8,
-                  child: Text(
-                    "05:00",
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 12,
+                  child: Container(
+                    height: 16.h,
+                    width: 38.w,
+                    decoration: BoxDecoration(
+                        color: Color(0xFF000000).withOpacity(.2),
+                        borderRadius: BorderRadius.circular(3.r)),
+                    child: Text(
+                      "05:00",
+                      style: GoogleFonts.inter(
+                        color: Color(0xFFFFFFFF),
+                        fontSize: 12.sp,
+                      ),
                     ),
                   ),
                 ),

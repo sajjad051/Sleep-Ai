@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import '../../../Route/Routes.dart';
 import '../../../core/usecase/app_color.dart';
@@ -11,7 +12,7 @@ import '../../../widget/Social_media_button.dart';
 import '../../../widget/custom_button.dart';
 
 class SignUpScreen extends StatelessWidget {
-   SignUpScreen({super.key});
+  SignUpScreen({super.key});
 
   SignUpController controller = Get.put(SignUpController());
 
@@ -29,204 +30,236 @@ class SignUpScreen extends StatelessWidget {
           backgroundColor: Colors.transparent,
           appBar: AppBar(
             leading: InkWell(
-                onTap:(){
+                onTap: () {
                   Navigator.pop(context);
-                },child: Icon(Icons.arrow_back, color: Colors.white)),
+                }, child: Icon(Icons.arrow_back, color: Colors.white)),
             backgroundColor: Colors.transparent,
             surfaceTintColor: Colors.transparent,
           ),
-          body:  SingleChildScrollView(
-            child: Padding(
-              padding: EdgeInsets.only(top: 240.h,left: 23.w,right: 24.h),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                   Text(
-                    "Create Your account",
-                    style: TextStyle(fontSize: 22.sp, color: Colors.white),
-                    textAlign: TextAlign.start,
-                  ),
-                   SizedBox(
-                    height: 12.h,
-                  ),
-                   Row(
-                    children: [
-                      Text(
-                        "Welcome to ",
-                        //style: welcomeTextSmall(),
-                        style: TextStyle(fontSize: 16.sp, color: Color(0xFF848BBD)),
-                      ),
-                      Text(
-                        "Sleeping",
-                        //style: welcomeTextSmall(),
-                        style: TextStyle(fontSize: 16.sp, color: Color(0xFF848BBD), fontWeight: FontWeight.bold),
-                      ),
-                      Text(
-                        " acount",
-                        //style: welcomeTextSmall(),
-                        style: TextStyle(fontSize: 16.sp, color: Color(0xFF848BBD), ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 37.h,
-                  ),
-                  Container(
-                    width: Get.width,
-                    height: 50.h,
-                    padding: EdgeInsets.only(left: 24.w),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      border: Border.all(color: AppColor.editTextBackground),
-                      color: AppColor.editTextBackground,
+          body: Obx(() {
+            return SingleChildScrollView(
+              child: Padding(
+                padding: EdgeInsets.only(top: 197.h, left: 23.w, right: 24.w),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Create Your account",
+                      style: GoogleFonts.inter(
+                          fontSize: 22.sp, color: Colors.white),
+                      textAlign: TextAlign.start,
                     ),
-                    child: TextField(
-                      onChanged: (text) {
-                        controller.isEmptyEmail.value= text.isEmpty;
-                      },
-                      style: const TextStyle(
-                        color: AppColor.editTextColor,
-                      ),
-                      controller: controller.email,
-                      decoration: InputDecoration(
-                        hintText: "Enter your Email address",
-                        prefixIcon: controller.email.text.isEmpty? Icon(Icons.email) : null,
-                        //  prefixIcon: controller.isEmptyEmail.value? Icon(Icons.email) : null,
-                        border: InputBorder.none,
-                      ),
+                    SizedBox(
+                      height: 12.h,
                     ),
-                  ),
-                  SizedBox(height: 40.h),
-                  Container(
-                    width: Get.width,
-                    height: 50.h,
-                    padding: EdgeInsets.only(left: 24),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      border: Border.all(color: AppColor.editTextBackground),
-                      color: AppColor.editTextBackground,
-                    ),
-                    child: TextField(
-                      onChanged: (text) {
-                        controller.isEmptyNumber.value= text.isEmpty;
-                      },
-                      style: const TextStyle(
-                        color: AppColor.editTextColor,
-                      ),
-                      controller: controller.number,
-                      keyboardType: TextInputType.number,
-                      decoration: InputDecoration(
-                        hintText: "Enter your Phone Number",
-                        prefixIcon:controller.number.text.isEmpty? Icon(Icons.call) : null,
-                        // prefixIcon: controller.isEmptyNumber.value?Icon(Icons.call) : null,
-                        border: InputBorder.none,
-                      ),
-                    ),
-                  ),
-                   SizedBox(height: 40.h),
-                  Container(
-                    width: Get.width,
-                    height: 50.h,
-                    padding: EdgeInsets.only(left: 24.w),
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        border: Border.all(color: AppColor.editTextBackground),
-                        color: AppColor.editTextBackground),
-                    child: TextField(
-                      onChanged: (text) {
-                        controller.isEmptyPassword.value= text.isEmpty;
-                      },
-                      style: const TextStyle(
-                        color: AppColor.editTextColor,
-                      ),
-                      controller: controller.password,
-                      obscureText: controller.hidePassword.value,
-                      decoration: InputDecoration(
-                        hintText: " Enter Password",
-                        prefixIcon:controller.password.text.isEmpty? Icon(Icons.lock) : null,
-                        // prefixIcon: controller.isEmptyPassword.value?Icon(Icons.lock) : null,
-                        // suffixIcon: Icon(Icons.visibility),
-            
-                        suffixIcon: controller.hidePassword.value == false
-                            ? InkWell(
-                            onTap: () {
-                              controller.hidePassword.value = true;
-                            },
-                            child: const Icon(Icons.visibility))
-                            : InkWell(
-                            onTap: () {
-                              controller.hidePassword.value = false;
-                            },
-                            child: const Icon(Icons.visibility_off)),
-            
-                        border: InputBorder.none,
-                        //border:OutlineInputBorder(),
-                        // border: BorderRadius.circular(),
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    height: 32.h,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Checkbox(
-                        value: controller.isChecked.value,
-                        onChanged: (bool? value) {
-                          controller.toggleCheckbox(value);
-                        },
-                        activeColor: Color(0xFF7D50FF),
-                      ),
-                      Expanded(
-                        child: Text(
-                          "By creating this account, you are agreeing to our terms and conditions",
-                          style: TextStyle(fontSize: 14.h, color: Color(0xFF848BBD)),
+                    Row(
+                      children: [
+                        Text(
+                          "Welcome to ",
+                          //style: welcomeTextSmall(),
+                          style: GoogleFonts.inter(
+                              fontSize: 16.sp, color: Color(0xFF848BBD)),
                         ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(height: 22.h),
-                  CustomButton(
-                      height: 50.h,
-                      width: Get.width,
-                      text: "Sign Up",
-                      background: Color(0xFF7D50FF),
-                      shadowColor: Color(0xFF7D50FF),
-                      onPressed: () {
-                        controller.signUp();
-                      }),
-                  SizedBox(
-                    height: 32.h,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Text("already have an account ?",
-                          style: welcomeTextSmall()),
-                      SizedBox(
-                        width: 10.w,
-                      ),
-                      InkWell(
-                        onTap: () {
-                          Get.toNamed(Routes.signIn);
-                        },
-                        child:  Text(
-                          'Sign In',
+                        Text(
+                          "Sleeping",
+                          //style: welcomeTextSmall(),
+                          style: GoogleFonts.inter(fontSize: 16.sp,
+                              color: Color(0xFF848BBD),
+                              fontWeight: FontWeight.bold),
+                        ),
+                        Text(
+                          " acount",
+                          //style: welcomeTextSmall(),
                           style: TextStyle(
-                              color: Color(0xFF7D50FF),
-                              fontSize: 14.sp,
-                              fontWeight: FontWeight.bold,
-                              decorationColor: Colors.purple),
+                            fontSize: 16.sp, color: Color(0xFF848BBD),),
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      height: 37.h,
+                    ),
+
+                    //Email
+                    Container(
+                      width: Get.width,
+                      height: 50.h,
+                      padding: EdgeInsets.only(left: 8.w),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(8.r),
+                        border: Border.all(color: AppColor.editTextBackground),
+                        color: AppColor.editTextBackground,
+                      ),
+                      child: TextField(
+                        onChanged: (text) {
+                          if(text.isNotEmpty)
+                            controller.showEmailIcon.value = false;
+                          if(text.isEmpty){
+                            controller.showEmailIcon.value = true;
+                          }
+                        },
+                        style: GoogleFonts.inter(
+                          color: AppColor.editTextColor,
+                        ),
+                        controller: controller.email,
+                        decoration: InputDecoration(
+                          hintText: "Enter your Email address",
+                          hintStyle: GoogleFonts.inter(),
+                          prefixIcon: controller.showEmailIcon.value == true
+                              ? Icon(Icons.email)
+                              : null,
+                          //  prefixIcon: controller.isEmptyEmail.value? Icon(Icons.email) : null,
+                          border: InputBorder.none,
                         ),
                       ),
-                    ],
-                  ),
-                ],
+                    ),
+                    SizedBox(height: 40.h),
+
+                    //PhoneNumber
+                    Container(
+                      width: Get.width,
+                      height: 50.h,
+                      padding: EdgeInsets.only(left: 8.w),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(8.r),
+                        border: Border.all(color: AppColor.editTextBackground),
+                        color: AppColor.editTextBackground,
+                      ),
+                      child: TextField(
+                        onChanged: (text) {
+                          if(text.isNotEmpty)
+                            controller.showNumberIcon.value = false;
+                          if(text.isEmpty){
+                            controller.showNumberIcon.value = true;
+                          }
+                        },
+                        style: GoogleFonts.inter(
+                          color: AppColor.editTextColor,
+                        ),
+                        controller: controller.number,
+                        keyboardType: TextInputType.number,
+                        decoration: InputDecoration(
+                          hintText: "Enter your Phone Number",
+                          prefixIcon: controller.showNumberIcon.value ? Icon(
+                              Icons.call) : null,
+                          // prefixIcon: controller.isEmptyNumber.value?Icon(Icons.call) : null,
+                          border: InputBorder.none,
+                        ),
+                      ),
+                    ),
+                    SizedBox(height: 40.h),
+
+                    //password
+                    Container(
+                      width: Get.width,
+                      height: 50.h,
+                      padding: EdgeInsets.only(left: 8.w),
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(8.r),
+                          border: Border.all(color: AppColor
+                              .editTextBackground),
+                          color: AppColor.editTextBackground),
+                      child: TextField(
+                        onChanged: (text) {
+                          if(text.isNotEmpty)
+                            controller.showLockIcon.value = false;
+                          if(text.isEmpty){
+                            controller.showLockIcon.value = true;
+                          }
+                        },
+                        style: GoogleFonts.inter(
+                          color: AppColor.editTextColor,
+                        ),
+                        controller: controller.password,
+                        obscureText: controller.hidePassword.value,
+                        decoration: InputDecoration(
+                          hintText: " Enter Password",
+                          prefixIcon: controller.showLockIcon.value ? Icon(
+                              Icons.lock) : null,
+                          // prefixIcon: controller.isEmptyPassword.value?Icon(Icons.lock) : null,
+                          // suffixIcon: Icon(Icons.visibility),
+
+                          suffixIcon: controller.hidePassword.value == false
+                              ? InkWell(
+                              onTap: () {
+                                controller.hidePassword.value = true;
+                              },
+                              child: const Icon(Icons.visibility))
+                              : InkWell(
+                              onTap: () {
+                                controller.hidePassword.value = false;
+                              },
+                              child: const Icon(Icons.visibility_off)),
+
+                          border: InputBorder.none,
+                          //border:OutlineInputBorder(),
+                          // border: BorderRadius.circular(),
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 32.h,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Checkbox(
+                          value: controller.isChecked.value,
+                          onChanged: (bool? value) {
+                            controller.toggleCheckbox(value);
+                          },
+                          activeColor: Color(0xFF7D50FF),
+                        ),
+                        Expanded(
+                          child: Text(
+                            "By creating this account, you are agreeing to our terms and conditions",
+                            style: GoogleFonts.inter(
+                                fontSize: 14.h, color: Color(0xFF848BBD)),
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: 22.h),
+                    CustomButton(
+                        height: 50.h,
+                        width: Get.width,
+                        text: "Sign Up",
+                        background: Color(0xFF7D50FF),
+                        shadowColor: Color(0xFF7D50FF),
+                        onPressed: () {
+                          controller.signUp();
+                        }),
+                    SizedBox(
+                      height: 32.h,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Text("already have an account ?",
+                            style: welcomeTextSmall()),
+                        SizedBox(
+                          width: 10.w,
+                        ),
+                        InkWell(
+                          onTap: () {
+                            Get.toNamed(Routes.signIn);
+                          },
+                          child: Text(
+                            'Sign In',
+                            style: GoogleFonts.inter(
+                                color: Color(0xFF7D50FF),
+                                fontSize: 14.sp,
+                                fontWeight: FontWeight.bold,
+                                decorationColor: Colors.purple),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
               ),
-            ),
-          ),
+            );
+          }),
         ),
       ],
     );

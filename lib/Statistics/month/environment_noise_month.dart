@@ -29,13 +29,13 @@ class EnvironmentNoiseMonth extends StatelessWidget {
 
           SizedBox(
             width : width,
-            height: width * 0.6,
+            height: 267.h,
             child: Stack(
               children: [
 
                 Container(
                   // color: Colors.blue,
-                  padding: EdgeInsets.only(bottom: 20),
+                  padding: EdgeInsets.only(bottom: 20.h),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -51,7 +51,7 @@ class EnvironmentNoiseMonth extends StatelessWidget {
                 ),
 
                 Container(
-                  padding: EdgeInsets.only(left: 40, top: 15, bottom: 35),
+                  padding: EdgeInsets.only(left: 40.h, top: 15.h, bottom: 35.h),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -438,7 +438,7 @@ class EnvironmentNoiseMonth extends StatelessWidget {
           ),
 
 
-          const SizedBox(height: 20,),
+           SizedBox(height: 20.h,),
 
         ],
       ),
@@ -468,14 +468,14 @@ class EnvironmentNoiseMonth extends StatelessWidget {
 
   TextStyle dayStyle(){
     return GoogleFonts.inter(
-        fontSize: 12,
+        fontSize: 12.sp,
         color: Colors.white70
     );
   }
 
   Container bar(double height, double value, Color color1, Color color2){
     return Container(
-      width: 4,
+      width: 4.h,
       height: height * value,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.only(

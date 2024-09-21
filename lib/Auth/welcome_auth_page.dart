@@ -17,6 +17,7 @@ class WelcomeAuthPage extends StatelessWidget {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
     return Scaffold(
+      backgroundColor: Color(0xFF020825),
       body: Stack(
         children: [
           SizedBox(
@@ -66,7 +67,7 @@ class WelcomeAuthPage extends StatelessWidget {
                   children: [
                     CustomButton(
                         height: 48.h,
-                        width: width,
+                        width: Get.width,
                         text: "Sign In",
                         background: const Color(0xFF7D50FF),
                         shadowColor: const Color(0xFF7D50FF),
@@ -77,7 +78,7 @@ class WelcomeAuthPage extends StatelessWidget {
                       height: 25.h,
                     ),
                     RoundedButton(
-                        height: 48,
+                        height: 48.h,
                         width: Get.width,
                         text: "Create Account",
                         background: const Color(0xFF020825),

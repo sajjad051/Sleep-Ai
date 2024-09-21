@@ -55,7 +55,6 @@ class TabBarMusic extends StatelessWidget {
                   fontSize: 14.sp,
                   fontWeight: FontWeight.w500,
                 ),),
-
               ],
             ),
           ),

@@ -5,7 +5,7 @@ class ForgotController extends GetxController{
 
   TextEditingController number = TextEditingController();
 
-  var isEmpty = false.obs;
+  var showPhoneNumber = true.obs;
 
   forgot() {
     FormData body = FormData({

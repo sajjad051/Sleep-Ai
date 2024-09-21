@@ -11,7 +11,11 @@ class SignUpController extends GetxController{
   var hidePassword = true.obs;
   var showPassword = false.obs;
 
-  var isEmptyEmail =false.obs;
+  var showEmailIcon =true.obs;
+  var showNumberIcon = true.obs;
+  var showLockIcon = true.obs;
+
+
   var isEmptyPassword = false.obs;
   var isEmptyNumber = false.obs;
 

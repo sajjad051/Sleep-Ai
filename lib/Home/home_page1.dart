@@ -67,7 +67,7 @@ class HomePage1 extends StatelessWidget {
     return Scaffold(
       backgroundColor: Color(0xFF020825),
       body: Padding(
-        padding:  EdgeInsets.only(left: 24.w,top: 12.h,),
+        padding:  EdgeInsets.only(left: 24.w,),
         child: Column(
           children: [
             Expanded(
@@ -75,9 +75,9 @@ class HomePage1 extends StatelessWidget {
                 itemCount: gridItems.length,
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
-                    crossAxisSpacing: 5,
-                    mainAxisSpacing: 5,
-                    childAspectRatio: 5 / 5.9),
+                    crossAxisSpacing: 0.w,
+                    mainAxisSpacing: 3.h,
+                    childAspectRatio: 5 / 6.4),
                 padding: EdgeInsets.only(top: 20.h),
                 itemBuilder: (context, index) {
                   final item = gridItems[index];

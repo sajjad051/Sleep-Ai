@@ -3,6 +3,8 @@ import 'dart:ui';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 
 
 class SleepDuration extends StatelessWidget {
@@ -12,9 +14,9 @@ class SleepDuration extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    width = MediaQuery.of(context).size.width-40;
+    width = MediaQuery.of(context).size.width-40.w;
     return Container(
-      padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 20),
+      padding:  EdgeInsets.symmetric(vertical: 30.h, horizontal: 20.w),
       decoration: BoxDecoration(
           color: Color(0xFF061238),
           borderRadius: BorderRadius.circular(8)
@@ -23,18 +25,18 @@ class SleepDuration extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text("Sleep Duration",style: TextStyle(fontSize: 16.sp, color: Colors.white, fontWeight: FontWeight.w700)),
-          const SizedBox(height: 20,),
+           SizedBox(height: 20.h,),
 
 
           SizedBox(
             width : width,
-            height: width * 0.6,
+            height: 267.h,
             child: Stack(
               children: [
 
                 Container(
                   // color: Colors.blue,
-                  padding: EdgeInsets.only(bottom: 20),
+                  padding: EdgeInsets.only(bottom: 20.h),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,

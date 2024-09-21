@@ -49,6 +49,8 @@ dependencies:
   flutter_screenutil: ^5.9.3
   google_fonts: ^6.2.1
   cached_network_image: ^3.4.1
+  ripple_wave: ^0.1.4
+  linear_timer: ^2.0.0
 
 
 

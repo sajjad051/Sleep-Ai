@@ -17,8 +17,9 @@ class WelcomePage4 extends StatelessWidget {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
     return Scaffold(
+      backgroundColor: Color(0xFF020825),
       body: Container(
-        color: Color(0xFF020825),
+       // color: Color(0xFF020825),
         child: Stack(
           alignment: Alignment.topCenter,
           children: [

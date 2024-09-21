@@ -1,5 +1,6 @@
 import 'package:ai_sleep/Auth/Controler/forgot_controler.dart';
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -138,17 +139,16 @@ class Recommendedcard extends StatelessWidget {
                     height: 24.h,
                     width: 24.w,
                     decoration: BoxDecoration(
-                        color: Color(0xFF000000).withOpacity(.2),
-                        borderRadius: BorderRadius.circular(15)
+                      color: Color(0xFF000000).withOpacity(.2), // Background color with opacity
+                      borderRadius: BorderRadius.circular(12.r),
                     ),
-                    child: SvgPicture.asset(
-                      "assets/sleep/Heart.svg",
-                      height: 11.63.h,
-                      width: 13.5.w,
-
+                    child: Icon(
+                      Icons.favorite_border,
+                      color: Color(0xFFFFFFFF),
+                      size: 13.5,// Icon color
                     ),
-
                   ),
+
                 ),
               ),
 
@@ -163,13 +163,13 @@ class Recommendedcard extends StatelessWidget {
                     height: 24.h,
                     width: 24.w,
                     decoration: BoxDecoration(
-                      color: Color(0xFF000000).withOpacity(.2),
-                      borderRadius: BorderRadius.circular(15),
+                      color: Color(0xFF000000).withOpacity(.2), // Background color with opacity
+                      borderRadius: BorderRadius.circular(12.r),
                     ),
-                    child: SvgPicture.asset(
-                      "assets/sleep/lock.svg",
-                      height: 11.5.h,
-                      width: 13.63.w,
+                    child: Icon(
+                      CupertinoIcons.lock_fill,
+                      color: Color(0xFFFFFFFF),
+                      size: 13.5,// Icon color
                     ),
                   ),
                 ),
@@ -183,10 +183,10 @@ class Recommendedcard extends StatelessWidget {
                   width: 38.w,
                   decoration: BoxDecoration(
                       color: Color(0xFF000000).withOpacity(.2),
-                      borderRadius: BorderRadius.circular(3)),
+                      borderRadius: BorderRadius.circular(3.r)),
                   child: Text(
                     "05:00",
-                    style: TextStyle(
+                    style: GoogleFonts.inter(
                       color: Color(0xFFFFFFFF),
                       fontSize: 12.sp,
                     ),

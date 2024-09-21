@@ -30,13 +30,13 @@ class _SleepRegularityState extends State<SRegularity> {
 
           SizedBox(
             width : width,
-            height: 286.h,
+            height: 296.h,
             child: Stack(
               children: [
 
                 Container(
                   // color: Colors.blue,
-                  padding: EdgeInsets.only(bottom: 20),
+                  padding: EdgeInsets.only(bottom: 20.h),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,

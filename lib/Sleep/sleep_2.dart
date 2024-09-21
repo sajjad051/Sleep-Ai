@@ -60,11 +60,13 @@ class Sleep2 extends StatelessWidget {
                           onTap: () {
                             Get.find<NavigationController>().clickStartTrack.value = 0;
                           },
-                          child: Image.asset("assets/sleep/Vector.webp",
-                          height: 32.h,
-                          width: 32.w,),
+                          child: SvgPicture.asset(
+                            "assets/sleep/ic_ar_back.svg",
+                            height: 32.h,
+                            width: 32.w,
+                          ),
                         ),
-                        SizedBox(width: 21.h),
+                        SizedBox(width: 21.w),
                         Text(
                           "Alarm",
                           style: GoogleFonts.inter(

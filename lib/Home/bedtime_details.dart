@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import 'Widget/customMusicCard.dart';
 class BedtimeDetails extends StatelessWidget {
@@ -56,7 +57,7 @@ class BedtimeDetails extends StatelessWidget {
     return Scaffold(
       backgroundColor: Color(0xFF020825),
         appBar: AppBar(
-          title: Text("Bedtime Stories", style: TextStyle(fontSize: 16, fontWeight:FontWeight.w700, color: Color(0xFFFFFFFF).withOpacity(.8)),),
+          title: Text("Bedtime Stories", style: GoogleFonts.inter(fontSize: 16.sp, fontWeight:FontWeight.w700, color: Color(0xFFFFFFFF).withOpacity(.8)),),
         leading: InkWell(onTap: () {
       Navigator.pop(context);
     },child: Icon(Icons.arrow_back, color: Colors.white)),
@@ -71,9 +72,9 @@ class BedtimeDetails extends StatelessWidget {
                 itemCount: gridItems.length,
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
-                    crossAxisSpacing: 5,
-                    mainAxisSpacing: 5,
-                    childAspectRatio: 5 / 5.8),
+                    crossAxisSpacing: 3,
+                    mainAxisSpacing: 3,
+                    childAspectRatio: 5 / 6.4),
                 padding: EdgeInsets.only(top: 20.h),
                 itemBuilder: (context, index) {
                   final item = gridItems[index];

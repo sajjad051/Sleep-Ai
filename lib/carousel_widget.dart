@@ -89,7 +89,7 @@ class CarouselWidget extends StatelessWidget {
             children: [
               Text(
                 "Breath exercise for better sleep",
-                style: TextStyle(
+                style: GoogleFonts.inter(
                   fontSize: 16.sp,
                   color: Colors.white,
                   fontWeight: FontWeight.w700,
@@ -98,14 +98,15 @@ class CarouselWidget extends StatelessWidget {
               SizedBox(height: 4.h),
               Text(
                 "Close your eyes and take a deep breathe to sleep better tonight",
-                style: TextStyle(
+                style: GoogleFonts.inter(
                   fontSize: 12.sp,
                   color: const Color(0xFF848BBD),
+                  fontWeight: FontWeight.w300
                 ),
               ),
             ],
           ),
-          SizedBox(height: 12.h,),
+          SizedBox(height: 7.h,),
           Obx(() {
             return Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -114,9 +115,9 @@ class CarouselWidget extends StatelessWidget {
                   alignment: Alignment.center,
                   children: [
                     Container(
-                      width: 18,
-                      height: 18,
-                      margin: const EdgeInsets.symmetric(horizontal: 4.0),
+                      width: 18.w,
+                      height: 18.h,
+                      margin:  EdgeInsets.symmetric(horizontal: 4.0.w),
                       child: CircularProgressIndicator(
                         value: carouselController.currentIndex.value == index
                             ? 1
@@ -130,13 +131,13 @@ class CarouselWidget extends StatelessWidget {
                     ),
                     AnimatedContainer(
                       duration: const Duration(milliseconds: 500),
-                      width: 12,
-                      height: 12,
+                      width: 12.w,
+                      height: 12.h,
                       decoration: BoxDecoration(
                         color: carouselController.currentIndex.value == index
                             ? Colors.deepPurpleAccent
                             : Colors.white.withOpacity(.2),
-                        borderRadius: BorderRadius.circular(12),
+                        borderRadius: BorderRadius.circular(12.r),
                       ),
                     ),
                   ],

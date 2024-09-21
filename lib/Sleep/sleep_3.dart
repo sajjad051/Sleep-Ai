@@ -1,5 +1,5 @@
 import 'package:ai_sleep/Home/Widget/custom_bottom_buttom.dart';
-import 'package:ai_sleep/Sleep/controler/picker_controler.dart';
+import 'package:ai_sleep/Sleep/controler/wheelPicker.dart';
 import 'package:ai_sleep/Sleep/controler/sleep_days_name.dart';
 import 'package:ai_sleep/Sleep/time_sleep.dart';
 import 'package:flutter/material.dart';
@@ -18,20 +18,20 @@ class Sleep3 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-     // bottomNavigationBar: CustomBottomButtom(),
-      backgroundColor: Colors.transparent,
-      body: Stack(
-        children: [
-          SizedBox(
-            height: double.infinity,
-            width: double.infinity,
-            child: Image.asset(
-              "assets/sleep/sleep_bg.webp",
-              fit: BoxFit.cover,
-            ),
+    return Stack(
+      children: [
+        SizedBox(
+          height: double.infinity,
+          width: double.infinity,
+          child: Image.asset(
+            "assets/sleep/sleep_bg.webp",
+            fit: BoxFit.cover,
           ),
-          Padding(
+        ),
+        Scaffold(
+          backgroundColor: Colors.transparent,
+
+          body: Padding(
             padding: EdgeInsets.only(left: 24.h, right: 24.w, top: 58.h),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -42,10 +42,16 @@ class Sleep3 extends StatelessWidget {
                     Row(
                       children: [
                         InkWell(
-                         onTap: () {
-                           Get.find<NavigationController>().clickStartTrack.value = 1;
-                         },
-                            child: Image.asset("assets/sleep/Vector.webp")),
+                          onTap: () {
+                            Get.find<NavigationController>().clickStartTrack.value = 1;
+                          },
+                          child: SvgPicture.asset(
+                            "assets/sleep/ic_ar_back.svg",
+                            height: 32.h,
+                            width: 32.w,
+                          ),
+                        ),
+
                         SizedBox(width: 21.w),
                         Text(
                           "Alarm",
@@ -70,35 +76,35 @@ class Sleep3 extends StatelessWidget {
                   ],
                 ),
                 SizedBox(height: 80.h),
-               // TimePickerScreen(),
+                // TimePickerScreen(),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     SleepDaysName(day: "Sat", onPressed: (){
-
+          
                     }),
                     SleepDaysName(day: "Sun", onPressed: (){
-
+          
                     }),
                     SleepDaysName(day: "Mon", onPressed: (){
-
+          
                     }),
                     SleepDaysName(day: "Tue", onPressed: (){
-
+          
                     }),
                     SleepDaysName(day: "Wed", onPressed: (){
-
+          
                     }),SleepDaysName(day: "Thu", onPressed: (){
-
+          
                     }),
                     SleepDaysName(day: "Fri", onPressed: (){
-
+          
                     }),
-
-
-
-
+          
+          
+          
+          
                   ],
                 ),
                 SizedBox(
@@ -121,19 +127,22 @@ class Sleep3 extends StatelessWidget {
                       children: [
                         Row(
                           children: [
-                            Container(
-                              width: 78.w,
-                              height: 78.h,
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(12),
-                                  border: Border.all(color: Color(0xFF020825)),
-                                  //color: Color(0x19B9C4FB)),
-                                  color: Color(0xFF020825)),
-                              child: Image.asset(
-                                "assets/sleep/music.jpg", // Use Image.asset for JPG or PNG images
+                            Padding(
+                              padding:  EdgeInsets.only(left: 4, top: 4, bottom: 4),
+                              child: Container(
+                                width: 78.w,
                                 height: 78.h,
-                                width: 78.h,
-                                fit: BoxFit.contain,
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(12),
+                                    border: Border.all(color: Color(0xFF020825)),
+                                    //color: Color(0x19B9C4FB)),
+                                    color: Color(0xFF020825)),
+                                child: Image.asset(
+                                  "assets/sleep/music.jpg", // Use Image.asset for JPG or PNG images
+                                  height: 78.h,
+                                  width: 78.h,
+                                  fit: BoxFit.contain,
+                                ),
                               ),
                             ),
                             Row(
@@ -189,18 +198,18 @@ class Sleep3 extends StatelessWidget {
                     background: Color(0xFF7D50FF),
                     shadowColor: Color(0xFF7D50FF),
                     onPressed: () {
-                      Get.toNamed(Routes.sleep1);
+                      Get.find<NavigationController>().clickStartTrack.value = 0;
                     }),
                 // Spacer(),
                 SizedBox(height: 25),
-
-
-                //  WheelPickerExample(),
+          
+          
+                // WheelPickerExample(),
               ],
             ),
-          )
-        ],
-      ),
+          ),
+        )
+      ],
     );
   }
 }

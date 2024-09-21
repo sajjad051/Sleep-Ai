@@ -23,19 +23,19 @@ class SleepMonthDuration extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text("Sleep Duration",style: TextStyle(fontSize: 16.sp, color: Colors.white, fontWeight: FontWeight.w700)),
+          Text("Sleep Duration",style: GoogleFonts.inter(fontSize: 16.sp, color: Colors.white, fontWeight: FontWeight.w700)),
            SizedBox(height: 20.h,),
 
 
           SizedBox(
             width : width,
-            height: width * 0.6,
+            height: 267.h,
             child: Stack(
               children: [
 
                 Container(
                   // color: Colors.blue,
-                  padding: EdgeInsets.only(bottom: 20),
+                  padding: EdgeInsets.only(bottom: 20.h),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -51,7 +51,7 @@ class SleepMonthDuration extends StatelessWidget {
                 ),
 
                 Container(
-                  padding: EdgeInsets.only(left: 40, top: 15, bottom: 35),
+                  padding: EdgeInsets.only(left: 40.w, top: 15.h, bottom: 35.h),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -438,7 +438,7 @@ class SleepMonthDuration extends StatelessWidget {
           ),
 
 
-          const SizedBox(height: 20,),
+           SizedBox(height: 20.h,),
 
         ],
       ),
