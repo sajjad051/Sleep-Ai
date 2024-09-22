@@ -6,6 +6,7 @@ import 'package:ai_sleep/Auth/Sign_up/Screen/Sign_up_screen.dart';
 import 'package:ai_sleep/Auth/welcome_auth_page.dart';
 import 'package:ai_sleep/Home/album_screen.dart';
 import 'package:ai_sleep/Home/artist_profile.dart';
+import 'package:ai_sleep/Home/artist_profile_details.dart';
 import 'package:ai_sleep/Home/bedtime_details.dart';
 import 'package:ai_sleep/Home/dialog.dart';
 import 'package:ai_sleep/Home/fearured_details.dart';
@@ -17,9 +18,12 @@ import 'package:ai_sleep/Home/music_player_screen.dart';
 import 'package:ai_sleep/HomePageView/home_page_view.dart';
 import 'package:ai_sleep/Navigation/navigation_menu.dart';
 import 'package:ai_sleep/Profile/profile_screen.dart';
+import 'package:ai_sleep/Records/easy_date_timeline.dart';
+import 'package:ai_sleep/Sleep/NumberPage.dart';
 import 'package:ai_sleep/Records/records_screen.dart';
 import 'package:ai_sleep/Sleep/controler/wheelPicker.dart';
 import 'package:ai_sleep/Sleep/sleep_1.dart';
+import 'package:ai_sleep/Sleep/swipe_btn.dart';
 import 'package:ai_sleep/Sleep/time_sleep.dart';
 import 'package:ai_sleep/Statistics/sleep_at_line_chart.dart';
 import 'package:ai_sleep/Statistics/statistics_Screen.dart';
@@ -74,7 +78,8 @@ abstract class Routes {
   static const homePageView1 = '/homePageView1';
   static const pBar = '/pBar';
   static const rippleWaveScreen = '/rippleWaveScreen';
-  static const linearTimer = '/linearTimer';
+  static const artistProfileDetails = '/artistProfileDetails';
+  static const easyDate = '/easyDate';
 }
 
 abstract class AppPage {
@@ -172,6 +177,7 @@ abstract class AppPage {
     GetPage(name: Routes.homePageView1, page: () => LineChartWidget()),
     GetPage(name: Routes.pBar, page: () => RippleWidget()),
     GetPage(name: Routes.rippleWaveScreen, page: () => RippleWaveScreen()),
-    // GetPage(name: Routes.linearTimer, page: () => LinearWidgetDemo()),
+    GetPage(name: Routes.easyDate, page: () => SwipeBtn()),
+    GetPage(name: Routes.artistProfileDetails, page: () => ArtistProfileDetails()),
   ];
 }

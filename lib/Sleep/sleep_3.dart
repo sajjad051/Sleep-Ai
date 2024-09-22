@@ -1,4 +1,5 @@
 import 'package:ai_sleep/Home/Widget/custom_bottom_buttom.dart';
+import 'package:ai_sleep/Sleep/NumberPage.dart';
 import 'package:ai_sleep/Sleep/controler/wheelPicker.dart';
 import 'package:ai_sleep/Sleep/controler/sleep_days_name.dart';
 import 'package:ai_sleep/Sleep/time_sleep.dart';
@@ -75,8 +76,11 @@ class Sleep3 extends StatelessWidget {
                     ),
                   ],
                 ),
-                SizedBox(height: 80.h),
+                SizedBox(height: 59.h),
                 // TimePickerScreen(),
+
+                Center(child: NumberPage()),
+                SizedBox(height: 80.h,),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.start,

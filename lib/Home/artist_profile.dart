@@ -1,4 +1,5 @@
 import 'package:ai_sleep/Home/Widget/custom_UnLock_card.dart';
+import 'package:ai_sleep/Home/artist_play_card.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -6,6 +7,7 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 //import '../widget/customHomeCard.dart';
+import '../Route/Routes.dart';
 import 'Widget/customHomeCard.dart';
 
 class ArtistProfile extends StatelessWidget {
@@ -49,7 +51,7 @@ class ArtistProfile extends StatelessWidget {
           width: Get.width,
           child: Image(
             image: CachedNetworkImageProvider(
-              'https://images.pexels.com/photos/1172064/pexels-photo-1172064.jpeg',
+              'https://upload.wikimedia.org/wikipedia/commons/3/36/Nagar_Baul_James.jpg',
             ),
             fit: BoxFit.cover,
           ),
@@ -92,11 +94,16 @@ class ArtistProfile extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
-                        'Lauren Groff',
-                        style: GoogleFonts.inter(
-                            color: Color(0xFFFFFFFF).withOpacity(.9),
-                            fontSize: 22),
+                      GestureDetector(
+                        onTap: () {
+                          Get.toNamed(Routes.artistProfileDetails);
+                        },
+                        child: Text(
+                          'Lauren Groff',
+                          style: GoogleFonts.inter(
+                              color: Color(0xFFFFFFFF).withOpacity(.9),
+                              fontSize: 22.sp, fontWeight: FontWeight.w500),
+                        ),
                       ),
                       SizedBox(
                         height: 10.h,
@@ -124,11 +131,11 @@ class ArtistProfile extends StatelessWidget {
                                   crossAxisCount: 2,
                                   crossAxisSpacing: 16,
                                   mainAxisSpacing: 12,
-                                  childAspectRatio: .8),
+                                  childAspectRatio: 2/2.8),
                           // padding: EdgeInsets.only(top: 10, bottom: 20),
                           itemBuilder: (context, index) {
                             final item = gridItems[index];
-                            return CustomUnlockCard(
+                            return ArtistPlayCard(
                               title: item['title']!,
                               subtitle: item['subtitle']!,
                               image: item['image']!,

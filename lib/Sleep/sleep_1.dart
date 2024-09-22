@@ -1,4 +1,5 @@
 import 'package:ai_sleep/Home/Widget/custom_bottom_buttom.dart';
+import 'package:ai_sleep/Sleep/swipe_btn.dart';
 import 'package:ai_sleep/widget/custom_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -216,33 +217,18 @@ class Sleep1 extends StatelessWidget {
                   // ),
                   Spacer(),
 
-              // SliderButton(
-              //   action: () async{
-              //     ///Do something here OnSlide
-              //     return true;
-              //   },
-              //   backgroundColor: Color(0xFF7D50FF),
-              //   baseColor: Color(0xFF7D50FF),
-              //   width: Get.width,
-              //   label: Align(
-              //     alignment: Alignment.center,
-              //     child: Text(
-              //       "Slide to Stop",
-              //       style: TextStyle(
-              //           color: Color(0xFFFFFFFF),fontSize: 16,fontWeight: FontWeight.bold),
-              //     ),
-              //   ),
-              //
-              //
-              //
-              // ),
+
+
+
+                  //Swipe Button
+                  // const SwipeBtn(),
 
                   CustomButton(
-                      height: 48.h,
+                      height: 54.h,
                       width: Get.width,
                       text: "Start Traking",
                       background: Color(0xFF7D50FF),
-                      shadowColor: Color(0xFF7D50FF),
+                      shadowColor: Color(0xFF7D50FF).withOpacity(.25),
                       onPressed: () {
                         Get.find<NavigationController>().clickStartTrack.value = 1;
                         // Get.toNamed(Routes.sleep2);

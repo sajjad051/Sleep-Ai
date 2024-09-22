@@ -34,6 +34,7 @@ class AlbumScreen extends StatelessWidget {
                     InkWell(
                         onTap: () {
                           Get.back();
+                          Get.back();
                         },
                         child: Icon(Icons.arrow_back, color: Colors.white)),
                     SizedBox(width: 33.w,),

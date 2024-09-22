@@ -12,6 +12,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import '../Home/Widget/navigation_controller.dart';
 import 'date_picker_controler.dart';
+import 'easy_date_timeline.dart';
 
 class RecordsScreen extends StatelessWidget {
   RecordsScreen({super.key});
@@ -32,18 +33,19 @@ class RecordsScreen extends StatelessWidget {
        // bottomNavigationBar: CustomBottomButtom(),
         body: SingleChildScrollView(
           child: Padding(
-            padding:  EdgeInsets.only(left: 24.w, right: 24.w, top: 32.h),
+            padding:  EdgeInsets.only(left: 24.w, right: 24.w, top: 34.h),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 DatePickerWidget(),
+                CustomDateTimeline(),
                  SizedBox(height: 16.h),
-                ProgressWidget(),
+                const ProgressWidget(),
                 SizedBox(height: 15.h),
-                Sleepquality(),
-                SizedBox(height: 15),
-                RecordSleepData(),
-                SizedBox(height: 15),
+                const Sleepquality(),
+                SizedBox(height: 15.h),
+                const RecordSleepData(),
+                SizedBox(height: 15.h),
                 SleepNoisesScreen(),
               ],
             ),

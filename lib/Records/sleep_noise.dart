@@ -1,20 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class SleepNoisesScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 391,
+      height: 130.h,
       width: Get.width,
       decoration: BoxDecoration(
         color: Color(0xFF061238), // Background color
-        borderRadius: BorderRadius.circular(16),
+        borderRadius: BorderRadius.circular(16.r),
       ),
       child: Padding(
         padding:
-        const EdgeInsets.only(top: 31, left: 15, right: 15, bottom: 22),
+         EdgeInsets.only(top: 31.h, left: 15.w, right: 15.w, bottom: 22.h),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -22,35 +24,35 @@ class SleepNoisesScreen extends StatelessWidget {
               "Sleep Noises",
               style: TextStyle(
                   color: Color(0xFFFFFFFF),
-                  fontSize: 14,
+                  fontSize: 14.sp,
                   fontWeight: FontWeight.w500),
             ),
 
-            SizedBox(height: 10),
+            SizedBox(height: 10.h),
             Row(
               children: [
                 Text(
                   "03:12",
-                  style: TextStyle(
+                  style: GoogleFonts.inter(
                       color: Color(0xFF848BBD),
                       fontSize: 11,
                       fontWeight: FontWeight.w400),
                 ),
-              SizedBox(width: 10,),
+              SizedBox(width: 10.h,),
                 Column(
                   children: [
                     Text(
                       "Snoring ",
-                      style: TextStyle(
+                      style: GoogleFonts.inter(
                           color: Color(0xFF848BBD),
-                          fontSize:8,
+                          fontSize:8.sp,
                       ),
                     ),
                     Text(
                       "03:12",
-                      style: TextStyle(
+                      style: GoogleFonts.inter(
                           color: Color(0xFF848BBD).withOpacity(.7),
-                          fontSize: 11,
+                          fontSize: 11.sp,
                           fontWeight: FontWeight.w500),
                     ),
 

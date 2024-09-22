@@ -85,7 +85,7 @@ class WelcomeAuthPage extends StatelessWidget {
                         shadowColor: const Color(0xFF7D50FF),
                         borderColor: const Color(0xFF7D50FF),
                         onPressed: () {
-                          Get.toNamed(Routes.homeScreen);
+                          Get.toNamed(Routes.signUp);
                         }),
                     SizedBox(
                       height: 70.h,

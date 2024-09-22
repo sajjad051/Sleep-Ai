@@ -1,6 +1,7 @@
 import 'package:ai_sleep/Home/home_page1.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class TabBarMusic extends StatelessWidget {
@@ -28,30 +29,32 @@ class TabBarMusic extends StatelessWidget {
             ),
             bottom:  TabBar(
               unselectedLabelColor: Color(0xFF848BBD),
+              tabAlignment: TabAlignment.start,
+              padding: EdgeInsets.only(left: 15.w),
+              labelPadding: EdgeInsets.symmetric(horizontal: 12.w),
+              dividerColor: Colors.transparent,
+              indicatorSize: TabBarIndicatorSize.label,
+              indicatorColor: Color(0xFF7D50FF),
+              labelColor: Color(0xFF7D50FF),
               isScrollable: true,
               tabs: <Widget>[
                 Text("Favorite",style: GoogleFonts.inter(
-                  color: Color(0xFF848BBD),
                   fontSize: 14.sp,
                   fontWeight: FontWeight.w500,
                 ),),
                 Text("Quick Sleep",style: GoogleFonts.inter(
-                  color: Color(0xFF848BBD),
                   fontSize: 14.sp,
                   fontWeight: FontWeight.w500,
                 ),),
                 Text("Meditation",style: GoogleFonts.inter(
-                  color: Color(0xFF848BBD),
                   fontSize: 14.sp,
                   fontWeight: FontWeight.w500,
                 ),),
                 Text("Nature",style: GoogleFonts.inter(
-                  color: Color(0xFF848BBD),
                   fontSize: 14.sp,
                   fontWeight: FontWeight.w500,
                 ),),
                 Text("Nature",style: GoogleFonts.inter(
-                  color: Color(0xFF848BBD),
                   fontSize: 14.sp,
                   fontWeight: FontWeight.w500,
                 ),),
@@ -68,13 +71,13 @@ class TabBarMusic extends StatelessWidget {
               child: HomePage1(),
             ),
             Center(
-              child: Text("It's sunny here"),
+              child: HomePage1(),
             ),
             Center(
-              child: Text("It's rainy here"),
+              child: HomePage1(),
             ),
             Center(
-              child: Text("It's sunny here"),
+              child: HomePage1(),
             ),
           ],
         ),
@@ -82,3 +85,4 @@ class TabBarMusic extends StatelessWidget {
     );
   }
 }
+

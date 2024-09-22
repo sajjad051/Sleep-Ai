@@ -1,9 +1,11 @@
 import 'package:ai_sleep/Records/circular_mini_progress_widget.dart';
 import 'package:ai_sleep/Records/custom_bar_card.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class Sleepquality extends StatelessWidget {
   const Sleepquality({super.key});
@@ -11,109 +13,126 @@ class Sleepquality extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 391,
+      height: 391.h,
       width: Get.width,
       decoration: BoxDecoration(
         color: Color(0xFF061238), // Background color
-        borderRadius: BorderRadius.circular(16),
+        borderRadius: BorderRadius.circular(16.r),
       ),
       child: Padding(
         padding:
-            const EdgeInsets.only(top: 31, left: 15, right: 15, bottom: 22),
+             EdgeInsets.only(top: 31.h, left: 15.w, right: 15.w, bottom: 22.h),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
               "Sleep Quality",
-              style: TextStyle(
+              style: GoogleFonts.inter(
                   color: Color(0xFFFFFFFF),
-                  fontSize: 14,
+                  fontSize: 14.sp,
                   fontWeight: FontWeight.w500),
             ),
             CustomBarChart(),
-            SizedBox(height: 10),
+            SizedBox(height: 21.h),
             Row(
               children: [
                 SvgPicture.asset(
                   "assets/sleep/moon_star.svg",
                   // fit: BoxFit.cover,
-                  height: 13.03,
-                  width: 11,
+                  height: 13.03.h,
+                  width: 11.w,
                   color: Color(0xFF848BBD),
                 ),
                 SizedBox(
-                  width: 8,
+                  width: 8.w,
                 ),
                 Text(
                   "22:40",
-                  style: TextStyle(
+                  style: GoogleFonts.inter(
                       color: Color(0xFF848BBD),
-                      fontSize: 11,
+                      fontSize: 11.sp,
                       fontWeight: FontWeight.w700),
                 ),
                 Spacer(),
                 SvgPicture.asset(
                   "assets/sleep/sun.svg",
                   // fit: BoxFit.cover,
-                  height: 13.02,
-                  width: 11,
+                  height: 13.02.h,
+                  width: 11.w,
                   color: Color(0xFF848BBD),
                 ),
                 SizedBox(
-                  width: 8,
+                  width: 8.w,
                 ),
                 Text(
                   "09:22",
-                  style: TextStyle(
+                  style: GoogleFonts.inter(
                       color: Color(0xFF848BBD),
-                      fontSize: 11,
+                      fontSize: 11.sp,
                       fontWeight: FontWeight.w700),
                 ),
               ],
             ),
+            SizedBox(height: 16.h,),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     CircularMiniProgressWidget(
-                      percentage: 45,
+                      percentage: 65,
                       progressColor: Color(0xFFFDFF88),
                       BackgroundColor: Color(0xFF020825),
                     ),
-                    Text(
-                      "Awake",
-                      style: TextStyle(
-                          color: Color(0xFF848BBD),
-                          fontSize: 12,
-                          fontWeight: FontWeight.w700),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Container(
+                          height: 8.h,
+                          width: 8.w,
+                          // color: Color(0xFFFDFF88),
+                          decoration: BoxDecoration(
+                              color: Color(0xFFFDFF88),
+                              borderRadius: BorderRadius.circular(2.r)
+                          ),
+                        ),
+                        SizedBox(width: 7.w,),
+                        Text(
+                          "Awake",
+                          style: GoogleFonts.inter(
+                              color: Color(0xFF848BBD),
+                              fontSize: 12.sp,
+                              fontWeight: FontWeight.w700),
+                        ),
+                      ],
                     ),
-                    const Row(
+                     Row(
                       children: [
                         Text(
-                          "8",
-                          style: TextStyle(
+                          "2",
+                          style: GoogleFonts.inter(
                               color: Color(0xFFFFFFFF),
-                              fontSize: 16,
+                              fontSize: 16.sp,
                               fontWeight: FontWeight.w700),
                         ),
                         Text(
                           "h",
-                          style: TextStyle(color: Color(0xFF848BBD), fontSize: 12),
+                          style: GoogleFonts.inter(color: Color(0xFF848BBD), fontSize: 12.sp),
                         ),
                         SizedBox(
-                          width: 8,
+                          width: 8.w,
                         ),
                         Text(
-                          "40",
-                          style: TextStyle(
+                          "18",
+                          style: GoogleFonts.inter(
                               color: Color(0xFFFFFFFF),
-                              fontSize: 16,
+                              fontSize: 16.sp,
                               fontWeight: FontWeight.w700),
                         ),
                         Text(
                           "min",
-                          style: TextStyle(color: Color(0xFF848BBD), fontSize: 12),
+                          style: GoogleFonts.inter(color: Color(0xFF848BBD), fontSize: 12.sp),
                         ),
                       ],
                     ),
@@ -121,6 +140,7 @@ class Sleepquality extends StatelessWidget {
                 ),
 
                 Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     CircularMiniProgressWidget(
                       percentage: 45,
@@ -128,39 +148,53 @@ class Sleepquality extends StatelessWidget {
                       BackgroundColor: Color(0xFF020825),
                     ),
 
-                    Text(
-                      "Awake",
-                      style: TextStyle(
-                          color: Color(0xFF848BBD),
-                          fontSize: 12,
-                          fontWeight: FontWeight.w700),
+                    Row(
+                      children: [
+                        Container(
+                          height: 8.h,
+                          width: 8.w,
+                         // color: Color(0xFFFDFF88),
+                          decoration: BoxDecoration(
+                            color: Color(0xFF00F2FE),
+                            borderRadius: BorderRadius.circular(2.r)
+                          ),
+                        ),
+                        SizedBox(width: 7.w,),
+                        Text(
+                          "Light",
+                          style: GoogleFonts.inter(
+                              color: Color(0xFF848BBD),
+                              fontSize: 12.sp,
+                              fontWeight: FontWeight.w700),
+                        ),
+                      ],
                     ),
-                    const Row(
+                     Row(
                       children: [
                         Text(
-                          "8",
-                          style: TextStyle(
+                          "2",
+                          style: GoogleFonts.inter(
                               color: Color(0xFFFFFFFF),
-                              fontSize: 16,
+                              fontSize: 16.sp,
                               fontWeight: FontWeight.w700),
                         ),
                         Text(
                           "h",
-                          style: TextStyle(color: Color(0xFF848BBD), fontSize: 12),
+                          style: GoogleFonts.inter(color: Color(0xFF848BBD), fontSize: 12.sp),
                         ),
                         SizedBox(
-                          width: 8,
+                          width: 8.w,
                         ),
                         Text(
-                          "40",
-                          style: TextStyle(
+                          "18",
+                          style: GoogleFonts.inter(
                               color: Color(0xFFFFFFFF),
-                              fontSize: 16,
+                              fontSize: 16.sp,
                               fontWeight: FontWeight.w700),
                         ),
                         Text(
                           "min",
-                          style: TextStyle(color: Color(0xFF848BBD), fontSize: 12),
+                          style: GoogleFonts.inter(color: Color(0xFF848BBD), fontSize: 12.sp),
                         ),
                       ],
                     ),
@@ -168,45 +202,60 @@ class Sleepquality extends StatelessWidget {
                 ),
 
                 Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     CircularMiniProgressWidget(
                       percentage: 80,
                       progressColor: Color(0xFFFF759F),
                       BackgroundColor: Color(0xFF020825),
                     ),
-                    Text(
-                      "Awake",
-                      style: TextStyle(
-                          color: Color(0xFF848BBD),
-                          fontSize: 12,
-                          fontWeight: FontWeight.w700),
+                    Row(
+                      children: [
+                        Container(
+                          height: 8.h,
+                          width: 8.w,
+                          // color: Color(0xFFFDFF88),
+                          decoration: BoxDecoration(
+                              color: Color(0xFFFF759F),
+                              borderRadius: BorderRadius.circular(2.r)
+                          ),
+                        ),
+                        SizedBox(width: 7.w,),
+                        Text(
+                          "Deep",
+                          style: GoogleFonts.inter(
+                              color: Color(0xFF848BBD),
+                              fontSize: 12.sp,
+                              fontWeight: FontWeight.w700),
+                        ),
+                      ],
                     ),
-                    const Row(
+                     Row(
                       children: [
                         Text(
-                          "8",
-                          style: TextStyle(
+                          "2",
+                          style: GoogleFonts.inter(
                               color: Color(0xFFFFFFFF),
-                              fontSize: 16,
+                              fontSize: 16.sp,
                               fontWeight: FontWeight.w700),
                         ),
                         Text(
                           "h",
-                          style: TextStyle(color: Color(0xFF848BBD), fontSize: 12),
+                          style: GoogleFonts.inter(color: Color(0xFF848BBD), fontSize: 12.sp),
                         ),
                         SizedBox(
-                          width: 8,
+                          width: 8.w,
                         ),
                         Text(
-                          "40",
-                          style: TextStyle(
+                          "18",
+                          style: GoogleFonts.inter(
                               color: Color(0xFFFFFFFF),
-                              fontSize: 16,
+                              fontSize: 16.sp,
                               fontWeight: FontWeight.w700),
                         ),
                         Text(
                           "min",
-                          style: TextStyle(color: Color(0xFF848BBD), fontSize: 12),
+                          style: GoogleFonts.inter(color: Color(0xFF848BBD), fontSize: 12.sp),
                         ),
                       ],
                     ),
@@ -214,45 +263,60 @@ class Sleepquality extends StatelessWidget {
                 ),
 
                 Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     CircularMiniProgressWidget(
-                      percentage: 45,
+                      percentage: 50,
                       progressColor: Color(0xFF93BF0E),
                       BackgroundColor: Color(0xFF020825),
                     ),
-                    Text(
-                      "Awake",
-                      style: TextStyle(
-                          color: Color(0xFF848BBD),
-                          fontSize: 12,
-                          fontWeight: FontWeight.w700),
+                    Row(
+                      children: [
+                        Container(
+                          height: 8.h,
+                          width: 8.w,
+                          // color: Color(0xFFFDFF88),
+                          decoration: BoxDecoration(
+                              color: Color(0xFFCFF068),
+                              borderRadius: BorderRadius.circular(2.r)
+                          ),
+                        ),
+                        SizedBox(width: 7.w,),
+                        Text(
+                          "Reem",
+                          style: GoogleFonts.inter(
+                              color: Color(0xFF848BBD),
+                              fontSize: 12.sp,
+                              fontWeight: FontWeight.w700),
+                        ),
+                      ],
                     ),
-                    const Row(
+                    Row(
                       children: [
                         Text(
-                          "8",
-                          style: TextStyle(
+                          "2",
+                          style: GoogleFonts.inter(
                               color: Color(0xFFFFFFFF),
-                              fontSize: 16,
+                              fontSize: 16.sp,
                               fontWeight: FontWeight.w700),
                         ),
                         Text(
                           "h",
-                          style: TextStyle(color: Color(0xFF848BBD), fontSize: 12),
+                          style: GoogleFonts.inter(color: Color(0xFF848BBD), fontSize: 12.sp),
                         ),
                         SizedBox(
-                          width: 8,
+                          width: 8.w,
                         ),
                         Text(
-                          "40",
-                          style: TextStyle(
+                          "18",
+                          style: GoogleFonts.inter(
                               color: Color(0xFFFFFFFF),
-                              fontSize: 16,
+                              fontSize: 16.sp,
                               fontWeight: FontWeight.w700),
                         ),
                         Text(
                           "min",
-                          style: TextStyle(color: Color(0xFF848BBD), fontSize: 12),
+                          style: GoogleFonts.inter(color: Color(0xFF848BBD), fontSize: 12.sp),
                         ),
                       ],
                     ),
