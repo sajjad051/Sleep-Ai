@@ -17,6 +17,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import '../Home/Widget/navigation_controller.dart';
 
@@ -109,7 +110,7 @@ class StatisticsScreen extends StatelessWidget {
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Text("Sleep at",style: TextStyle(fontSize: 16.sp, color: Colors.white, fontWeight: FontWeight.w700)),
+                                  Text("Sleep at",style: GoogleFonts.inter(fontSize: 14.sp, color: Colors.white, fontWeight: FontWeight.w500)),
                                   LineChartWidget(),
                                 ],
                               ),
@@ -132,7 +133,7 @@ class StatisticsScreen extends StatelessWidget {
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Text("Wake at",style: TextStyle(fontSize: 16.sp, color: Colors.white, fontWeight: FontWeight.w700)),
+                                  Text("Wake at",style: GoogleFonts.inter(fontSize: 14.sp, color: Colors.white, fontWeight: FontWeight.w500)),
                                   LineChartWidget(),
                                 ],
                               ),
@@ -150,11 +151,11 @@ class StatisticsScreen extends StatelessWidget {
                                 color: Color(0xFF061238),
                                 borderRadius: BorderRadius.circular(16.r)),
                             child: Padding(
-                              padding:  EdgeInsets.only(left: 18,top: 23),
+                              padding:  EdgeInsets.only(left: 18.w,top: 23.h),
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Text("Sleep Efficiency",style: TextStyle(fontSize: 16.sp, color: Colors.white, fontWeight: FontWeight.w700)),
+                                  Text("Sleep Efficiency",style: GoogleFonts.inter(fontSize: 14.sp, color: Colors.white, fontWeight: FontWeight.w500)),
                                   EfficiencyLineChart(),
                                 ],
                               ),

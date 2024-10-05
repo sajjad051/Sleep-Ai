@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class ProfileListWidget extends StatelessWidget {
 
@@ -21,14 +22,16 @@ class ProfileListWidget extends StatelessWidget {
         children: [
           SvgPicture.asset(
             icon,
-            height: height,
-            width: width,
+            height: height.h,
+            width: width.w,
+            color: Color(0xFFFFFFFF).withOpacity(.8),
           ),
           SizedBox(width: 21.41.w),
           Text(text,
-              style: TextStyle(
+              style: GoogleFonts.inter(
                   fontSize: 16.sp,
-                  color: Color(0xFFFFFFFF))),
+                  fontWeight: FontWeight.w500,
+                  color: Color(0xFFFFFFFF).withOpacity(.8))),
         ],
       ),
     );

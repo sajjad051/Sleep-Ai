@@ -9,6 +9,13 @@ class VerificationController extends GetxController{
   TextEditingController third = TextEditingController();
   TextEditingController fourth = TextEditingController();
 
+  var firstText = true.obs;
+  var secondText = true.obs;
+  var thirdText = true.obs;
+  var fourthText = true.obs;
+
+
+
   verification() {
     String combinedNumber = first.text + second.text + third.text + fourth.text;
 
@@ -20,3 +27,4 @@ class VerificationController extends GetxController{
   }
 
 }
+

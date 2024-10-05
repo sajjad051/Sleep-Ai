@@ -57,7 +57,7 @@ class AlbumScreen extends StatelessWidget {
               //   decoration: BoxDecoration(
               //     borderRadius: BorderRadius.circular(20),
               //     image: DecorationImage(
-              //       image: AssetImage('assets/sleep/sunset.jpg'), // Replace with your image path
+              //       image: AssetImage('assets/sleep/sunset.jpg'),
               //       fit: BoxFit.cover,
               //     ),
               //   ),

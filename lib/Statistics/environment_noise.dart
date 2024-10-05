@@ -23,7 +23,7 @@ class EnvironmentNoise extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text("Environment noise",style: GoogleFonts.inter(fontSize: 16.sp, color: Colors.white, fontWeight: FontWeight.w700)),
+          Text("Environment noise",style: GoogleFonts.inter(fontSize: 14.sp, color: Colors.white, fontWeight: FontWeight.w500)),
            SizedBox(height: 20.h,),
 
 

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class SetButton extends StatelessWidget {
   final double height;
@@ -13,29 +15,28 @@ class SetButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  Padding(
-      padding: const EdgeInsets.only(
-          left: 8, right: 8, bottom: 6, top: 6),
-      child: Container(
-        height: height,
-        width: width,
-        decoration: BoxDecoration(
-          color: background,
-          borderRadius: const BorderRadius.all(Radius.circular(20.0)),
-          border: Border.all(
-            color: borderColor,
+      padding:  EdgeInsets.only(
+          left: 30.w, right: 30.w, bottom: 3.h, top: 4.h),
+      child: InkWell(
+        onTap: onPressed,
+        child: Container(
+          height: height,
+          width: width,
+          decoration: BoxDecoration(
+            color: background,
+            borderRadius:  BorderRadius.all(Radius.circular(40.0.r)),
+            border: Border.all(
+              color: borderColor,
+            ),
           ),
-        ),
-        child: Material(
-          color: Colors.transparent,
-          child: InkWell(
-            borderRadius: const BorderRadius.all(Radius.circular(20.0)),
-            highlightColor: Colors.transparent,
-            onTap: onPressed,
+          child: Material(
+            color: Colors.transparent,
             child: Center(
               child: Text(
                 text,
-                style: const TextStyle(
-                    fontSize: 16,
+                style:  GoogleFonts.inter(
+                    fontSize: 11.sp,
+                    fontWeight: FontWeight.w400,
                     color: Colors.white),
               ),
             ),

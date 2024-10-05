@@ -8,6 +8,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import '../Home/Widget/navigation_controller.dart';
 import '../Route/Routes.dart';
@@ -25,7 +26,7 @@ class Sleep3 extends StatelessWidget {
           height: double.infinity,
           width: double.infinity,
           child: Image.asset(
-            "assets/sleep/sleep_bg.webp",
+            "assets/sleep/SleepTwo.webp",
             fit: BoxFit.cover,
           ),
         ),
@@ -33,7 +34,7 @@ class Sleep3 extends StatelessWidget {
           backgroundColor: Colors.transparent,
 
           body: Padding(
-            padding: EdgeInsets.only(left: 24.h, right: 24.w, top: 58.h),
+            padding: EdgeInsets.only(left: 24.h, right: 24.w, top: 50.h),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -76,11 +77,11 @@ class Sleep3 extends StatelessWidget {
                     ),
                   ],
                 ),
-                SizedBox(height: 59.h),
+                SizedBox(height: 49.h),
                 // TimePickerScreen(),
 
                 Center(child: NumberPage()),
-                SizedBox(height: 80.h,),
+                SizedBox(height: 65.h,),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -157,20 +158,21 @@ class Sleep3 extends StatelessWidget {
                                     top: 14.h,
                                   ),
                                   child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
                                     children: [
                                       Text(
                                         "Better sleep",
-                                        style: TextStyle(
+                                        style: GoogleFonts.inter(
                                             fontSize: 16.sp,
                                             fontWeight: FontWeight.w700,
                                             color: Color(0xFFFFFFFF)),
                                       ),
                                       SizedBox(
-                                        height: 18.h,
+                                        height: 12.h,
                                       ),
                                       Text(
-                                        "Better sleep",
-                                        style: TextStyle(
+                                        "Play Music",
+                                        style: GoogleFonts.inter(
                                             fontSize: 14.sp,
                                             fontWeight: FontWeight.w500,
                                             color: Color(0xFFFFFFFF)),

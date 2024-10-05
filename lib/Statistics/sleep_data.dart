@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class SleepDataScreen extends StatelessWidget {
   @override
@@ -22,10 +23,10 @@ class SleepDataScreen extends StatelessWidget {
             padding:  EdgeInsets.only(top: 20.h, left: 16.w),
             child: Text(
               '  Sleep Data',
-              style: TextStyle(
+              style: GoogleFonts.inter(
                 color: Colors.white,
-                fontSize: 18.sp,
-                fontWeight: FontWeight.bold,
+                fontSize: 14.sp,
+                fontWeight: FontWeight.w500,
               ),
             ),
           ),

@@ -7,7 +7,9 @@ class CustomButton extends StatelessWidget {
   final double width;
   final String text;
   final Color background;
-  final Color? shadowColor; // Make shadowColor nullable
+  final Color? shadowColor; // Optional shadow color
+  final Color? textColor; // Optional text color
+  final double? fontSize; // Optional font size
   final VoidCallback onPressed;
 
   const CustomButton({
@@ -16,7 +18,9 @@ class CustomButton extends StatelessWidget {
     required this.width,
     required this.text,
     required this.background,
-    this.shadowColor, // Optional (nullable)
+    this.shadowColor, // Optional shadow color
+    this.textColor, // Optional text color
+    this.fontSize, // Optional font size
     required this.onPressed,
   });
 
@@ -32,8 +36,9 @@ class CustomButton extends StatelessWidget {
           if (shadowColor != null) // Only add BoxShadow if shadowColor is not null
             BoxShadow(
               color: shadowColor!.withOpacity(0.3),
-              blurRadius: 8.r,
+              blurRadius: 18.r,
               offset: Offset(4, 4),
+              spreadRadius: 0,
             )
         ],
       ),
@@ -48,8 +53,8 @@ class CustomButton extends StatelessWidget {
               text,
               style: GoogleFonts.inter(
                 fontWeight: FontWeight.w500,
-                fontSize: 18.sp,
-                color: Colors.white,
+                fontSize: fontSize ?? 16.sp, // Use default if fontSize is null
+                color: textColor ?? Colors.white, // Use default if textColor is null
                 height: 2.6.h,
               ),
             ),

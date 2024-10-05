@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import '../Home/Widget/custom_bottom_buttom.dart';
 import '../Home/Widget/navigation_controller.dart';
@@ -41,176 +42,175 @@ class ProfileScreen extends StatelessWidget {
 
             SingleChildScrollView(
               child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 20),
-                child: Padding(
-                  padding: EdgeInsets.only(top: Get.height * .33),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        "Hello!, Rafi",
-                        style:
-                            TextStyle(fontSize: 22.sp, color: Color(0xFFFFFFFF)),
-                      ),
-                      SizedBox(
-                        height: 20.h,
-                      ),
-                      Container(
-                          width: Get.width,
-                          height: 152.h,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(20),
-                            //  border: Border.all(color: Color(0xFF848BBD)),
-                            color: Color(0xFF061238),
+                padding: EdgeInsets.only(left: 24.w,right: 24.w,top: 210.h),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Hello!, Rafi",
+                      style:
+                          GoogleFonts.inter(fontSize: 22.sp,fontWeight: FontWeight.w500, color: Color(0xFFFFFFFF)),
+                    ),
+                    SizedBox(
+                      height: 20.h,
+                    ),
+                    Container(
+                        width: Get.width,
+                        height: 142.h,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(16.r),
+                          //  border: Border.all(color: Color(0xFF848BBD)),
+                          color: Color(0xFF061238),
+                        ),
+                        child: Padding(
+                          padding: EdgeInsets.only(
+                              top: 31.h, left: 25.w, right: 24.w, bottom: 31.h),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Row(
+                                children: [
+                                  Icon(Icons.alarm,
+                                      size: 18.sp,
+                                      color:
+                                          Color(0xFFFFFFFF).withOpacity(0.8)),
+                                  SizedBox(width: 10.w),
+                                  Text("Alarm",
+                                      style: GoogleFonts.inter(
+                                          fontSize: 16.sp,
+                                          fontWeight: FontWeight.w500,
+                                          color: Color(0xFFFFFFFF).withOpacity(.8))),
+                                  Spacer(),
+                                  //Text("Alarm", style: TextStyle(fontSize: 16, color: Color(0xFFFFFFFF))),
+                                  SetButton(
+                                      height: 20.h,
+                                      width: 78.w,
+                                      text: "set",
+                                      background:
+                                      Color(0xFF7D50FF).withOpacity(.2),
+                                      shadowColor: Color(0xFF7D50FF),
+                                      onPressed: () {},
+                                      borderColor: Color(0xFF7D50FF)),
+                                ],
+                              ),
+                              Divider(
+                                color: Color(0xFFFFFFFF).withOpacity(.10),
+                              ),
+                              Row(
+                                children: [
+                                  Icon(Icons.alarm,
+                                      size: 18.sp,
+                                      color:
+                                          Color(0xFFFFFFFF).withOpacity(0.8)),
+                                  SizedBox(width: 10.w),
+                                  Text("Bedtime goal",
+                                      style: GoogleFonts.inter(
+                                          fontSize: 16.sp,
+                                          fontWeight: FontWeight.w500,
+                                          color: Color(0xFFFFFFFF).withOpacity(.8))),
+                                  Spacer(),
+                                  //Text("Alarm", style: TextStyle(fontSize: 16, color: Color(0xFFFFFFFF))),
+                                  SetButton(
+                                      height: 20.h,
+                                      width: 78.w,
+                                      text: "set",
+                                      background:
+                                          Color(0xFF7D50FF).withOpacity(.2),
+                                      shadowColor: Color(0xFF7D50FF),
+                                      onPressed: () {},
+                                      borderColor: Color(0xFF7D50FF)),
+                                ],
+                              ),
+                            ],
                           ),
-                          child: Padding(
-                            padding: EdgeInsets.only(
-                                top: 25.h, left: 25.w, right: 24.w, bottom: 20.h),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Row(
-                                  children: [
-                                    Icon(Icons.alarm,
-                                        size: 18,
-                                        color:
-                                            Color(0xFFFFFFFF).withOpacity(0.8)),
-                                    SizedBox(width: 10.w),
-                                    Text("Alarm",
-                                        style: TextStyle(
-                                            fontSize: 16.sp,
-                                            color: Color(0xFFFFFFFF))),
-                                    Spacer(),
-                                    //Text("Alarm", style: TextStyle(fontSize: 16, color: Color(0xFFFFFFFF))),
-                                    SetButton(
-                                        height: 24,
-                                        width: 78,
-                                        text: "set",
-                                        background:
-                                            Color(0xFF7D50FF).withOpacity(.2),
-                                        shadowColor: Color(0xFF7D50FF),
-                                        onPressed: () {},
-                                        borderColor: Color(0xFF7D50FF)),
-                                  ],
-                                ),
-                                Divider(
-                                  color: Color(0xFFFFFFFF).withOpacity(.10),
-                                ),
-                                Row(
-                                  children: [
-                                    Icon(Icons.alarm,
-                                        size: 18,
-                                        color:
-                                            Color(0xFFFFFFFF).withOpacity(0.8)),
-                                    SizedBox(width: 10.w),
-                                    Text("Bedtime goal",
-                                        style: TextStyle(
-                                            fontSize: 16.sp,
-                                            color: Color(0xFFFFFFFF))),
-                                    Spacer(),
-                                    //Text("Alarm", style: TextStyle(fontSize: 16, color: Color(0xFFFFFFFF))),
-                                    SetButton(
-                                        height: 24,
-                                        width: 78,
-                                        text: "set",
-                                        background:
-                                            Color(0xFF7D50FF).withOpacity(.2),
-                                        shadowColor: Color(0xFF7D50FF),
-                                        onPressed: () {},
-                                        borderColor: Color(0xFF7D50FF)),
-                                  ],
-                                ),
-                              ],
-                            ),
-                          )),
-                      SizedBox(
-                        height: Get.height * .03,
-                      ),
-                      Container(
-                          width: Get.width,
-                          height: 417.h,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(20),
-                            //  border: Border.all(color: Color(0xFF848BBD)),
-                            color: Color(0xFF061238),
+                        )),
+                    SizedBox(
+                      height: 24.h,
+                    ),
+                    Container(
+                        width: Get.width,
+                        height: 417.h,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20),
+                          //  border: Border.all(color: Color(0xFF848BBD)),
+                          color: Color(0xFF061238),
+                        ),
+                        child: Padding(
+                          padding: EdgeInsets.symmetric(
+                              horizontal: 20.w, vertical: 25.h),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              ProfileListWidget(
+                                  width: 18.49,
+                                  height: 19.02,
+                                  text: "Contact Us",
+                                  onPressed: () {
+
+                                  },
+                                  icon: 'assets/auth_img/ic_contact.svg'),
+                              Divider(
+                                color: Color(0xFFFFFFFF).withOpacity(.10),
+                              ),
+                              ProfileListWidget(
+                                  width: 18.61,
+                                  height: 18.61,
+                                  text: "Terms And Conditions",
+                                  onPressed: () {
+
+                                  },
+                                  icon: 'assets/sleep/ic_p_lock.svg'),
+                              Divider(
+                                color: Color(0xFFFFFFFF).withOpacity(.10),
+                              ),
+                              ProfileListWidget(
+                                  width: 18.61,
+                                  height: 18.61,
+                                  text: "Privacy Policy",
+                                  onPressed: () {
+
+                                  },
+                                  icon: 'assets/sleep/ic_p_lock.svg'),
+                              Divider(
+                                color: Color(0xFFFFFFFF).withOpacity(.10),
+                              ),
+                              ProfileListWidget(
+                                  width: 18.61,
+                                  height: 18.61,
+                                  text: "Rate Us",
+                                  onPressed: () {
+
+                                  },
+                                  icon: 'assets/sleep/ic_p_lock.svg'),
+                              Divider(
+                                color: Color(0xFFFFFFFF).withOpacity(.10),
+                              ),
+                              ProfileListWidget(
+                                  width: 18.49,
+                                  height: 19.02,
+                                  text: "FAQ",
+                                  onPressed: () {
+
+                                  },
+                                  icon: 'assets/auth_img/ic_contact.svg'),
+                              Divider(
+                                color: Color(0xFFFFFFFF).withOpacity(.10),
+                              ),
+                              ProfileListWidget(
+                                  width: 18.61,
+                                  height: 18.61,
+                                  text: "Share App",
+                                  onPressed: () {
+
+                                  },
+                                  icon: 'assets/sleep/ic_p_lock.svg'),
+                            ],
                           ),
-                          child: Padding(
-                            padding: const EdgeInsets.symmetric(
-                                horizontal: 20, vertical: 25),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                ProfileListWidget(
-                                    width: 19.2,
-                                    height: 24.49,
-                                    text: "Contact Us",
-                                    onPressed: () {
-
-                                    },
-                                    icon: 'assets/auth_img/ic_contact.svg'),
-                                Divider(
-                                  color: Color(0xFFFFFFFF).withOpacity(.10),
-                                ),
-                                ProfileListWidget(
-                                    width: 19.2,
-                                    height: 24.49,
-                                    text: "Terms And Conditions",
-                                    onPressed: () {
-
-                                    },
-                                    icon: 'assets/auth_img/ic_contact.svg'),
-                                Divider(
-                                  color: Color(0xFFFFFFFF).withOpacity(.10),
-                                ),
-                                ProfileListWidget(
-                                    width: 19.2,
-                                    height: 24.49,
-                                    text: "Privacy Policy",
-                                    onPressed: () {
-
-                                    },
-                                    icon: 'assets/auth_img/ic_contact.svg'),
-                                Divider(
-                                  color: Color(0xFFFFFFFF).withOpacity(.10),
-                                ),
-                                ProfileListWidget(
-                                    width: 19.2,
-                                    height: 24.49,
-                                    text: "Rate Us",
-                                    onPressed: () {
-
-                                    },
-                                    icon: 'assets/auth_img/ic_contact.svg'),
-                                Divider(
-                                  color: Color(0xFFFFFFFF).withOpacity(.10),
-                                ),
-                                ProfileListWidget(
-                                    width: 19.2,
-                                    height: 24.49,
-                                    text: "FAQ",
-                                    onPressed: () {
-
-                                    },
-                                    icon: 'assets/auth_img/ic_contact.svg'),
-                                Divider(
-                                  color: Color(0xFFFFFFFF).withOpacity(.10),
-                                ),
-                                ProfileListWidget(
-                                    width: 19.2,
-                                    height: 24.49,
-                                    text: "Share App",
-                                    onPressed: () {
-
-                                    },
-                                    icon: 'assets/auth_img/ic_contact.svg'),
-                              ],
-                            ),
-                          )),
-                    ],
-                  ),
+                        )),
+                  ],
                 ),
               ),
             ),

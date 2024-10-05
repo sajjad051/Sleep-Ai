@@ -18,12 +18,12 @@ class SleepMonthDuration extends StatelessWidget {
       padding:  EdgeInsets.symmetric(vertical: 30.h, horizontal: 20.w),
       decoration: BoxDecoration(
           color: Color(0xFF061238),
-          borderRadius: BorderRadius.circular(8)
+          borderRadius: BorderRadius.circular(8.r)
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text("Sleep Duration",style: GoogleFonts.inter(fontSize: 16.sp, color: Colors.white, fontWeight: FontWeight.w700)),
+          Text("Sleep Duration",style: GoogleFonts.inter(fontSize: 14.sp, color: Colors.white, fontWeight: FontWeight.w500)),
            SizedBox(height: 20.h,),
 
 
@@ -449,8 +449,8 @@ class SleepMonthDuration extends StatelessWidget {
     return Row(
       children: [
         Container(
-          height: 30,
-          width: 30,
+          height: 30.h,
+          width: 30.w,
           alignment: Alignment.centerLeft,
           child: Text(name, style:  GoogleFonts.inter(color: Colors.white38),),
         ),
@@ -459,7 +459,7 @@ class SleepMonthDuration extends StatelessWidget {
           child: Container(
             margin: EdgeInsets.symmetric(horizontal: 4.h,),
             color: Colors.white12,
-            height: 1,
+            height: 1.h,
           ),
         )
       ],
@@ -468,19 +468,19 @@ class SleepMonthDuration extends StatelessWidget {
 
   TextStyle dayStyle(){
     return GoogleFonts.inter(
-        fontSize: 12,
+        fontSize: 12.sp,
         color: Colors.white70
     );
   }
 
   Container bar(double height, double value, Color color1, Color color2){
     return Container(
-      width: 4,
+      width: 4.w,
       height: height * value,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.only(
-          topRight: Radius.circular(40.0),
-          topLeft: Radius.circular(40.0),
+          topRight: Radius.circular(40.0.r),
+          topLeft: Radius.circular(40.0.r),
         ),
 
         gradient: LinearGradient(

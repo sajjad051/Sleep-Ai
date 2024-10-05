@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 
 class SleepDuration extends StatelessWidget {
@@ -24,7 +25,7 @@ class SleepDuration extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text("Sleep Duration",style: TextStyle(fontSize: 16.sp, color: Colors.white, fontWeight: FontWeight.w700)),
+          Text("Sleep Duration",style: GoogleFonts.inter(fontSize: 14.sp, color: Colors.white, fontWeight: FontWeight.w500)),
            SizedBox(height: 20.h,),
 
 

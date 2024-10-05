@@ -25,7 +25,7 @@ class _SleepRegularityState extends State<SleepMonthRegularity> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text("Sleep Regularity",style: TextStyle(fontSize: 16.sp, color: Colors.white, fontWeight: FontWeight.w700)),
+          Text("Sleep Regularity",style: GoogleFonts.inter(fontSize: 14.sp, color: Colors.white, fontWeight: FontWeight.w500)),
           SizedBox(height: 20.h,),
 
 

@@ -2,6 +2,7 @@ import 'package:ai_sleep/Auth/Controler/signUp_controler.dart';
 import 'package:ai_sleep/core/usecase/text_style.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -14,7 +15,7 @@ import '../../../widget/custom_button.dart';
 class SignUpScreen extends StatelessWidget {
   SignUpScreen({super.key});
 
-  SignUpController controller = Get.put(SignUpController());
+  SignUpController SupController = Get.put(SignUpController());
 
   @override
   Widget build(BuildContext context) {
@@ -82,33 +83,46 @@ class SignUpScreen extends StatelessWidget {
 
                     //Email
                     Container(
-                      width: Get.width,
-                      height: 50.h,
-                      padding: EdgeInsets.only(left: 8.w),
+                      width: double.infinity,
+                      height: 50,
+                      padding: EdgeInsets.only(left: 24.w),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(8.r),
-                        border: Border.all(color: AppColor.editTextBackground),
-                        color: AppColor.editTextBackground,
+                        border: Border.all(color: SupController.showEmailIcon.value == true? AppColor.editTextBackground : Color(0xFFFFFFFF).withOpacity(.5)),
+                        color: Color(0x19B9C4FB),
                       ),
                       child: TextField(
+                        textAlign: TextAlign.start,
+                        autofocus: true,
                         onChanged: (text) {
-                          if(text.isNotEmpty)
-                            controller.showEmailIcon.value = false;
-                          if(text.isEmpty){
-                            controller.showEmailIcon.value = true;
+                          if (text.isNotEmpty)
+                            SupController.showEmailIcon.value = false;
+                          if (text.isEmpty) {
+                            SupController.showEmailIcon.value = true;
                           }
                         },
                         style: GoogleFonts.inter(
-                          color: AppColor.editTextColor,
-                        ),
-                        controller: controller.email,
+                            color: Colors.white,
+                            fontSize: 16.sp,
+                            fontWeight: FontWeight.w400),
+                        controller: SupController.email,
                         decoration: InputDecoration(
-                          hintText: "Enter your Email address",
-                          hintStyle: GoogleFonts.inter(),
-                          prefixIcon: controller.showEmailIcon.value == true
-                              ? Icon(Icons.email)
+                          hintText: "Enter Your Email Address",
+                          hintStyle: GoogleFonts.inter(
+                            color: Color(0xFFB9C4FB),
+                            fontSize: 14.sp,
+                            fontWeight: FontWeight.w400,
+                          ),
+                          prefixIconConstraints: const BoxConstraints(
+                              maxHeight: 24
+                          ),
+                          prefixIcon: SupController.showEmailIcon.value == true
+                              ? Padding(
+                            padding: EdgeInsets.only(right: 24.w),
+                            child: SvgPicture.asset(
+                                'assets/sleep/ic_email.svg'),
+                          )
                               : null,
-                          //  prefixIcon: controller.isEmptyEmail.value? Icon(Icons.email) : null,
                           border: InputBorder.none,
                         ),
                       ),
@@ -116,33 +130,50 @@ class SignUpScreen extends StatelessWidget {
                     SizedBox(height: 40.h),
 
                     //PhoneNumber
-                    Container(
-                      width: Get.width,
-                      height: 50.h,
-                      padding: EdgeInsets.only(left: 8.w),
+                   Container(
+                      width: double.infinity,
+                      height: 50,
+                      padding: EdgeInsets.only(left: 24.w),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(8.r),
-                        border: Border.all(color: AppColor.editTextBackground),
-                        color: AppColor.editTextBackground,
+                        border: Border.all(color: SupController.showNumberIcon
+                            .value == true ? AppColor.editTextBackground : Color(
+                            0xFFFFFFFF).withOpacity(.5)),
+                        color: Color(0x19B9C4FB),
                       ),
                       child: TextField(
+                        keyboardType: TextInputType.number,
+                        textAlign: TextAlign.start,
+                        autofocus: true,
                         onChanged: (text) {
-                          if(text.isNotEmpty)
-                            controller.showNumberIcon.value = false;
-                          if(text.isEmpty){
-                            controller.showNumberIcon.value = true;
+                          if (text.isNotEmpty)
+                            SupController.showNumberIcon.value = false;
+                          if (text.isEmpty) {
+                            SupController.showNumberIcon.value = true;
                           }
                         },
                         style: GoogleFonts.inter(
-                          color: AppColor.editTextColor,
-                        ),
-                        controller: controller.number,
-                        keyboardType: TextInputType.number,
+                            color: Colors.white,
+                            fontSize: 16.sp,
+                            fontWeight: FontWeight.w400),
+                        controller: SupController.number,
                         decoration: InputDecoration(
                           hintText: "Enter your Phone Number",
-                          prefixIcon: controller.showNumberIcon.value ? Icon(
-                              Icons.call) : null,
-                          // prefixIcon: controller.isEmptyNumber.value?Icon(Icons.call) : null,
+                          hintStyle: GoogleFonts.inter(
+                            color: Color(0xFFB9C4FB),
+                            fontSize: 14.sp,
+                            fontWeight: FontWeight.w400,
+                          ),
+                          prefixIconConstraints: const BoxConstraints(
+                              maxHeight: 24
+                          ),
+                          prefixIcon: SupController.showNumberIcon.value == true
+                              ? Padding(
+                            padding: EdgeInsets.only(right: 24.w),
+                            child: SvgPicture.asset(
+                                'assets/sleep/ic_call.svg'),
+                          )
+                              : null,
                           border: InputBorder.none,
                         ),
                       ),
@@ -152,44 +183,57 @@ class SignUpScreen extends StatelessWidget {
                     //password
                     Container(
                       width: Get.width,
-                      height: 50.h,
-                      padding: EdgeInsets.only(left: 8.w),
+                      height: 50,
+                      padding:  EdgeInsets.only(left: 24.w),
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(8.r),
-                          border: Border.all(color: AppColor
-                              .editTextBackground),
-                          color: AppColor.editTextBackground),
+                          border: Border.all(color: SupController.showLockIcon.value == true? AppColor.editTextBackground : Color(0xFFFFFFFF).withOpacity(.5)),
+                          //color: Color(0x19B9C4FB)),
+                          color:  AppColor.editTextBackground),
                       child: TextField(
                         onChanged: (text) {
-                          if(text.isNotEmpty)
-                            controller.showLockIcon.value = false;
-                          if(text.isEmpty){
-                            controller.showLockIcon.value = true;
+                          if (text.isNotEmpty)
+                            SupController.showLockIcon.value = false;
+                          if (text.isEmpty) {
+                            SupController.showLockIcon.value = true;
                           }
                         },
+                        textAlignVertical: TextAlignVertical.center,
                         style: GoogleFonts.inter(
-                          color: AppColor.editTextColor,
-                        ),
-                        controller: controller.password,
-                        obscureText: controller.hidePassword.value,
+                            color: Colors.white,
+                            fontSize: 16.sp,
+                            fontWeight: FontWeight.w400),
+                        controller: SupController.password,
+                        obscureText: SupController.hidePassword.value,
                         decoration: InputDecoration(
-                          hintText: " Enter Password",
-                          prefixIcon: controller.showLockIcon.value ? Icon(
-                              Icons.lock) : null,
-                          // prefixIcon: controller.isEmptyPassword.value?Icon(Icons.lock) : null,
-                          // suffixIcon: Icon(Icons.visibility),
-
-                          suffixIcon: controller.hidePassword.value == false
+                          hintText: "Enter Password",
+                          hintStyle: GoogleFonts.inter(
+                            color: Color(0xFFB9C4FB),
+                            fontSize: 14.sp,
+                            fontWeight: FontWeight.w400,
+                          ),
+                          prefixIconConstraints: const BoxConstraints(
+                              maxHeight: 24
+                          ),
+                          prefixIcon: SupController.showLockIcon.value == true
+                              ? Padding(
+                            padding: EdgeInsets.only(right: 22.w),
+                            child: SvgPicture.asset(
+                                'assets/sleep/ic_lock.svg'),
+                          )
+                              : null,
+                          //suffixIcon: Icon(Icons.visibility),
+                          suffixIcon: SupController.hidePassword.value == false
                               ? InkWell(
                               onTap: () {
-                                controller.hidePassword.value = true;
+                                SupController.hidePassword.value = true;
                               },
-                              child: const Icon(Icons.visibility))
+                              child: const Icon(Icons.visibility,color: Colors.white,))
                               : InkWell(
                               onTap: () {
-                                controller.hidePassword.value = false;
+                                SupController.hidePassword.value = false;
                               },
-                              child: const Icon(Icons.visibility_off)),
+                              child: const Icon(Icons.visibility_off,color: Colors.white,)),
 
                           border: InputBorder.none,
                           //border:OutlineInputBorder(),
@@ -203,18 +247,26 @@ class SignUpScreen extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-                        Checkbox(
-                          value: controller.isChecked.value,
-                          onChanged: (bool? value) {
-                            controller.toggleCheckbox(value);
-                          },
-                          activeColor: Color(0xFF7D50FF),
+                        Theme(
+                          data: Theme.of(context).copyWith(
+                            checkboxTheme: CheckboxThemeData(
+                              side: BorderSide(color: Color(0xFF7D50FF), width: 2), // Change border color here
+                            ),
+                          ),
+                          child: Checkbox(
+                            value: SupController.isChecked.value,
+                            onChanged: (bool? value) {
+                              SupController.toggleCheckbox(value);
+                            },
+                            activeColor: Color(0xFF7D50FF), // Change the checkmark color
+                          ),
                         ),
+
                         Expanded(
                           child: Text(
                             "By creating this account, you are agreeing to our terms and conditions",
                             style: GoogleFonts.inter(
-                                fontSize: 14.h, color: Color(0xFF848BBD)),
+                                fontSize: 14.h, color: Color(0xFF848BBD),fontWeight: FontWeight.w400),
                           ),
                         ),
                       ],
@@ -227,7 +279,7 @@ class SignUpScreen extends StatelessWidget {
                         background: Color(0xFF7D50FF),
                         shadowColor: Color(0xFF7D50FF),
                         onPressed: () {
-                          controller.signUp();
+                          SupController.signUp();
                         }),
                     SizedBox(
                       height: 32.h,

@@ -31,7 +31,7 @@ class CustomBottomButtom extends StatelessWidget {
           ),
         ),
         child: Padding(
-          padding:  EdgeInsets.symmetric(horizontal: 20.h, vertical: 20.w),
+          padding:  EdgeInsets.symmetric(horizontal: 10.h, vertical: 17.w),
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,

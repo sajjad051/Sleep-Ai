@@ -36,7 +36,7 @@ class Sleep1 extends StatelessWidget {
               height: Get.height,
               width: Get.width,
               child: Image.asset(
-                "assets/sleep/sleep_bg.webp",
+                "assets/sleep/SleepTwo.webp",
                 fit: BoxFit.cover,
                 //height: Get.height,
               ),

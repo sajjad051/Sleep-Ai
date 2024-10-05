@@ -9,6 +9,10 @@ class ResetController extends GetxController{
   var hidePassword = true.obs;
   var showPassword = false.obs;
 
+  var newPasswordText = true.obs;
+  var confirmPasswordText = true.obs;
+
+
   var confirmHidePassword = true.obs;
   var confirmShowPassword = false.obs;
 
