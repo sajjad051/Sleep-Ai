@@ -4,11 +4,12 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+
 class SleepNoisesScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 130.h,
+      height: 160.h,
       width: Get.width,
       decoration: BoxDecoration(
         color: Color(0xFF061238), // Background color
@@ -38,8 +39,10 @@ class SleepNoisesScreen extends StatelessWidget {
                       fontSize: 11,
                       fontWeight: FontWeight.w400),
                 ),
+
               SizedBox(width: 10.h,),
                 Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
                       "Snoring ",
@@ -49,7 +52,7 @@ class SleepNoisesScreen extends StatelessWidget {
                       ),
                     ),
                     Text(
-                      "03:12",
+                      "1 min",
                       style: GoogleFonts.inter(
                           color: Color(0xFF848BBD).withOpacity(.7),
                           fontSize: 11.sp,
@@ -59,7 +62,7 @@ class SleepNoisesScreen extends StatelessWidget {
                   ],
                 ),
 
-                
+
 
               ],
             )

@@ -21,27 +21,34 @@ class VerificationCode extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xFF020825),
+      appBar: AppBar(
+        leading: InkWell(
+          onTap: () {
+            Navigator.pop(context);
+          },
+          child: Padding(
+            padding:  EdgeInsets.only(left: 10.w),
+            child: Transform.scale(
+              scale: 1,  // Adjust the scale factor to resize
+              child: SvgPicture.asset(
+                'assets/sleep/ic_ar_back.svg', // Path to your SVG file
+                color: Colors.white, // Set the color if needed
+              ),
+            ),
+          ),
+        ),
+        backgroundColor: Colors.transparent,
+        surfaceTintColor: Colors.transparent,
+        toolbarHeight: 32.h,
+
+      ),
       body: Padding(
-        padding: EdgeInsets.only(left: 24.w, right: 24.w, top: 24.h),
+        padding: EdgeInsets.only(left: 24.w, right: 24.w, top: 120.h),
         child: Obx(() {
           return Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              InkWell(
-                onTap: () {
-                  Navigator.pop(context);
-                },
-                child: SizedBox(
-                  height: 32.h,
-                  width: 32.w,
-                  child: SvgPicture.asset(
-                    "assets/sleep/ic_ar_back.svg",
-                    color: Colors.white,
-                  ),
-                ),
-              ),
-              SizedBox(height: 108.h,),
               Text(
                 'Verification Code ',
                 style: welcomeTextLarge(),

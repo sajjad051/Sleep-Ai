@@ -81,7 +81,7 @@ class ForgotPassword extends StatelessWidget {
                     child: TextField(
                       keyboardType: TextInputType.number,
                       textAlign: TextAlign.start,
-                      autofocus: true,
+                     // autofocus: true,
                       onChanged: (text) {
                         if (text.isNotEmpty)
                           controller.showPhoneNumber.value = false;

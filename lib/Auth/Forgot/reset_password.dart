@@ -21,27 +21,33 @@ class ResetPassword extends StatelessWidget {
     double height = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: Color(0xFF020825),
+      appBar: AppBar(
+        leading: InkWell(
+          onTap: () {
+            Navigator.pop(context);
+          },
+          child: Padding(
+            padding:  EdgeInsets.only(left: 12.w),
+            child: Transform.scale(
+              scale: 1,  // Adjust the scale factor to resize
+              child: SvgPicture.asset(
+                'assets/sleep/ic_ar_back.svg', // Path to your SVG file
+                color: Colors.white, // Set the color if needed
+              ),
+            ),
+          ),
+        ),
+        backgroundColor: Colors.transparent,
+        surfaceTintColor: Colors.transparent,
+        toolbarHeight: 32.h,
+      ),
       body: Obx(
         () => Padding(
-          padding:  EdgeInsets.only(top: 32.h, left: 24.w, right: 24.w),
+          padding:  EdgeInsets.only(top: 108.h, left: 24.w, right: 24.w),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              InkWell(
-                onTap: () {
-                  Navigator.pop(context);
-                },
-                child: SizedBox(
-                  height: 32.h,
-                  width: 32.w,
-                  child: SvgPicture.asset(
-                    "assets/sleep/ic_ar_back.svg",
-                    color: Colors.white,
-                  ),
-                ),
-              ),
-              SizedBox(height: 108,),
               Text(
                 'Reset Password ?',
                 style: GoogleFonts.inter(
@@ -87,7 +93,7 @@ class ResetPassword extends StatelessWidget {
                   controller: controller.newPassword,
                   obscureText: controller.hidePassword.value,
                   decoration: InputDecoration(
-                    hintText: "Enter Password",
+                    hintText: "New Password",
                     hintStyle: GoogleFonts.inter(
                       color: Color(0xFFB9C4FB),
                       fontSize: 14.sp,
@@ -150,7 +156,7 @@ class ResetPassword extends StatelessWidget {
                   controller: controller.confirmPassword,
                   obscureText: controller.confirmHidePassword.value,
                   decoration: InputDecoration(
-                    hintText: "Enter Password",
+                    hintText: "Confirm Password",
                     hintStyle: GoogleFonts.inter(
                       color: Color(0xFFB9C4FB),
                       fontSize: 14.sp,

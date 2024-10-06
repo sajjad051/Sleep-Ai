@@ -226,12 +226,17 @@ class HomeScreen extends StatelessWidget {
                               color: Color(0xFFFFFFFF).withOpacity(.8),
                             ),
                           ),
-                          Text(
-                            "See All",
-                            style: GoogleFonts.inter(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 14.sp,
-                              color: Color(0xFFFFFFFF).withOpacity(.8),
+                          InkWell(
+                            onTap: (){
+                              Get.toNamed(Routes.recommendedDtl);
+                            },
+                            child: Text(
+                              "See All",
+                              style: GoogleFonts.inter(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 14.sp,
+                                color: Color(0xFFFFFFFF).withOpacity(.8),
+                              ),
                             ),
                           ),
                         ],
@@ -278,12 +283,17 @@ class HomeScreen extends StatelessWidget {
                               color: Color(0xFFFFFFFF).withOpacity(.8),
                             ),
                           ),
-                          Text(
-                            "See All",
-                            style: GoogleFonts.inter(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 14.sp,
-                              color: Color(0xFFFFFFFF).withOpacity(.8),
+                          InkWell(
+                            onTap: (){
+                              Get.toNamed(Routes.mentalFitnessDtl);
+                            },
+                            child: Text(
+                              "See All",
+                              style: GoogleFonts.inter(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 14.sp,
+                                color: Color(0xFFFFFFFF).withOpacity(.8),
+                              ),
                             ),
                           ),
                         ],
@@ -330,12 +340,17 @@ class HomeScreen extends StatelessWidget {
                               color: Color(0xFFFFFFFF).withOpacity(.8),
                             ),
                           ),
-                          Text(
-                            "See All",
-                            style: GoogleFonts.inter(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 14.sp,
-                              color: Color(0xFFFFFFFF).withOpacity(.8),
+                          InkWell(
+                            onTap: (){
+                              Get.toNamed(Routes.musicDtl);
+                            },
+                            child: Text(
+                              "See All",
+                              style: GoogleFonts.inter(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 14.sp,
+                                color: Color(0xFFFFFFFF).withOpacity(.8),
+                              ),
                             ),
                           ),
                         ],
@@ -370,19 +385,24 @@ class HomeScreen extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
-                            "Mental Fitness",
+                            "Meditations",
                             style: GoogleFonts.inter(
                               fontWeight: FontWeight.bold,
                               fontSize: 16.sp,
                               color: Color(0xFFFFFFFF).withOpacity(.8),
                             ),
                           ),
-                          Text(
-                            "See All",
-                            style: GoogleFonts.inter(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 14.sp,
-                              color: Color(0xFFFFFFFF).withOpacity(.8),
+                          InkWell(
+                            onTap: (){
+                            Get.toNamed(Routes.meditationDtl);
+                          },
+                            child: Text(
+                              "See All",
+                              style: GoogleFonts.inter(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 14.sp,
+                                color: Color(0xFFFFFFFF).withOpacity(.8),
+                              ),
                             ),
                           ),
                         ],

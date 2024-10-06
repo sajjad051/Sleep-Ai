@@ -31,30 +31,34 @@ class SignInScreen extends StatelessWidget {
         ),
         Scaffold(
           backgroundColor: Colors.transparent,
+          appBar: AppBar(
+            leading: InkWell(
+              onTap: () {
+                Navigator.pop(context);
+              },
+              child: Padding(
+                padding:  EdgeInsets.only(left: 12.w),
+                child: Transform.scale(
+                  scale: 1,  // Adjust the scale factor to resize
+                  child: SvgPicture.asset(
+                    'assets/sleep/ic_ar_back.svg', // Path to your SVG file
+                    color: Colors.white, // Set the color if needed
+                  ),
+                ),
+              ),
+            ),
+            backgroundColor: Colors.transparent,
+            surfaceTintColor: Colors.transparent,
+            toolbarHeight: 32.h,
+          ),
           body: Obx(() {
             return SingleChildScrollView(
               child: Padding(
-                padding: EdgeInsets.only(top: 32.h, left: 24.w, right: 24.h),
+                padding: EdgeInsets.only(top:245.h, left: 24.w, right: 24.h),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    InkWell(
-                      onTap: () {
-                        Navigator.pop(context);
-                      },
-                      child: SizedBox(
-                        height: 32.h,
-                        width: 32.w,
-                        child: SvgPicture.asset(
-                          "assets/sleep/ic_ar_back.svg",
-                          color: Colors.white,
-                        ),
-                      ),
-                    ),
-                    SizedBox(
-                      height: 270.h,
-                    ),
                     Text(
                       "Sign in",
                       style: GoogleFonts.inter(
@@ -97,7 +101,7 @@ class SignInScreen extends StatelessWidget {
                     SizedBox(
                       height: 23.h,
                     ),
-              
+
                     //Email
                     Container(
                       width: double.infinity,
@@ -105,12 +109,15 @@ class SignInScreen extends StatelessWidget {
                       padding: EdgeInsets.only(left: 24.w),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(8.r),
-                        border: Border.all(color: controller.showEmailIcon.value == true? AppColor.editTextBackground : Color(0xFFFFFFFF).withOpacity(.5)),
+                        border: Border.all(
+                            color: controller.showEmailIcon.value == true
+                                ? AppColor.editTextBackground
+                                : Color(0xFFFFFFFF).withOpacity(.5)),
                         color: Color(0x19B9C4FB),
                       ),
                       child: TextField(
                         textAlign: TextAlign.start,
-                        autofocus: true,
+                        // autofocus: true,
                         onChanged: (text) {
                           if (text.isNotEmpty)
                             controller.showEmailIcon.value = false;
@@ -130,32 +137,34 @@ class SignInScreen extends StatelessWidget {
                             fontSize: 14.sp,
                             fontWeight: FontWeight.w400,
                           ),
-                          prefixIconConstraints: const BoxConstraints(
-                            maxHeight: 24
-                          ),
+                          prefixIconConstraints:
+                              const BoxConstraints(maxHeight: 24),
                           prefixIcon: controller.showEmailIcon.value == true
                               ? Padding(
-                            padding: EdgeInsets.only(right: 24.w),
-                            child: SvgPicture.asset(
-                                'assets/sleep/ic_email.svg'),
-                          )
+                                  padding: EdgeInsets.only(right: 24.w),
+                                  child: SvgPicture.asset(
+                                      'assets/sleep/ic_email.svg'),
+                                )
                               : null,
                           border: InputBorder.none,
                         ),
                       ),
                     ),
                     SizedBox(height: 32.h),
-              
+
                     //password
                     Container(
                       width: Get.width,
                       height: 50,
-                      padding:  EdgeInsets.only(left: 24.w),
+                      padding: EdgeInsets.only(left: 24.w),
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(8.r),
-                          border: Border.all(color: controller.showLockIcon.value == true? AppColor.editTextBackground : Color(0xFFFFFFFF).withOpacity(.5)),
+                          border: Border.all(
+                              color: controller.showLockIcon.value == true
+                                  ? AppColor.editTextBackground
+                                  : Color(0xFFFFFFFF).withOpacity(.5)),
                           //color: Color(0x19B9C4FB)),
-                          color:  AppColor.editTextBackground),
+                          color: AppColor.editTextBackground),
                       child: TextField(
                         onChanged: (text) {
                           if (text.isNotEmpty)
@@ -178,15 +187,14 @@ class SignInScreen extends StatelessWidget {
                             fontSize: 14.sp,
                             fontWeight: FontWeight.w400,
                           ),
-                          prefixIconConstraints: const BoxConstraints(
-                              maxHeight: 24
-                          ),
+                          prefixIconConstraints:
+                               BoxConstraints(maxHeight: 24.h),
                           prefixIcon: controller.showLockIcon.value == true
                               ? Padding(
-                            padding: EdgeInsets.only(right: 22.w),
-                            child: SvgPicture.asset(
-                                'assets/sleep/ic_lock.svg'),
-                          )
+                                  padding: EdgeInsets.only(right: 22.w),
+                                  child: SvgPicture.asset(
+                                      'assets/sleep/ic_lock.svg'),
+                                )
                               : null,
                           //suffixIcon: Icon(Icons.visibility),
                           suffixIcon: controller.hidePassword.value == false
@@ -194,12 +202,18 @@ class SignInScreen extends StatelessWidget {
                                   onTap: () {
                                     controller.hidePassword.value = true;
                                   },
-                                  child: const Icon(Icons.visibility,color: Colors.white,))
+                                  child: const Icon(
+                                    Icons.visibility,
+                                    color: Colors.white,
+                                  ))
                               : InkWell(
                                   onTap: () {
                                     controller.hidePassword.value = false;
                                   },
-                                  child: const Icon(Icons.visibility_off,color: Colors.white,)),
+                                  child: const Icon(
+                                    Icons.visibility_off,
+                                    color: Colors.white,
+                                  )),
 
                           border: InputBorder.none,
                           //border:OutlineInputBorder(),
@@ -234,18 +248,20 @@ class SignInScreen extends StatelessWidget {
                         height: 54.h,
                         width: Get.width,
                         text: "Sign In",
-                        background: controller.showEmailIcon.value == true && controller.showLockIcon.value == true
+                        background: controller.showEmailIcon.value == true &&
+                                controller.showLockIcon.value == true
                             ? Color(0xFF7D50FF).withOpacity(.25)
                             : Color(0xFF7D50FF),
-                        shadowColor: controller.showEmailIcon.value == true && controller.showLockIcon.value == true
+                        shadowColor: controller.showEmailIcon.value == true &&
+                                controller.showLockIcon.value == true
                             ? null
                             : Color(0xFF6C38FF40),
-                        textColor: controller.showEmailIcon.value  == true && controller.showLockIcon.value == true
+                        textColor: controller.showEmailIcon.value == true &&
+                                controller.showLockIcon.value == true
                             ? Color(0xFFFFFFFF).withOpacity(.60)
                             : Colors.white,
                         onPressed: () {
-                         // controller.forgot();
-                          Get.toNamed(Routes.forgotPage);
+                          Get.toNamed(Routes.homePageView);
                         },
                       );
                     }),
@@ -339,6 +355,7 @@ class SignInScreen extends StatelessWidget {
                         )
                       ],
                     ),
+                    //SizedBox(height: 62.h,),
                   ],
                 ),
               ),

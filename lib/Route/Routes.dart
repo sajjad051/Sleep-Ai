@@ -14,7 +14,11 @@ import 'package:ai_sleep/Home/home_page/breath_ex_screen.dart';
 import 'package:ai_sleep/Home/home_page/breath_time_count.dart';
 import 'package:ai_sleep/Home/home_page/home_screen.dart';
 import 'package:ai_sleep/Home/home_page1.dart';
+import 'package:ai_sleep/Home/meditations.dart';
+import 'package:ai_sleep/Home/mental_fitness_details.dart';
+import 'package:ai_sleep/Home/music_details.dart';
 import 'package:ai_sleep/Home/music_player_screen.dart';
+import 'package:ai_sleep/Home/recommended_details.dart';
 import 'package:ai_sleep/HomePageView/home_page_view.dart';
 import 'package:ai_sleep/Navigation/navigation_menu.dart';
 import 'package:ai_sleep/Profile/profile_screen.dart';
@@ -80,6 +84,11 @@ abstract class Routes {
   static const rippleWaveScreen = '/rippleWaveScreen';
   static const artistProfileDetails = '/artistProfileDetails';
   static const easyDate = '/easyDate';
+  static const recommendedDtl = '/recommendedDtl';
+  static const musicDtl = '/musicDtl';
+  static const meditationDtl = '/meditationDtl';
+  static const mentalFitnessDtl = '/mentalFitnessDtl';
+
 }
 
 abstract class AppPage {
@@ -163,6 +172,22 @@ abstract class AppPage {
     GetPage(
       name: Routes.artistProfile,
       page: () => ArtistProfile(),
+    ),
+    GetPage(
+      name: Routes.recommendedDtl,
+      page: () => RecommendedDetails(),
+    ),
+    GetPage(
+      name: Routes.musicDtl,
+      page: () => MusicDetails(),
+    ),
+    GetPage(
+      name: Routes.meditationDtl,
+      page: () => MeditationsDetails(),
+    ),
+    GetPage(
+      name: Routes.mentalFitnessDtl,
+      page: () => MentalFitnessDetails(),
     ),
     GetPage(name: Routes.homeScreen, page: () => HomeScreen()),
     GetPage(name: Routes.breathEx, page: () => BreathExScreen()),

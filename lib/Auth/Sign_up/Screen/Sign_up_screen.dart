@@ -24,18 +24,32 @@ class SignUpScreen extends StatelessWidget {
         SizedBox(
           height: double.infinity,
           width: double.infinity,
-          child: Image.asset("assets/auth_img/ic_SignUp.webp",
-            fit: BoxFit.cover,),
+          child: Image.asset(
+            "assets/auth_img/ic_SignUp.webp",
+            fit: BoxFit.cover,
+          ),
         ),
         Scaffold(
           backgroundColor: Colors.transparent,
           appBar: AppBar(
             leading: InkWell(
-                onTap: () {
-                  Navigator.pop(context);
-                }, child: Icon(Icons.arrow_back, color: Colors.white)),
+              onTap: () {
+                Navigator.pop(context);
+              },
+              child: Padding(
+                padding:  EdgeInsets.only(left: 12.w),
+                child: Transform.scale(
+                  scale: 1,  // Adjust the scale factor to resize
+                  child: SvgPicture.asset(
+                    'assets/sleep/ic_ar_back.svg', // Path to your SVG file
+                    color: Colors.white, // Set the color if needed
+                  ),
+                ),
+              ),
+            ),
             backgroundColor: Colors.transparent,
             surfaceTintColor: Colors.transparent,
+            toolbarHeight: 32.h,
           ),
           body: Obx(() {
             return SingleChildScrollView(
@@ -65,7 +79,8 @@ class SignUpScreen extends StatelessWidget {
                         Text(
                           "Sleeping",
                           //style: welcomeTextSmall(),
-                          style: GoogleFonts.inter(fontSize: 16.sp,
+                          style: GoogleFonts.inter(
+                              fontSize: 16.sp,
                               color: Color(0xFF848BBD),
                               fontWeight: FontWeight.bold),
                         ),
@@ -73,7 +88,9 @@ class SignUpScreen extends StatelessWidget {
                           " acount",
                           //style: welcomeTextSmall(),
                           style: TextStyle(
-                            fontSize: 16.sp, color: Color(0xFF848BBD),),
+                            fontSize: 16.sp,
+                            color: Color(0xFF848BBD),
+                          ),
                         ),
                       ],
                     ),
@@ -88,12 +105,15 @@ class SignUpScreen extends StatelessWidget {
                       padding: EdgeInsets.only(left: 24.w),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(8.r),
-                        border: Border.all(color: SupController.showEmailIcon.value == true? AppColor.editTextBackground : Color(0xFFFFFFFF).withOpacity(.5)),
+                        border: Border.all(
+                            color: SupController.showEmailIcon.value == true
+                                ? AppColor.editTextBackground
+                                : Color(0xFFFFFFFF).withOpacity(.5)),
                         color: Color(0x19B9C4FB),
                       ),
                       child: TextField(
                         textAlign: TextAlign.start,
-                        autofocus: true,
+                        // autofocus: true,
                         onChanged: (text) {
                           if (text.isNotEmpty)
                             SupController.showEmailIcon.value = false;
@@ -113,15 +133,14 @@ class SignUpScreen extends StatelessWidget {
                             fontSize: 14.sp,
                             fontWeight: FontWeight.w400,
                           ),
-                          prefixIconConstraints: const BoxConstraints(
-                              maxHeight: 24
-                          ),
+                          prefixIconConstraints:
+                              const BoxConstraints(maxHeight: 24),
                           prefixIcon: SupController.showEmailIcon.value == true
                               ? Padding(
-                            padding: EdgeInsets.only(right: 24.w),
-                            child: SvgPicture.asset(
-                                'assets/sleep/ic_email.svg'),
-                          )
+                                  padding: EdgeInsets.only(right: 24.w),
+                                  child: SvgPicture.asset(
+                                      'assets/sleep/ic_email.svg'),
+                                )
                               : null,
                           border: InputBorder.none,
                         ),
@@ -130,21 +149,22 @@ class SignUpScreen extends StatelessWidget {
                     SizedBox(height: 40.h),
 
                     //PhoneNumber
-                   Container(
+                    Container(
                       width: double.infinity,
                       height: 50,
                       padding: EdgeInsets.only(left: 24.w),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(8.r),
-                        border: Border.all(color: SupController.showNumberIcon
-                            .value == true ? AppColor.editTextBackground : Color(
-                            0xFFFFFFFF).withOpacity(.5)),
+                        border: Border.all(
+                            color: SupController.showNumberIcon.value == true
+                                ? AppColor.editTextBackground
+                                : Color(0xFFFFFFFF).withOpacity(.5)),
                         color: Color(0x19B9C4FB),
                       ),
                       child: TextField(
                         keyboardType: TextInputType.number,
                         textAlign: TextAlign.start,
-                        autofocus: true,
+                        // autofocus: true,
                         onChanged: (text) {
                           if (text.isNotEmpty)
                             SupController.showNumberIcon.value = false;
@@ -164,15 +184,14 @@ class SignUpScreen extends StatelessWidget {
                             fontSize: 14.sp,
                             fontWeight: FontWeight.w400,
                           ),
-                          prefixIconConstraints: const BoxConstraints(
-                              maxHeight: 24
-                          ),
+                          prefixIconConstraints:
+                              const BoxConstraints(maxHeight: 24),
                           prefixIcon: SupController.showNumberIcon.value == true
                               ? Padding(
-                            padding: EdgeInsets.only(right: 24.w),
-                            child: SvgPicture.asset(
-                                'assets/sleep/ic_call.svg'),
-                          )
+                                  padding: EdgeInsets.only(right: 24.w),
+                                  child: SvgPicture.asset(
+                                      'assets/sleep/ic_call.svg'),
+                                )
                               : null,
                           border: InputBorder.none,
                         ),
@@ -184,12 +203,15 @@ class SignUpScreen extends StatelessWidget {
                     Container(
                       width: Get.width,
                       height: 50,
-                      padding:  EdgeInsets.only(left: 24.w),
+                      padding: EdgeInsets.only(left: 24.w),
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(8.r),
-                          border: Border.all(color: SupController.showLockIcon.value == true? AppColor.editTextBackground : Color(0xFFFFFFFF).withOpacity(.5)),
+                          border: Border.all(
+                              color: SupController.showLockIcon.value == true
+                                  ? AppColor.editTextBackground
+                                  : Color(0xFFFFFFFF).withOpacity(.5)),
                           //color: Color(0x19B9C4FB)),
-                          color:  AppColor.editTextBackground),
+                          color: AppColor.editTextBackground),
                       child: TextField(
                         onChanged: (text) {
                           if (text.isNotEmpty)
@@ -212,28 +234,33 @@ class SignUpScreen extends StatelessWidget {
                             fontSize: 14.sp,
                             fontWeight: FontWeight.w400,
                           ),
-                          prefixIconConstraints: const BoxConstraints(
-                              maxHeight: 24
-                          ),
+                          prefixIconConstraints:
+                              const BoxConstraints(maxHeight: 24),
                           prefixIcon: SupController.showLockIcon.value == true
                               ? Padding(
-                            padding: EdgeInsets.only(right: 22.w),
-                            child: SvgPicture.asset(
-                                'assets/sleep/ic_lock.svg'),
-                          )
+                                  padding: EdgeInsets.only(right: 22.w),
+                                  child: SvgPicture.asset(
+                                      'assets/sleep/ic_lock.svg'),
+                                )
                               : null,
                           //suffixIcon: Icon(Icons.visibility),
                           suffixIcon: SupController.hidePassword.value == false
                               ? InkWell(
-                              onTap: () {
-                                SupController.hidePassword.value = true;
-                              },
-                              child: const Icon(Icons.visibility,color: Colors.white,))
+                                  onTap: () {
+                                    SupController.hidePassword.value = true;
+                                  },
+                                  child: const Icon(
+                                    Icons.visibility,
+                                    color: Colors.white,
+                                  ))
                               : InkWell(
-                              onTap: () {
-                                SupController.hidePassword.value = false;
-                              },
-                              child: const Icon(Icons.visibility_off,color: Colors.white,)),
+                                  onTap: () {
+                                    SupController.hidePassword.value = false;
+                                  },
+                                  child: const Icon(
+                                    Icons.visibility_off,
+                                    color: Colors.white,
+                                  )),
 
                           border: InputBorder.none,
                           //border:OutlineInputBorder(),
@@ -249,8 +276,10 @@ class SignUpScreen extends StatelessWidget {
                       children: [
                         Theme(
                           data: Theme.of(context).copyWith(
-                            checkboxTheme: CheckboxThemeData(
-                              side: BorderSide(color: Color(0xFF7D50FF), width: 2), // Change border color here
+                            checkboxTheme: const CheckboxThemeData(
+                              side: BorderSide(
+                                  color: Color(0xFF7D50FF),
+                                  width: 2), // Change border color here
                             ),
                           ),
                           child: Checkbox(
@@ -258,15 +287,17 @@ class SignUpScreen extends StatelessWidget {
                             onChanged: (bool? value) {
                               SupController.toggleCheckbox(value);
                             },
-                            activeColor: Color(0xFF7D50FF), // Change the checkmark color
+                            activeColor:
+                                Color(0xFF7D50FF), // Change the checkmark color
                           ),
                         ),
-
                         Expanded(
                           child: Text(
                             "By creating this account, you are agreeing to our terms and conditions",
                             style: GoogleFonts.inter(
-                                fontSize: 14.h, color: Color(0xFF848BBD),fontWeight: FontWeight.w400),
+                                fontSize: 14.h,
+                                color: Color(0xFF848BBD),
+                                fontWeight: FontWeight.w400),
                           ),
                         ),
                       ],
@@ -287,8 +318,8 @@ class SignUpScreen extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-                        Text("already have an account ?",
-                            style: welcomeTextSmall()),
+                        Text("Already have an account?",
+                            style: GoogleFonts.inter(fontSize: 14.sp,fontWeight: FontWeight.w400, color: Color(0xFFFFFFFF).withOpacity(.7))),
                         SizedBox(
                           width: 10.w,
                         ),
@@ -301,8 +332,8 @@ class SignUpScreen extends StatelessWidget {
                             style: GoogleFonts.inter(
                                 color: Color(0xFF7D50FF),
                                 fontSize: 14.sp,
-                                fontWeight: FontWeight.bold,
-                                decorationColor: Colors.purple),
+                                fontWeight: FontWeight.w700,
+                                ),
                           ),
                         ),
                       ],
