@@ -39,56 +39,59 @@ class _LinearWidgetDemoState extends State<LinearWidgetDemo>
 
   @override
   Widget build(BuildContext context) {
-    return  Stack(
-         children: [
-           InkWell(
-             onTap: () {
-               toggleTimer();
-               widget.onTap();
-             },
-             child: Container(
-               width: Get.width, // Set the desired width
-               height: 50, // Set the desired height
-               decoration: BoxDecoration(
-                 color: Color(0xFF9EA7DF), // Background color
-                 borderRadius: BorderRadius.circular(30), // Rounded corners
-               ),
-               child: ClipRRect(
-                 borderRadius: BorderRadius.circular(30), // Match the container's border radius
-                 child: LinearTimer(
-                   duration: const Duration(seconds: 60),
-                   color: Color(0xFF7D50FF),
-                   backgroundColor: Colors.transparent, // Ensure it blends with container background
-                   controller: timerController1,
-                   onTimerEnd: () {
-                     timerController1.reset();
-                    // Get.back();
-                     setState(() {
-                       isRunning = false; // Reset the state when the timer ends
-                     });
-                   },
-                 ),
-               ),
-             ),
-           ),
-           Positioned.fill(
-             child: Align(
-               alignment: Alignment.center,
-               child: InkWell(
-                 onTap: () {
-                   toggleTimer();
-                   widget.onTap();
-                 },
-                 child: Text(
-                   isRunning? "tap to Stop" : 'Tab to Start',
-                   style: GoogleFonts.inter(color: Color(0xFFFFFFFF),fontSize: 16, fontWeight: FontWeight.w500,),
-                 ),
-               ),
-             ),
-           )
-
-         ],
-      );
-
+    return Stack(
+      children: [
+        Container(
+          width: Get.width, // Set the desired width
+          height: 50, // Set the desired height
+          decoration: BoxDecoration(
+            //color: Color(0xFF9EA7DF), // Background color
+            borderRadius: BorderRadius.circular(30), // Rounded corners
+          ),
+          child: GestureDetector(
+            onTap: () {
+              toggleTimer();
+              widget.onTap();
+            },
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(
+                  30), // Match the container's border radius
+              child: LinearTimer(
+                duration: const Duration(seconds: 60),
+                color: Color(0xFF7D50FF),
+                backgroundColor:Color(0xFF7D50FF).withOpacity(.5), // Ensure it blends with container background
+                controller: timerController1,
+                onTimerEnd: () {
+                  //timerController1.reset();
+                   Get.back();
+                  // setState(() {
+                  //   isRunning = false; // Reset the state when the timer ends
+                  // });
+                },
+              ),
+            ),
+          ),
+        ),
+        Positioned.fill(
+          child: Align(
+            alignment: Alignment.center,
+            child: InkWell(
+              onTap: () {
+                toggleTimer();
+                widget.onTap();
+              },
+              child: Text(
+                isRunning ? "tap to Stop" : 'Tab to Start',
+                style: GoogleFonts.inter(
+                  color: Color(0xFFFFFFFF),
+                  fontSize: 16.sp,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+            ),
+          ),
+        )
+      ],
+    );
   }
 }

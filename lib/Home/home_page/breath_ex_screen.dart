@@ -62,8 +62,8 @@ class BreathExScreen extends StatelessWidget {
                     'Relax Your Mind and Relieve Stress',
                     style: GoogleFonts.inter(
                         color: Colors.white,
-                        fontSize: 18.sp,
-                        fontWeight: FontWeight.bold),
+                        fontSize: 16.sp,
+                        fontWeight: FontWeight.w500),
                   ),
                 ),
                 Spacer(),
@@ -75,14 +75,14 @@ class BreathExScreen extends StatelessWidget {
                       width: 66.w,
                       height: 66.h,
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(45).w,
+                        shape: BoxShape.circle,
                         //  border: Border.all(color: Color(0xFF848BBD)),
                         color: Color(0xFFFFFFFF).withOpacity(.2),
                       ),
                       child: Center(
                         child: Text(
                           "1 min",
-                          style: GoogleFonts.inter(color: AppColor.editTextColor),
+                          style: GoogleFonts.inter(color: Color(0xFFFFFFFF), fontSize: 14.sp,fontWeight: FontWeight.w500),
                           textAlign: TextAlign.center,
                         ),
                       ),
@@ -91,14 +91,14 @@ class BreathExScreen extends StatelessWidget {
                       width: 66.w,
                       height: 66.h,
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(45).w,
+                        shape: BoxShape.circle,
                         //  border: Border.all(color: Color(0xFF848BBD)),
                         color: Color(0xFFFFFFFF).withOpacity(.2),
                       ),
                       child: Center(
                         child: Text(
                           "2 min",
-                          style: GoogleFonts.inter(color: AppColor.editTextColor),
+                          style: GoogleFonts.inter(color: Color(0xFFFFFFFF), fontSize: 14.sp,fontWeight: FontWeight.w500),
                           textAlign: TextAlign.center,
                         ),
                       ),
@@ -107,14 +107,14 @@ class BreathExScreen extends StatelessWidget {
                       width: 66.w,
                       height: 66.h,
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(45).w,
+                        shape: BoxShape.circle,
                         //  border: Border.all(color: Color(0xFF848BBD)),
                         color: Color(0xFFFFFFFF).withOpacity(.2),
                       ),
                       child: Center(
                         child: Text(
                           "3 min",
-                          style: GoogleFonts.inter(color: AppColor.editTextColor),
+                          style: GoogleFonts.inter(color: Color(0xFFFFFFFF), fontSize: 14.sp,fontWeight: FontWeight.w500),
                           textAlign: TextAlign.center,
                         ),
                       ),
@@ -123,14 +123,14 @@ class BreathExScreen extends StatelessWidget {
                       width: 66.w,
                       height: 66.h,
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(45).w,
+                        shape: BoxShape.circle,
                         //  border: Border.all(color: Color(0xFF848BBD)),
                         color: Color(0xFFFFFFFF).withOpacity(.2),
                       ),
                       child: Center(
                         child: Text(
                           "4 min",
-                          style: GoogleFonts.inter(color: AppColor.editTextColor),
+                          style: GoogleFonts.inter(color: Color(0xFFFFFFFF), fontSize: 14.sp,fontWeight: FontWeight.w500),
                           textAlign: TextAlign.center,
                         ),
                       ),
@@ -146,7 +146,7 @@ class BreathExScreen extends StatelessWidget {
                       child: Center(
                         child: Text(
                           "5 min",
-                          style: GoogleFonts.inter(color: AppColor.editTextColor),
+                          style: GoogleFonts.inter(color: Color(0xFFFFFFFF), fontSize: 14.sp,fontWeight: FontWeight.w500),
                           textAlign: TextAlign.center,
                         ),
                       ),
@@ -154,7 +154,7 @@ class BreathExScreen extends StatelessWidget {
                   ],
                 ),
                 SizedBox(
-                  height: 30.h,
+                  height: 60.h,
                 ),
                 CustomButton(
                     height: 50.h,

@@ -1,3 +1,4 @@
+import 'package:ai_sleep/widget/Rotation_transition.dart';
 import 'package:ai_sleep/widget/custom_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -13,8 +14,7 @@ class RippleWidget extends StatefulWidget {
   State<RippleWidget> createState() => _RippleWidgetState();
 }
 
-class _RippleWidgetState extends State<RippleWidget>
-    with SingleTickerProviderStateMixin {
+class _RippleWidgetState extends State<RippleWidget> with SingleTickerProviderStateMixin {
   late final AnimationControllerX _controller;
 
   @override
@@ -27,44 +27,60 @@ class _RippleWidgetState extends State<RippleWidget>
   @override
   Widget build(BuildContext context) {
     return Container(
-        height:  400.h,
-        child:  Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                SizedBox(
-                  width: 310.w,
-                  height: 310.h,
-                  child: RippleWave(
-                    duration: Duration(seconds: 60),
-                    childTween: Tween(begin: 1, end: 1),
-                    color: Color(0xFFFFFFFF).withOpacity(.07),
-                    repeat: false,
-                    animationController: _controller.controller,
-                    waveCount: 8,
-                    child: Center(
-                      child: Text(
-                        "Breathe Out",
-                        style: GoogleFonts.inter(
-                          color: Colors.black,
-                          fontSize: 16.sp,
-                          fontWeight: FontWeight.w500,
+      height: 438.h,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Stack(
+            children: [
+              Center(child: SizedBox(height:438.w, width:438.w,child: RotationTransitionExample())),
+              Positioned(
+                top: 37.h,
+                left: 20.w,
+                child: SizedBox(
+                  width: 350.w,
+                  height: 350.h,
+                  child: Obx(() {
+                    return RippleWave(
+                      duration: const Duration(seconds: 10),
+                      childTween: Tween(begin: 1, end: 1),
+                      color: _controller.isAnimating.value? Color(0xFFFFFFFF).withOpacity(.07) : Colors.transparent,
+                      repeat: false,
+                      animationController: _controller.controller,
+                      waveCount: _controller.isAnimating.value? 8:-1,
+                      child: _controller.isAnimating.value // Access reactive value with .value
+                          ?
+                      ClipRRect(
+                        child: Image.asset(
+                          'assets/sleep/ic_breath_out.webp',
+                          fit: BoxFit.fill,
+                          width: 145.w,
+                          height: 145.w,
                         ),
-                      ),
-                    ),
-                  ),
+                      )
+
+                          : ClipRRect(
+                        child: Image.asset(
+                          'assets/sleep/ic_breath_in.webp',
+                          fit: BoxFit.fill,
+                          width: 145.w,
+                          height: 145.w,
+                        ),
+                      )
+                    );
+                  }),
                 ),
-              ],
-            ),
-          )
+              ),
 
-
+            ],
+          ),
+        ],
+      ),
     );
   }
 
   @override
   void dispose() {
-    _controller.onClose(); // Dispose the controller when done
-    super.dispose();
+    super.dispose(); // No need to call onClose manually, GetX handles cleanup
   }
 }

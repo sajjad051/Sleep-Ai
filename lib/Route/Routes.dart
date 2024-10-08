@@ -34,7 +34,7 @@ import 'package:ai_sleep/Statistics/statistics_Screen.dart';
 import 'package:ai_sleep/TabBar_Music/tabbar_music.dart';
 import 'package:ai_sleep/WelcomeScreen/widget/On_Board_screen/onBoard.dart';
 import 'package:ai_sleep/ripple_widget.dart';
-import 'package:ai_sleep/ripple_wave.dart';
+import 'package:ai_sleep/circular_rotation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
 
@@ -46,6 +46,7 @@ import '../WelcomeScreen/welcome_page_3.dart';
 import '../WelcomeScreen/welcome_page_4.dart';
 import '../carousel_widget.dart';
 import '../linear_timer.dart';
+import '../widget/Rotation_transition.dart';
 
 abstract class Routes {
   static const test = '/test';
@@ -81,14 +82,13 @@ abstract class Routes {
   static const homePageView = '/homePageView';
   static const homePageView1 = '/homePageView1';
   static const pBar = '/pBar';
-  static const rippleWaveScreen = '/rippleWaveScreen';
+  static const crircularRotationPage = '/crircularRotationPage';
   static const artistProfileDetails = '/artistProfileDetails';
   static const easyDate = '/easyDate';
   static const recommendedDtl = '/recommendedDtl';
   static const musicDtl = '/musicDtl';
   static const meditationDtl = '/meditationDtl';
   static const mentalFitnessDtl = '/mentalFitnessDtl';
-
 }
 
 abstract class AppPage {
@@ -200,9 +200,13 @@ abstract class AppPage {
     GetPage(name: Routes.navigationMenu, page: () => NavigationMenu()),
     GetPage(name: Routes.homePageView, page: () => HomePageView()),
     GetPage(name: Routes.homePageView1, page: () => LineChartWidget()),
+
     GetPage(name: Routes.pBar, page: () => RippleWidget()),
-    GetPage(name: Routes.rippleWaveScreen, page: () => RippleWaveScreen()),
+    GetPage(
+        name: Routes.crircularRotationPage,
+        page: () => RotationTransitionExample()),
     GetPage(name: Routes.easyDate, page: () => SwipeBtn()),
-    GetPage(name: Routes.artistProfileDetails, page: () => ArtistProfileDetails()),
+    GetPage(
+        name: Routes.artistProfileDetails, page: () => ArtistProfileDetails()),
   ];
 }

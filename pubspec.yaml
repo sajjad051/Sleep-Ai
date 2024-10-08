@@ -59,6 +59,7 @@ dependencies:
   just_waveform: ^0.0.5
   audio_waveforms: ^1.0.5
   audioplayers: ^6.1.0
+  circular_rotation: ^0.0.2
 
 
 
