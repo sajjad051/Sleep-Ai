@@ -14,10 +14,11 @@ import '../../widget/custom_button.dart';
 class BreathTimeCount extends StatelessWidget {
   BreathTimeCount({super.key});
 
-  final AnimationControllerX controllerX = Get.put(AnimationControllerX());
+  //final AnimationControllerX controllerX = Get.put(AnimationControllerX());
 
   // late LinearTimerController timerController1 = LinearTimerController(this as TickerProvider);
 
+   String txt= '03:15';
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -30,74 +31,69 @@ class BreathTimeCount extends StatelessWidget {
             fit: BoxFit.cover,
           ),
         ),
-        Scaffold(
-          backgroundColor: Colors.transparent,
-          appBar: AppBar(
-            title: Text(
-              "Bedtime Exercise 4 min",
-              style: GoogleFonts.inter(
-                  fontSize: 16.sp,
-                  fontWeight: FontWeight.w700,
-                  color: Color(0xFFFFFFFF).withOpacity(.8)),
-            ),
-            leading: InkWell(
-                onTap: () {
-                  Navigator.pop(context);
-                  // timerController1.reset();
-                },
-                child: Icon(Icons.arrow_back, color: Colors.white)),
+         Scaffold(
             backgroundColor: Colors.transparent,
-          ),
-          body: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20.w),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                SizedBox(
-                  height: 130.h,
-                ),
+            appBar: AppBar(
+              title: Text(
+                "Bedtime Exercise 4 min",
+                style: GoogleFonts.inter(
+                    fontSize: 16.sp,
+                    fontWeight: FontWeight.w700,
+                    color: Color(0xFFFFFFFF).withOpacity(.8)),
+              ),
+              leading: InkWell(
+                  onTap: () {
+                    Navigator.pop(context);
+                    // timerController1.reset();
+                  },
+                  child: Icon(Icons.arrow_back, color: Colors.white)),
+              backgroundColor: Colors.transparent,
+            ),
+            body: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20.w),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SizedBox(
+                    height: 130.h,
+                  ),
 
-                const RippleWidget(),
+                 // controllerX.isAnimating == true ?
+                   const RippleWidget(),
 
-                Center(
-                    child: Text(
-                  "03:13",
-                  style: GoogleFonts.inter(
-                      fontSize: 28.sp,
-                      fontWeight: FontWeight.w300,
-                      color: Color(0xFFFFFFFF).withOpacity(.7)),
-                )),
-                // CustomButton(
-                //   height: 50,
-                //   width: Get.width,
-                //   text: "Tap to Stop",
-                //   background: Color(0xFF7D50FF),
-                //   shadowColor: Color(0xFF7D50FF),
-                //   onPressed: controllerX.toggleAnimation,
-                // ),
+                  // Center(
+                  //     child: ClipRRect(
+                  //       borderRadius: BorderRadius.circular(100),
+                  //       child: Image.asset(
+                  //         'assets/sleep/ic_sunset.webp', fit: BoxFit.cover,
+                  //         width: 100,
+                  //         height: 100,),
+                  //     )) : const RippleWidget(),
 
-                Spacer(),
-                LinearWidgetDemo(onTap: (){
-                  controllerX.toggleAnimation();
-                },),
+                  Center(
+                      child: Text(
+                        "$txt",
+                        style: GoogleFonts.inter(
+                            fontSize: 28.sp,
+                            fontWeight: FontWeight.w300,
+                            color: Color(0xFFFFFFFF).withOpacity(.7)),
+                      )),
 
-                // Spacer(),
-                // CustomButton(
-                //     height: 50,
-                //     width: Get.width,
-                //     text: "Tap to Stop",
-                //     background: Color(0xFF7D50FF),
-                //     shadowColor: Color(0xFF7D50FF),
-                //     onPressed: () {
-                //
-                //     }),
-                SizedBox(
-                  height: 69.h,
-                ),
-              ],
+
+                  Spacer(),
+                  LinearWidgetDemo(onTap: () {
+                    controllerX.toggleAnimation();
+                  },),
+
+
+                  SizedBox(
+                    height: 69.h,
+                  ),
+                ],
+              ),
             ),
           ),
-        ),
+
       ],
     );
   }

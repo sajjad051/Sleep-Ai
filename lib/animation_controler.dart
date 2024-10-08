@@ -5,6 +5,7 @@ class AnimationControllerX extends GetxController {
   late final AnimationController _animationController;
   var isAnimating = false.obs;
 
+
   void initController(TickerProvider tickerProvider) {
     _animationController = AnimationController(
       duration: const Duration(seconds: 5),
@@ -14,20 +15,23 @@ class AnimationControllerX extends GetxController {
 
   void toggleAnimation() {
     if (isAnimating.value) {
-      _animationController.stop();
+      _animationController.stop(); // Stop animation instead of disposing
       isAnimating.value = false;
     } else {
       _animationController.repeat();
+      // Restart animation
       isAnimating.value = true;
     }
   }
 
-  @override
-  void onClose() {
-    // _animationController.dispose();
-    super.onClose();
-  }
 
+
+  @override
+  // void onClose() {
+  //   // Dispose the animation controller when the controller is disposed
+  //  // _animationController.dispose();
+  //   super.onClose();
+  // }
 
   AnimationController get controller => _animationController;
 }

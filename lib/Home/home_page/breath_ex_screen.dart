@@ -73,9 +73,9 @@ class BreathExScreen extends StatelessWidget {
                   children: [
                     Container(
                       width: 66.w,
-                      height: 66.h,
+                      height: 66.w,
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(45).w,
+                        borderRadius: BorderRadius.circular(45),
                         //  border: Border.all(color: Color(0xFF848BBD)),
                         color: Color(0xFFFFFFFF).withOpacity(.2),
                       ),
@@ -89,9 +89,9 @@ class BreathExScreen extends StatelessWidget {
                     ),
                     Container(
                       width: 66.w,
-                      height: 66.h,
+                      height: 66.w,
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(45).w,
+                        borderRadius: BorderRadius.circular(45),
                         //  border: Border.all(color: Color(0xFF848BBD)),
                         color: Color(0xFFFFFFFF).withOpacity(.2),
                       ),
@@ -105,9 +105,9 @@ class BreathExScreen extends StatelessWidget {
                     ),
                     Container(
                       width: 66.w,
-                      height: 66.h,
+                      height: 66.w,
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(45).w,
+                        borderRadius: BorderRadius.circular(45),
                         //  border: Border.all(color: Color(0xFF848BBD)),
                         color: Color(0xFFFFFFFF).withOpacity(.2),
                       ),
@@ -121,9 +121,9 @@ class BreathExScreen extends StatelessWidget {
                     ),
                     Container(
                       width: 66.w,
-                      height: 66.h,
+                      height: 66.w,
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(45).w,
+                        borderRadius: BorderRadius.circular(45),
                         //  border: Border.all(color: Color(0xFF848BBD)),
                         color: Color(0xFFFFFFFF).withOpacity(.2),
                       ),
