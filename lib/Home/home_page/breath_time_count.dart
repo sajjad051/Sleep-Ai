@@ -54,7 +54,7 @@ class BreathTimeCount extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 SizedBox(
-                  height: 80.h,
+                  height: 70.h,
                 ),
 
                 const RippleWidget(),

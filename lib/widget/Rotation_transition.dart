@@ -11,9 +11,10 @@ class RotationTransitionExample extends StatefulWidget {
 
 /// [AnimationController]s can be created with `vsync: this` because of
 /// [TickerProviderStateMixin].
+///
 class _RotationTransitionExampleState extends State<RotationTransitionExample>
     with TickerProviderStateMixin {
-  late bool isCircle = true;
+  late bool isAnimating = false;
 
   late AnimationController _controller;
   @override
@@ -30,14 +31,14 @@ class _RotationTransitionExampleState extends State<RotationTransitionExample>
     _controller.dispose();
     super.dispose();
   }
-  void toggleAnimation() {
+  void toggleCircleAnimation() {
     setState(() {
-      if (isCircle) {
+      if (isAnimating) {
         _controller.stop(); // Stop the animation
       } else {
         _controller.repeat(); // Start the animation again
       }
-      isCircle = !isCircle; // Toggle the animation state
+     // isAnimating = !isAnimating; // Toggle the animation state
     });
   }
   @override

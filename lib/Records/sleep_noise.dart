@@ -4,12 +4,15 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../Custom_voice_message_view/Voice_Message_view_ex.dart';
+import '../Custom_voice_message_view/voice_controller_ex.dart';
+
 
 class SleepNoisesScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 160.h,
+      height: 160,
       width: Get.width,
       decoration: BoxDecoration(
         color: Color(0xFF061238), // Background color
@@ -30,42 +33,57 @@ class SleepNoisesScreen extends StatelessWidget {
             ),
 
             SizedBox(height: 10.h),
-            Row(
-              children: [
-                Text(
-                  "03:12",
-                  style: GoogleFonts.inter(
-                      color: Color(0xFF848BBD),
-                      fontSize: 11,
-                      fontWeight: FontWeight.w400),
+
+                VoiceMessageViewEX(
+                  controller: VoiceControllerEx(
+                    audioSrc:
+                    'https://dl.solahangs.com/Music/1403/02/H/128/Hiphopologist%20-%20Shakkak%20%28128%29.mp3',
+                    maxDuration: const Duration(seconds: 10),
+                    isFile: false,
+                    onComplete: () {
+                      /// do something on complete
+                    },
+                    onPause: () {
+                      /// do something on pause
+                    },
+                    onPlaying: () {
+                      /// do something on playing
+                    },
+                    onError: (err) {
+                      /// do something on error
+                    },
+                  ),
+                  innerPadding: 12,
+                  cornerRadius: 20,
                 ),
+            SizedBox(height: 16,),
+            VoiceMessageViewEX(
+              controller: VoiceControllerEx(
+                audioSrc:
+                'https://dl.solahangs.com/Music/1403/02/H/128/Hiphopologist%20-%20Shakkak%20%28128%29.mp3',
+                maxDuration: const Duration(seconds: 10),
+                isFile: false,
+                onComplete: () {
+                  /// do something on complete
+                },
+                onPause: () {
+                  /// do something on pause
+                },
+                onPlaying: () {
+                  /// do something on playing
+                },
+                onError: (err) {
+                  /// do something on error
+                },
+              ),
+              innerPadding: 12,
+              cornerRadius: 20,
+            ),
 
-              SizedBox(width: 10.h,),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      "Snoring ",
-                      style: GoogleFonts.inter(
-                          color: Color(0xFF848BBD),
-                          fontSize:8.sp,
-                      ),
-                    ),
-                    Text(
-                      "1 min",
-                      style: GoogleFonts.inter(
-                          color: Color(0xFF848BBD).withOpacity(.7),
-                          fontSize: 11.sp,
-                          fontWeight: FontWeight.w500),
-                    ),
-
-                  ],
-                ),
 
 
 
-              ],
-            )
+
 
           ],
         ),

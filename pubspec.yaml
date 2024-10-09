@@ -60,6 +60,7 @@ dependencies:
   audio_waveforms: ^1.0.5
   audioplayers: ^6.1.0
   circular_rotation: ^0.0.2
+  voice_message_package: ^2.2.1
 
 
 
