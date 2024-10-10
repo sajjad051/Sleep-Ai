@@ -89,6 +89,7 @@ class SleepNoisesScreen extends StatelessWidget {
         ),
       ),
     );
+    
     // return Scaffold(
     //   backgroundColor: Color(0xFF0C163F), // Navy background color
     //   body: Container(

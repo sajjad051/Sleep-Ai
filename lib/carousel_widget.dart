@@ -13,7 +13,7 @@ class CarouselWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 275.h,
-      width: 375.w,
+      width: Get.width,
       child: Column(
         children: [
           CarouselSlider(
@@ -36,7 +36,7 @@ class CarouselWidget extends StatelessWidget {
                     width: 380.w,
                     height: 175.h,
                     decoration: BoxDecoration(
-                      color: Colors.teal,
+                      color: Colors.transparent,
                       borderRadius: BorderRadius.circular(8.0.r),
                     ),
                     child: InkWell(
@@ -50,7 +50,7 @@ class CarouselWidget extends StatelessWidget {
                             child: Center(
                               child: Image.asset(
                                 "assets/sleep/Layer 1.jpg",
-                                fit: BoxFit.cover,
+                                fit: BoxFit.fill,
                                 height: 175.h,
                                 width: 380.w,
                               ),
@@ -84,27 +84,30 @@ class CarouselWidget extends StatelessWidget {
             }),
           ),
           SizedBox(height: 8.h), // Space between carousel and text
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                "Breath exercise for better sleep",
-                style: GoogleFonts.inter(
-                  fontSize: 16.sp,
-                  color: Colors.white,
-                  fontWeight: FontWeight.w700,
+          Padding(
+            padding: EdgeInsets.only(left: 24.w),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  "Breath exercise for better sleep",
+                  style: GoogleFonts.inter(
+                    fontSize: 16.sp,
+                    color: Colors.white,
+                    fontWeight: FontWeight.w700,
+                  ),
                 ),
-              ),
-              SizedBox(height: 4.h),
-              Text(
-                "Close your eyes and take a deep breathe to sleep better tonight",
-                style: GoogleFonts.inter(
-                  fontSize: 12.sp,
-                  color: const Color(0xFF848BBD),
-                  fontWeight: FontWeight.w300
+                SizedBox(height: 4.h),
+                Text(
+                  "Close your eyes and take a deep breathe to sleep better tonight",
+                  style: GoogleFonts.inter(
+                    fontSize: 12.sp,
+                    color: const Color(0xFF848BBD),
+                    fontWeight: FontWeight.w300
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
           SizedBox(height: 7.h,),
           Obx(() {

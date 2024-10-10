@@ -92,7 +92,6 @@ class HomeScreen extends StatelessWidget {
               child: Padding(
                 padding: EdgeInsets.only(
                   top: 160.h,
-                  left: 24.w,
                 ),
                 child: Column(
                   children: [
@@ -100,16 +99,14 @@ class HomeScreen extends StatelessWidget {
                     // onTap: (){
                     //   Get.toNamed(Routes.breathEx);
                     // },child: HomeSlider()),
-                    Padding(
-                      padding: EdgeInsets.only(right: 24),
-                      child: CarouselWidget(),
-                    ),
+                    ///carousal Slider
+                    CarouselWidget(),
                     SizedBox(
                       height: 19.h,
                     ),
 
                     Padding(
-                      padding: EdgeInsets.only(right: 24.w),
+                      padding: EdgeInsets.only(right: 24.w,left: 24.w),
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -139,29 +136,32 @@ class HomeScreen extends StatelessWidget {
                       ),
                     ),
                     SizedBox(height: 12.h),
-                    SizedBox(
-                      height: 227.h,
-                      child: ListView.builder(
-                        scrollDirection: Axis.horizontal,
-                        itemCount: gridItems.length,
-                        padding: EdgeInsets.zero,
-                        // padding: EdgeInsets.only(right:  16.w),
-                        itemBuilder: (context, index) {
-                          final item = gridItems[index];
-                          return Padding(
-                            padding: EdgeInsets.only(right: 16.w),
-                            child: Customhomecard(
-                              title: item['title']!,
-                              subtitle: item['subtitle']!,
-                              image: item['image']!,
-                            ),
-                          );
-                        },
+                    Padding(
+                      padding: EdgeInsets.only(right: 24.w,left: 24.w),
+                      child: SizedBox(
+                        height: 227.h,
+                        child: ListView.builder(
+                          scrollDirection: Axis.horizontal,
+                          itemCount: gridItems.length,
+                          padding: EdgeInsets.zero,
+                          // padding: EdgeInsets.only(right:  16.w),
+                          itemBuilder: (context, index) {
+                            final item = gridItems[index];
+                            return Padding(
+                              padding: EdgeInsets.only(right: 16.w),
+                              child: Customhomecard(
+                                title: item['title']!,
+                                subtitle: item['subtitle']!,
+                                image: item['image']!,
+                              ),
+                            );
+                          },
+                        ),
                       ),
                     ),
 
                     Padding(
-                      padding: EdgeInsets.only(right: 24.w, top: 24.h),
+                      padding: EdgeInsets.only(right: 24.w, top: 24.h, left: 24.w),
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -191,29 +191,32 @@ class HomeScreen extends StatelessWidget {
                       ),
                     ),
                     SizedBox(height: 12.h),
-                    SizedBox(
-                      height: 227.h,
-                      child: ListView.builder(
-                        scrollDirection: Axis.horizontal,
-                        itemCount: gridItems.length,
-                        padding: EdgeInsets.zero,
-                        // padding: EdgeInsets.only(right:  16.w),
-                        itemBuilder: (context, index) {
-                          final item = gridItems[index];
-                          return Padding(
-                            padding: EdgeInsets.only(right: 16.w),
-                            child: Customhomecard(
-                              title: item['title']!,
-                              subtitle: item['subtitle']!,
-                              image: item['image']!,
-                            ),
-                          );
-                        },
+                    Padding(
+                      padding: EdgeInsets.only(right: 24.w,left: 24.w),
+                      child: SizedBox(
+                        height: 227.h,
+                        child: ListView.builder(
+                          scrollDirection: Axis.horizontal,
+                          itemCount: gridItems.length,
+                          padding: EdgeInsets.zero,
+                          // padding: EdgeInsets.only(right:  16.w),
+                          itemBuilder: (context, index) {
+                            final item = gridItems[index];
+                            return Padding(
+                              padding: EdgeInsets.only(right: 16.w),
+                              child: Customhomecard(
+                                title: item['title']!,
+                                subtitle: item['subtitle']!,
+                                image: item['image']!,
+                              ),
+                            );
+                          },
+                        ),
                       ),
                     ),
 
                     Padding(
-                      padding: EdgeInsets.only(right: 24.w, top: 24),
+                      padding: EdgeInsets.only(right: 24.w, top: 24.h, left: 24.w),
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -243,34 +246,37 @@ class HomeScreen extends StatelessWidget {
                       ),
                     ),
                     SizedBox(height: 12.h),
-                    Container(
-                      height: 250.h,
-                      // Adjust the height as needed
-                      child: ListView.builder(
-                        scrollDirection: Axis.horizontal,
-                        itemCount: gridItems.length,
-                        // padding: EdgeInsets.only(right:  16.w),
-                        itemBuilder: (context, index) {
-                          final item = gridItems[index];
-                          return Container(
-                            //margin: EdgeInsets.symmetric(horizontal: 3),
-                            width: 356
-                                .w, // Adjust the width of each item if needed
-                            child: Padding(
-                              padding: EdgeInsets.only(right: 16.w),
-                              child: Recommendedcard(
-                                title: item['title']!,
-                                subtitle: item['subtitle']!,
-                                image: item['image']!,
+                    Padding(
+                      padding: EdgeInsets.only(right: 24.w,left: 24.w),
+                      child: Container(
+                        height: 250.h,
+                        // Adjust the height as needed
+                        child: ListView.builder(
+                          scrollDirection: Axis.horizontal,
+                          itemCount: gridItems.length,
+                          // padding: EdgeInsets.only(right:  16.w),
+                          itemBuilder: (context, index) {
+                            final item = gridItems[index];
+                            return Container(
+                              //margin: EdgeInsets.symmetric(horizontal: 3),
+                              width: 356
+                                  .w, // Adjust the width of each item if needed
+                              child: Padding(
+                                padding: EdgeInsets.only(right: 16.w),
+                                child: Recommendedcard(
+                                  title: item['title']!,
+                                  subtitle: item['subtitle']!,
+                                  image: item['image']!,
+                                ),
                               ),
-                            ),
-                          );
-                        },
+                            );
+                          },
+                        ),
                       ),
                     ),
 
                     Padding(
-                      padding: EdgeInsets.only(right: 24.w),
+                      padding: EdgeInsets.only(right: 24.w, left: 24),
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -300,34 +306,37 @@ class HomeScreen extends StatelessWidget {
                       ),
                     ),
                     SizedBox(height: 10.h),
-                    Container(
-                      height: 250.h,
-                      // Adjust the height as needed
-                      child: ListView.builder(
-                        scrollDirection: Axis.horizontal,
-                        itemCount: gridItems.length,
-                        // padding: EdgeInsets.only(right:  16.w),
-                        itemBuilder: (context, index) {
-                          final item = gridItems[index];
-                          return Container(
-                            //margin: EdgeInsets.symmetric(horizontal: 3),
-                            width: 356
-                                .w, // Adjust the width of each item if needed
-                            child: Padding(
-                              padding: EdgeInsets.only(right: 16.w),
-                              child: Recommendedcard(
-                                title: item['title']!,
-                                subtitle: item['subtitle']!,
-                                image: item['image']!,
+                    Padding(
+                      padding: EdgeInsets.only(right: 24.w,left: 24.w),
+                      child: Container(
+                        height: 250.h,
+                        // Adjust the height as needed
+                        child: ListView.builder(
+                          scrollDirection: Axis.horizontal,
+                          itemCount: gridItems.length,
+                          // padding: EdgeInsets.only(right:  16.w),
+                          itemBuilder: (context, index) {
+                            final item = gridItems[index];
+                            return Container(
+                              //margin: EdgeInsets.symmetric(horizontal: 3),
+                              width: 356
+                                  .w, // Adjust the width of each item if needed
+                              child: Padding(
+                                padding: EdgeInsets.only(right: 16.w),
+                                child: Recommendedcard(
+                                  title: item['title']!,
+                                  subtitle: item['subtitle']!,
+                                  image: item['image']!,
+                                ),
                               ),
-                            ),
-                          );
-                        },
+                            );
+                          },
+                        ),
                       ),
                     ),
 
                     Padding(
-                      padding: EdgeInsets.only(right: 24.w, top: 8.h),
+                      padding: EdgeInsets.only(right: 24.w, top: 8.h,left: 24.h),
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -357,29 +366,32 @@ class HomeScreen extends StatelessWidget {
                       ),
                     ),
                     SizedBox(height: 10.h),
-                    SizedBox(
-                      height: 227.h,
-                      child: ListView.builder(
-                        scrollDirection: Axis.horizontal,
-                        itemCount: gridItems.length,
-                        padding: EdgeInsets.zero,
-                        // padding: EdgeInsets.only(right:  16.w),
-                        itemBuilder: (context, index) {
-                          final item = gridItems[index];
-                          return Padding(
-                            padding: EdgeInsets.only(right: 16.w),
-                            child: Customhomecard(
-                              title: item['title']!,
-                              subtitle: item['subtitle']!,
-                              image: item['image']!,
-                            ),
-                          );
-                        },
+                    Padding(
+                      padding: EdgeInsets.only(right: 24.w,left: 24.w),
+                      child: SizedBox(
+                        height: 227.h,
+                        child: ListView.builder(
+                          scrollDirection: Axis.horizontal,
+                          itemCount: gridItems.length,
+                          padding: EdgeInsets.zero,
+                          // padding: EdgeInsets.only(right:  16.w),
+                          itemBuilder: (context, index) {
+                            final item = gridItems[index];
+                            return Padding(
+                              padding: EdgeInsets.only(right: 16.w),
+                              child: Customhomecard(
+                                title: item['title']!,
+                                subtitle: item['subtitle']!,
+                                image: item['image']!,
+                              ),
+                            );
+                          },
+                        ),
                       ),
                     ),
 
                     Padding(
-                      padding: EdgeInsets.only(right: 24.w, top: 24.h),
+                      padding: EdgeInsets.only(right: 24.w, top: 24.h,left: 24.w),
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -409,24 +421,27 @@ class HomeScreen extends StatelessWidget {
                       ),
                     ),
                     SizedBox(height: 10.h),
-                    SizedBox(
-                      height: 227.h,
-                      child: ListView.builder(
-                        scrollDirection: Axis.horizontal,
-                        itemCount: gridItems.length,
-                        padding: EdgeInsets.zero,
-                        // padding: EdgeInsets.only(right:  16.w),
-                        itemBuilder: (context, index) {
-                          final item = gridItems[index];
-                          return Padding(
-                            padding: EdgeInsets.only(right: 16.w),
-                            child: Customhomecard(
-                              title: item['title']!,
-                              subtitle: item['subtitle']!,
-                              image: item['image']!,
-                            ),
-                          );
-                        },
+                    Padding(
+                      padding: EdgeInsets.only(right: 24.w,left: 24.w),
+                      child: SizedBox(
+                        height: 227.h,
+                        child: ListView.builder(
+                          scrollDirection: Axis.horizontal,
+                          itemCount: gridItems.length,
+                          padding: EdgeInsets.zero,
+                          // padding: EdgeInsets.only(right:  16.w),
+                          itemBuilder: (context, index) {
+                            final item = gridItems[index];
+                            return Padding(
+                              padding: EdgeInsets.only(right: 16.w),
+                              child: Customhomecard(
+                                title: item['title']!,
+                                subtitle: item['subtitle']!,
+                                image: item['image']!,
+                              ),
+                            );
+                          },
+                        ),
                       ),
                     ),
 
